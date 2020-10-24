@@ -51,7 +51,7 @@ extern SPIClass& spi;
 #elif defined(CUSTOM_DRIVER)
     #include "TFT_eSPI_Custom.h"
 #else
-  #include "Processors/TFT_eSPI_Generic.h"
+  #include "TFT_eSPI_Generic.h"
 #endif
 
 /***************************************************************************************
