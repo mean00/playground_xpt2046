@@ -279,59 +279,6 @@ static const uint16_t default_4bit_palette[] PROGMEM = {
   TFT_PINK      // 15
 };
 
-/***************************************************************************************
-**                         Section 7: Diagnostic support
-***************************************************************************************/
-// #define TFT_eSPI_DEBUG     // Switch on debug support serial messages  (not used yet)
-// #define TFT_eSPI_FNx_DEBUG // Switch on debug support for function "x" (not used yet)
-
-// This structure allows sketches to retrieve the user setup parameters at runtime
-// by calling getSetup(), zero impact on code size unless used, mainly for diagnostics
-typedef struct
-{
-String  version = TFT_ESPI_VERSION;
-int32_t esp;         // Processor code
-uint8_t trans;       // SPI transaction supoort
-uint8_t serial;      // Serial (SPI) or parallel
-uint8_t overlap;     // ESP8266 overlap mode
-
-#if defined (ESP32)  // TODO: make generic for other processors
-  #if defined (USE_HSPI_PORT)
-    uint8_t  port = HSPI;
-  #else
-    uint8_t  port = VSPI;
-  #endif
-#endif
-
-uint16_t tft_driver; // Hexadecimal code
-uint16_t tft_width;  // Rotation 0 width and height
-uint16_t tft_height;
-
-uint8_t r0_x_offset; // Display offsets, not all used yet
-uint8_t r0_y_offset;
-uint8_t r1_x_offset;
-uint8_t r1_y_offset;
-uint8_t r2_x_offset;
-uint8_t r2_y_offset;
-uint8_t r3_x_offset;
-uint8_t r3_y_offset;
-
-int8_t pin_tft_mosi; // SPI pins
-int8_t pin_tft_miso;
-int8_t pin_tft_clk;
-int8_t pin_tft_cs;
-
-int8_t pin_tft_dc;   // Control pins
-int8_t pin_tft_rd;
-int8_t pin_tft_wr;
-int8_t pin_tft_rst;
-
-
-int8_t pin_tft_led;
-int8_t pin_tft_led_on;
-
-
-} setup_t;
 
 /***************************************************************************************
 **                         Section 8: Class member and support functions
@@ -618,20 +565,7 @@ class TFT_eSPI : public Print {
   void     writeColor(uint16_t color, uint32_t len); // Deprecated, use pushBlock()
   void     endWrite(void);                           // End SPI transaction
 
-  // Set/get an arbitrary library configuration attribute or option
-  //       Use to switch ON/OFF capabilities such as UTF8 decoding - each attribute has a unique ID
-  //       id = 0: reserved - may be used in fuuture to reset all attributes to a default state
-  //       id = 1: Turn on (a=true) or off (a=false) GLCD cp437 font character error correction
-  //       id = 2: Turn on (a=true) or off (a=false) UTF8 decoding
-  //       id = 3: Enable or disable use of ESP32 PSRAM (if available)
-           #define CP437_SWITCH 1
-           #define UTF8_SWITCH  2
-           #define PSRAM_ENABLE 3
-  void     setAttribute(uint8_t id = 0, uint8_t a = 0); // Set attribute value
-  uint8_t  getAttribute(uint8_t id = 0);                // Get attribute value
 
-           // Used for diagnostic sketch to see library setup adopted by compiler, see Section 7 above
-  void     getSetup(setup_t& tft_settings); // Sketch provides the instance to populate
 
   // Global variables
   static   SPIClass& getSPIinstance(void); // Get SPI class handle
@@ -762,11 +696,6 @@ protected:
 
   bool     _booted;    // init() or begin() has already run once
   
-                       // User sketch manages these via set/getAttribute()
-  bool     _cp437;        // If set, use correct CP437 charset (default is ON)
-  bool     _utf8;         // If set, use UTF-8 decoder in print stream 'write()' function (default ON)
-  bool     _psram_enable; // Enable PSRAM use for library functions (TBD) and Sprites
-
   uint32_t _lastColor; // Buffered value of last colour used
   virtual  void spiLock() {};
   virtual  void spiUnlock() {};
@@ -774,30 +703,9 @@ protected:
   GFXfont  *gfxFont;
 #endif
 
-/***************************************************************************************
-**                         Section 9: TFT_eSPI class conditional extensions
-***************************************************************************************/
-// Load the Touch extension
-#ifdef TOUCH_CS
-  #include "Extensions/Touch.h"        // Loaded if TOUCH_CS is defined by user
-#endif
-
-// Load the Anti-aliased font extension
-#ifdef SMOOTH_FONT
-  #include "Extensions/Smooth_font.h"  // Loaded if SMOOTH_FONT is defined by user
-#endif
-
-  
+    // pinout
   int _csPin,_dcPin,_rstPin;
   
 }; // End of class TFT_eSPI
 
-/***************************************************************************************
-**                         Section 10: Additional extension classes
-***************************************************************************************/
-// Load the Button Class
-#include "Extensions/Button.h"
-
-// Load the Sprite Class
-#include "Extensions/Sprite.h"
-
+// EOF

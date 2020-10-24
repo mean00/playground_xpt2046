@@ -9,7 +9,7 @@
 //   Note that some sketches are designed for a particular TFT pixel width/height
 #define ILI9341_DRIVER 1
 
-#include "Fonts/GFXFF/gfxfont.h"
+#include "gfxfont.h"
 
 #define SPI_FREQUENCY  40000000
 // Optional reduced SPI frequency for reading TFT

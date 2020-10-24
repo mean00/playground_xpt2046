@@ -75,10 +75,6 @@ TFT_eSPI::TFT_eSPI(int w, int h,int pinCS, int pinDC, int pinRst)
   inTransaction = false;
 
   _booted   = true;     // Default attributes
-  _cp437    = true;
-  _utf8     = true;
-
-  _psram_enable = false;
 
   addr_row = 0xFFFF;
   addr_col = 0xFFFF;
