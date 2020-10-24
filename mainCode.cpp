@@ -6,23 +6,14 @@
 
 #include <Wire.h>
 #include "SPI.h"
-#include "wav_irotary.h"
-#include "simpler_INA219.h"
-#include "simplerMCP4725.h"
-#include "push_button.h"
-#include "screenBase.h"
-#include "screenIdle.h"
-#include "screenDischarging.h"
 #include "dso_debug.h"
-#include "RotaryEncoder/wav_irotary.h"
-#include "xpt2046.h"
 #include "dso_eeprom.h"
- 
+#include "TFT_eSPI_extended.h" 
+#include "stopWatch.h"
 extern const GFXfont FreeSans24pt7b ;
 extern const GFXfont FreeSans18pt7b ;
 extern const GFXfont FreeSans9pt7b ;
 
-extern void touchCalibration(XPT2046 *xpt, TFT_eSPI_extended *tft);
 
 
 //#define TEST_DIS 
@@ -38,42 +29,15 @@ extern void touchCalibration(XPT2046 *xpt, TFT_eSPI_extended *tft);
 // TOUCH SCREEN
 #define TOUCH_CS        PB11
 #define TOUCH_IRQ       PB8
-
-
-
-//
-// Our globals
-
-batConfig            config=
-{
-    200,      // Wire resistor, computed automatically
-    0,      //int     currentDischargeMa;
-    3000,   //     minimumVoltage;
-    
-    0,      //uint32_t duration;
-    0,      // float    sumMa;
-    
-#ifdef TEST_DIS    
-    200,
-#else
-    500,    // int     targetDischargeMa;
-#endif
-    
-    NULL,   // TFT
-    NULL    
-};
-#if 1
 #define BootSequence(x,y) {Logger(x);  tft->setCursor(10, y*2);       tft->myDrawString(x);xDelay(10);}
-#else
-#define BootSequence(x,y) {Logger(x); ;xDelay(10);}
-#endif
+
 /*
  */
 void myLoop(void) ;
 /**
  * 
  */
-class MainTask : public xTask,XPT2046Hook
+class MainTask : public xTask
 {
 public:
             MainTask() : xTask("MainTask",10,400)
@@ -89,14 +53,7 @@ public:
             void    loop(void) ;
 protected:
             TFT_eSPI_extended    *tft=NULL;
-            WavRotary            *rotary=NULL;
-            simpler_INA219       *ina219=NULL;
-            myMCP4725            *mcp4725=NULL;
-            batScreen            *currentScreen=NULL;
-            XPT2046              *xpt2046=NULL;
-            int                  gateVoltage=0;    
             xMutex               *spiMutex;
-            CurrentState         currentState;
 };
 
 
@@ -158,8 +115,26 @@ void    MainTask::run(void)
   Wire.begin();
     
   initTft();   
-  tft->fillScreen(ILI9341_BLACK);
-    
+  char s[200];
+  for(int i=0;i<5;i++)
+  {
+    StopWatch w;
+    w.ok();
+    tft->fillScreen(ILI9341_BLACK);
+    int t=w.msSinceOk();
+    sprintf(s,"Round:%d elapsed:%d\n\r",i,t);
+    Serial.print(s);
+  }
+  for(int i=0;i<5;i++)
+  {
+    StopWatch w;
+    w.ok();
+    tft->setCursor(10, 100);
+    tft->myDrawString("ABCDEGHIJKMN");
+    int t=w.msSinceOk();
+    sprintf(s,"Round:%d elapsed:%d\n\r",i,t);
+    Serial.print(s);
+  }   
 
     
   
@@ -167,27 +142,11 @@ void    MainTask::run(void)
   BootSequence("Zero",40);
   delay(10); // no current, we can autocalibrate the ina
 #endif
-#if 1
   BootSequence("All ok",50);  
-  
+  while(1)
+  {
 
-    while(1)
-    {
-
-    }  
-#ifdef TEST_DIS
-  currentScreen=new dischargingScreen(   &config,4000);
-#else  
-  currentScreen =new idleScreen(&config);
-#endif    
-  currentScreen->draw();
-  #endif    
-  
-  
-  ina219->autoZero();
-  ina219->setMultiSampling(2);   
-  config.userSettings.loadSettings();
-  
+  }  
   while(1)
   {
         loop();
@@ -198,20 +157,7 @@ void    MainTask::run(void)
  */
 void MainTask::loop(void) 
 {
-    // Returns NULL if we stay on the same screen
-    // the new screen otherwise
-    batScreen *s=currentScreen->process();
-    if(s)
-    {
-        delete currentScreen;
-        currentScreen=s;
-        s->draw();
-        
-        // Purge pending events if any
-        rotary->readEvent();
-        rotary->getCount();        
-    }
-    xDelay(50);
+       xDelay(50);
 }
 /**
  * 

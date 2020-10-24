@@ -23,8 +23,8 @@ set(ARDUINO_CPUMENU .menu.cpu.${ARDUINO_CPU})
 SET(libPrefix ${ARDUINO_DEFAULT_BOARD}_)
 #
 MESSAGE(STATUS "**** Configuration is ** ${CONFIGURATION} **")
-SET(SUB_COMPONENTS FreeRTOS RotaryEncoder  )
-SET(SUB_LIBRARIES xpt2046 TFT_eSPI )
+SET(SUB_COMPONENTS FreeRTOS )
+SET(SUB_LIBRARIES TFT_eSPI )
 
 add_subdirectory(assets)
 
@@ -33,14 +33,10 @@ include_directories(${CMAKE_SOURCE_DIR})
 include_directories(FreeRTOS/Source/include)
 include_directories(FreeRTOS/)
 include_directories(FreeRTOS/Source/portable/Stm32duino/)
-include_directories(RotaryEncoder/)
 include_directories(assets/backgrounds/generated)
 
-include_directories(simplerMCP4725)
-include_directories(simpler_INA219)
 
 # Build 
-add_subdirectory(XPT2046) # Physical folder name
 add_subdirectory(TFT_eSPI)
 FOREACH(comp ${SUB_LIBRARIES} ) # Logical name    
     IMPORT_LIBRARY(${comp})
@@ -58,13 +54,13 @@ add_definitions("-DPRINTF_DISABLE_SUPPORT_EXPONENTIAL -DPRINTF_DISABLE_SUPPORT_L
 SET(UTILS utils/fancyLock.cpp    utils/cycleClock.cpp utils/myPwm.cpp utils/i2c_stubs.c)
 generate_arduino_firmware(componentTester${EXTENSION}
                 SKETCH batteryTester2.ino
-                SRCS screenCalibration.cpp 
-                            mainCode.cpp push_button.cpp 
-                            screenIdle.cpp screenBase.cpp screenError.cpp screenSetup.cpp items.cpp screenDischarging.cpp screenFinished.cpp embedded_printf/printf.c    settings.cpp
-                            dso_eeprom.cpp
+                SRCS 
+                            mainCode.cpp 
+                            embedded_printf/printf.c    
+                            settings.cpp
                             dso_logger.cpp
-                            calibration.cpp
                             heap.cpp
+                            stopWatch.cpp
                 PORT ${ARDUINO_DEFAULT_PORT}
                 BOARD_CPU ${ARDUINO_CPU}
                 )
