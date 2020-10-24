@@ -35,10 +35,10 @@
   //#include <FS.h>
 #endif
 
-  #define DC_C digitalWrite(TFT_DC, LOW)
-  #define DC_D digitalWrite(TFT_DC, HIGH)
-  #define CS_L digitalWrite(TFT_CS, LOW)
-  #define CS_H digitalWrite(TFT_CS, HIGH)
+  #define DC_C digitalWrite(_dcPin, LOW)
+  #define DC_D digitalWrite(_dcPin, HIGH)
+  #define CS_L digitalWrite(_csPin, LOW)
+  #define CS_H digitalWrite(_csPin, HIGH)
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // Make sure TFT_RD is defined if not used to avoid an error message

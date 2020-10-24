@@ -68,13 +68,10 @@ void MainTask::initTft()
         tft=NULL;
     }
     // Deep reset of screen
-    pinMode(TFT_RST,OUTPUT);
-    digitalWrite(TFT_RST,LOW);
-    delay(100);  
-    digitalWrite(TFT_RST,HIGH);
+ 
     spiMutex=new xMutex();
 
-    tft = new TFT_eSPI_extended(spiMutex);
+    tft = new TFT_eSPI_extended(spiMutex,320,240,PB10,PB0,PB1);
     
     tft->init();  
     tft->setRotation(3);

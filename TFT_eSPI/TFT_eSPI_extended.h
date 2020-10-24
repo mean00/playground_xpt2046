@@ -20,9 +20,8 @@ public:
       uint16_t         *filler;
       const GFXfont    *font;        
     };
-
-    
-    TFT_eSPI_extended(xMutex *tex,int16_t _W = TFT_WIDTH, int16_t _H = TFT_HEIGHT) : TFT_eSPI(_W,_H)
+      
+    TFT_eSPI_extended(xMutex *tex,int _W  , int _H, int pinCS, int pinDC, int pinRst=-1) : TFT_eSPI(_W,_H, pinCS,pinDC,pinRst)
     {
         this->tex=tex;
         currentFont=NULL;

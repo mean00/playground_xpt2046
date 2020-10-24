@@ -141,7 +141,7 @@ extern SPIClass& spi;
   // the sketch if they are used
   #include <Fonts/GFXFF/gfxfont.h>
   // Call up any user custom fonts
-  #include <User_Setups/User_Custom_Fonts.h>
+//  #include <User_Setups/User_Custom_Fonts.h>
 #endif // #ifdef LOAD_GFXFF
 
 // Create a null default font in case some fonts not used (to prevent crash)
@@ -326,23 +326,11 @@ int8_t pin_tft_rd;
 int8_t pin_tft_wr;
 int8_t pin_tft_rst;
 
-int8_t pin_tft_d0;   // Parallel port pins
-int8_t pin_tft_d1;
-int8_t pin_tft_d2;
-int8_t pin_tft_d3;
-int8_t pin_tft_d4;
-int8_t pin_tft_d5;
-int8_t pin_tft_d6;
-int8_t pin_tft_d7;
 
 int8_t pin_tft_led;
 int8_t pin_tft_led_on;
 
-int8_t pin_tch_cs;   // Touch chip select pin
 
-int16_t tft_spi_freq;// TFT write SPI frequency
-int16_t tft_rd_freq; // TFT read  SPI frequency
-int16_t tch_spi_freq;// Touch controller read/write SPI frequency
 } setup_t;
 
 /***************************************************************************************
@@ -361,7 +349,7 @@ class TFT_eSPI : public Print {
  //--------------------------------------- public ------------------------------------//
  public:
 
-  TFT_eSPI(int16_t _W = TFT_WIDTH, int16_t _H = TFT_HEIGHT);
+  TFT_eSPI(int _W , int _H , int pinCS, int pinDC, int pinRst=-1);
 
   // init() and begin() are equivalent, begin() included for backwards compatibility
   // Sketch defined tab colour option is for ST7735 displays only
@@ -758,8 +746,8 @@ protected:
 
   //int32_t  win_xe, win_ye;          // Window end coords - not needed
 
-  int32_t  _init_width, _init_height; // Display w/h as input, used by setRotation()
-  int32_t  _width, _height;           // Display w/h as modified by current rotation
+  int  _init_width, _init_height; // Display w/h as input, used by setRotation()
+  int  _width, _height;           // Display w/h as modified by current rotation
   int32_t  addr_row, addr_col;        // Window position - used to minimise window commands
 
   uint32_t fontsloaded;               // Bit field of fonts loaded
@@ -799,6 +787,9 @@ protected:
   #include "Extensions/Smooth_font.h"  // Loaded if SMOOTH_FONT is defined by user
 #endif
 
+  
+  int _csPin,_dcPin,_rstPin;
+  
 }; // End of class TFT_eSPI
 
 /***************************************************************************************
