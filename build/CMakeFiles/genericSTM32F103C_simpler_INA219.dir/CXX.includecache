@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/fx/Arduino_stm32/tmp/simpler_INA219/simpler_INA219.cpp
+Arduino.h
+/home/fx/Arduino_stm32/tmp/simpler_INA219/Arduino.h
+Wire.h
+-
+simpler_INA219.h
+/home/fx/Arduino_stm32/tmp/simpler_INA219/simpler_INA219.h
+simpler_INA219_internal.h
+/home/fx/Arduino_stm32/tmp/simpler_INA219/simpler_INA219_internal.h
+
+/home/fx/Arduino_stm32/tmp/simpler_INA219/simpler_INA219.h
+Arduino.h
+/home/fx/Arduino_stm32/tmp/simpler_INA219/Arduino.h
+WProgram.h
+/home/fx/Arduino_stm32/tmp/simpler_INA219/WProgram.h
+Wire.h
+-
+
+/home/fx/Arduino_stm32/tmp/simpler_INA219/simpler_INA219_internal.h
+

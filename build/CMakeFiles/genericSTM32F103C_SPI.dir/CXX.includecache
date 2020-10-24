@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/fx/Arduino_stm32/tmp/Arduino_STM32/STM32F1/libraries/SPI/src/SPI.cpp
+SPI.h
+/home/fx/Arduino_stm32/tmp/Arduino_STM32/STM32F1/libraries/SPI/src/SPI.h
+libmaple/timer.h
+-
+libmaple/util.h
+-
+libmaple/rcc.h
+-
+wirish.h
+/home/fx/Arduino_stm32/tmp/Arduino_STM32/STM32F1/libraries/SPI/src/wirish.h
+boards.h
+/home/fx/Arduino_stm32/tmp/Arduino_STM32/STM32F1/libraries/SPI/src/boards.h
+
+/home/fx/Arduino_stm32/tmp/Arduino_STM32/STM32F1/libraries/SPI/src/SPI.h
+libmaple/libmaple_types.h
+-
+libmaple/spi.h
+-
+libmaple/dma.h
+-
+boards.h
+-
+stdint.h
+-
+wirish.h
+-
+

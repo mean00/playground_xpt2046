@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/fx/Arduino_stm32/tmp/simplerMCP4725/simplerMCP4725.cpp
+Wire.h
+-
+simplerMCP4725.h
+/home/fx/Arduino_stm32/tmp/simplerMCP4725/simplerMCP4725.h
+
+/home/fx/Arduino_stm32/tmp/simplerMCP4725/simplerMCP4725.h
+Wire.h
+-
+

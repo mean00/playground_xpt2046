@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/fx/Arduino_stm32/tmp/Arduino_STM32/STM32F1/cores/maple/libmaple/exc.S
+
+/home/fx/Arduino_stm32/tmp/Arduino_STM32/STM32F1/cores/maple/libmaple/stm32f1/performance/isrs.S
+libmaple/stm32.h
+-
+
+/home/fx/Arduino_stm32/tmp/Arduino_STM32/STM32F1/cores/maple/libmaple/stm32f1/performance/vector_table.S
+libmaple/stm32.h
+-
+

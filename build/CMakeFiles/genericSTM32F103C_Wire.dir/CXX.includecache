@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/fx/Arduino_stm32/tmp/Arduino_STM32/STM32F1/libraries/Wire/SoftWire.cpp
+SoftWire.h
+/home/fx/Arduino_stm32/tmp/Arduino_STM32/STM32F1/libraries/Wire/SoftWire.h
+
+/home/fx/Arduino_stm32/tmp/Arduino_STM32/STM32F1/libraries/Wire/SoftWire.h
+utility/WireBase.h
+/home/fx/Arduino_stm32/tmp/Arduino_STM32/STM32F1/libraries/Wire/utility/WireBase.h
+wirish.h
+/home/fx/Arduino_stm32/tmp/Arduino_STM32/STM32F1/libraries/Wire/wirish.h
+
+/home/fx/Arduino_stm32/tmp/Arduino_STM32/STM32F1/libraries/Wire/Wire.cpp
+Wire.h
+/home/fx/Arduino_stm32/tmp/Arduino_STM32/STM32F1/libraries/Wire/Wire.h
+
+/home/fx/Arduino_stm32/tmp/Arduino_STM32/STM32F1/libraries/Wire/Wire.h
+utility/WireBase.h
+/home/fx/Arduino_stm32/tmp/Arduino_STM32/STM32F1/libraries/Wire/utility/WireBase.h
+wirish.h
+/home/fx/Arduino_stm32/tmp/Arduino_STM32/STM32F1/libraries/Wire/wirish.h
+libmaple/i2c.h
+-
+
+/home/fx/Arduino_stm32/tmp/Arduino_STM32/STM32F1/libraries/Wire/utility/WireBase.cpp
+WireBase.h
+/home/fx/Arduino_stm32/tmp/Arduino_STM32/STM32F1/libraries/Wire/utility/WireBase.h
+wirish.h
+/home/fx/Arduino_stm32/tmp/Arduino_STM32/STM32F1/libraries/Wire/utility/wirish.h
+
+/home/fx/Arduino_stm32/tmp/Arduino_STM32/STM32F1/libraries/Wire/utility/WireBase.h
+wirish.h
+/home/fx/Arduino_stm32/tmp/Arduino_STM32/STM32F1/libraries/Wire/utility/wirish.h
+libmaple/i2c.h
+-
+

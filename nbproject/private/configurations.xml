@@ -1,0 +1,4377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="Adafruit_GFX">
+        <in>Adafruit_GFX.cpp</in>
+        <in>Adafruit_SPITFT.cpp</in>
+        <in>glcdfont.c</in>
+      </df>
+      <df name="Adafruit_ILI9341_STM">
+        <in>Adafruit_ILI9341_STM.cpp</in>
+      </df>
+      <df name="Arduino_STM32">
+        <df name="drivers">
+          <df name="win">
+            <df name="src">
+              <df name="libwdi-extra-files">
+                <df name="ddk">
+                  <df name="redist">
+                    <df name="wdf">
+                      <df name="x64">
+                      </df>
+                      <df name="x86">
+                      </df>
+                    </df>
+                  </df>
+                </df>
+                <df name="libusb0">
+                  <df name="bin">
+                    <df name="amd64">
+                    </df>
+                    <df name="x86">
+                    </df>
+                  </df>
+                  <in>installer_license.txt</in>
+                </df>
+                <df name="libusbk">
+                  <df name="dll">
+                    <df name="amd64">
+                    </df>
+                    <df name="x86">
+                    </df>
+                  </df>
+                  <df name="sys">
+                    <df name="amd64">
+                    </df>
+                    <df name="x86">
+                    </df>
+                  </df>
+                </df>
+                <df name="usbser">
+                </df>
+              </df>
+              <df name="pbatard_libwdi">
+                <df name="examples">
+                  <df name=".msvc">
+                  </df>
+                  <df name="getopt">
+                    <df name=".msvc">
+                    </df>
+                    <in>getopt.c</in>
+                    <in>getopt.h</in>
+                    <in>getopt1.c</in>
+                  </df>
+                  <in>inf_wizard.c</in>
+                  <in>inf_wizard_rc.rc</in>
+                  <in>libusb-win32_version.h</in>
+                  <in>libusb-win32_version.rc</in>
+                  <in>profile.c</in>
+                  <in>profile.h</in>
+                  <in>wdi-simple.c</in>
+                  <in>wdi-simple.rc</in>
+                  <in>zadic.c</in>
+                  <in>zadic.rc</in>
+                  <in>zadic_resource.h</in>
+                  <in>zadig.c</in>
+                  <in>zadig.h</in>
+                  <in>zadig.rc</in>
+                  <in>zadig_license.h</in>
+                  <in>zadig_net.c</in>
+                  <in>zadig_parser.c</in>
+                  <in>zadig_registry.h</in>
+                  <in>zadig_resource.h</in>
+                  <in>zadig_stdlg.c</in>
+                </df>
+                <df name="libwdi">
+                  <df name=".msvc">
+                  </df>
+                  <in>embedder.c</in>
+                  <in>embedder.h</in>
+                  <in>embedder_files.h</in>
+                  <in>installer.c</in>
+                  <in>installer.h</in>
+                  <in>libwdi.c</in>
+                  <in>libwdi.h</in>
+                  <in>libwdi.rc</in>
+                  <in>libwdi_dlg.c</in>
+                  <in>libwdi_i.h</in>
+                  <in>logging.c</in>
+                  <in>logging.h</in>
+                  <in>msapi_utf8.h</in>
+                  <in>mssign32.h</in>
+                  <in>pki.c</in>
+                  <in>resource.h</in>
+                  <in>tokenizer.c</in>
+                  <in>tokenizer.h</in>
+                  <in>vid_data.c</in>
+                </df>
+                <df name="msvc">
+                  <in>config.h</in>
+                  <in>inttypes.h</in>
+                  <in>stdint.h</in>
+                </df>
+              </df>
+            </df>
+            <df name="win_xp_legacy">
+              <df name="maple-dfu">
+                <df name="amd64">
+                </df>
+                <df name="license">
+                  <df name="libusb0">
+                    <in>installer_license.txt</in>
+                  </df>
+                </df>
+                <df name="x86">
+                </df>
+              </df>
+              <df name="maple-serial">
+                <df name="amd64">
+                </df>
+                <df name="license">
+                  <df name="libusb0">
+                    <in>installer_license.txt</in>
+                  </df>
+                </df>
+                <df name="x86">
+                </df>
+              </df>
+            </df>
+          </df>
+          <in>boards.txt</in>
+        </df>
+        <df name="STM32F1">
+          <df name="cores">
+            <df name="maple">
+              <df name="avr">
+                <in>dtostrf.c</in>
+                <in>dtostrf.h</in>
+                <in>interrupt.h</in>
+                <in>pgmspace.h</in>
+              </df>
+              <df name="libmaple">
+                <df name="stm32f1">
+                  <df name="performance">
+                    <in>isrs.S</in>
+                    <in>vector_table.S</in>
+                  </df>
+                </df>
+                <df name="usb">
+                  <df name="stm32f1">
+                    <in>usb.c</in>
+                    <in>usb_cdcacm.c</in>
+                    <in>usb_reg_map.c</in>
+                  </df>
+                  <df name="usb_lib">
+                    <in>usb_core.c</in>
+                    <in>usb_init.c</in>
+                    <in>usb_mem.c</in>
+                    <in>usb_regs.c</in>
+                  </df>
+                </df>
+                <in>adc.c</in>
+                <in>adc_f1.c</in>
+                <in>bkp_f1.c</in>
+                <in>dac.c</in>
+                <in>dma.c</in>
+                <in>dma_f1.c</in>
+                <in>exc.S</in>
+                <in>exti.c</in>
+                <in>exti_f1.c</in>
+                <in>flash.c</in>
+                <in>fsmc_f1.c</in>
+                <in>gpio.c</in>
+                <in>gpio_f1.c</in>
+                <in>i2c.c</in>
+                <in>i2c_f1.c</in>
+                <in>iwdg.c</in>
+                <in>nvic.c</in>
+                <in>pwr.c</in>
+                <in>rcc.c</in>
+                <in>rcc_f1.c</in>
+                <in>spi.c</in>
+                <in>spi_f1.c</in>
+                <in>systick.c</in>
+                <in>timer.c</in>
+                <in>timer_f1.c</in>
+                <in>usart.c</in>
+                <in>usart_f1.c</in>
+                <in>usart_private.c</in>
+                <in>util.c</in>
+              </df>
+              <df name="stm32f1">
+                <in>util_hooks.c</in>
+                <in>wiring_pulse_f1.cpp</in>
+                <in>wirish_debug.cpp</in>
+                <in>wirish_digital_f1.cpp</in>
+              </df>
+              <in>Arduino.h</in>
+              <in>Client.h</in>
+              <in>HardwareSerial.cpp</in>
+              <in>HardwareSerial.h</in>
+              <in>HardwareTimer.cpp</in>
+              <in>HardwareTimer.h</in>
+              <in>IPAddress.cpp</in>
+              <in>IPAddress.h</in>
+              <in>Print.cpp</in>
+              <in>Print.h</in>
+              <in>Printable.h</in>
+              <in>Server.h</in>
+              <in>Stream.cpp</in>
+              <in>Stream.h</in>
+              <in>Udp.h</in>
+              <in>WCharacter.h</in>
+              <in>WProgram.h</in>
+              <in>WString.cpp</in>
+              <in>WString.h</in>
+              <in>bit_constants.h</in>
+              <in>bits.h</in>
+              <in>boards.h</in>
+              <in>boards_private.h</in>
+              <in>cxxabi-compat.cpp</in>
+              <in>ext_interrupts.cpp</in>
+              <in>ext_interrupts.h</in>
+              <in>hooks.c</in>
+              <in>io.h</in>
+              <in>itoa.c</in>
+              <in>itoa.h</in>
+              <in>main.cpp</in>
+              <in>new.cpp</in>
+              <in>pwm.cpp</in>
+              <in>pwm.h</in>
+              <in>sdio.cpp</in>
+              <in>tone.cpp</in>
+              <in>tone.h</in>
+              <in>usb_serial.cpp</in>
+              <in>usb_serial.h</in>
+              <in>wiring_private.h</in>
+              <in>wiring_pulse.h</in>
+              <in>wirish.h</in>
+              <in>wirish_analog.cpp</in>
+              <in>wirish_constants.h</in>
+              <in>wirish_debug.h</in>
+              <in>wirish_digital.cpp</in>
+              <in>wirish_math.cpp</in>
+              <in>wirish_math.h</in>
+              <in>wirish_shift.cpp</in>
+              <in>wirish_time.cpp</in>
+              <in>wirish_time.h</in>
+              <in>wirish_types.h</in>
+            </df>
+          </df>
+          <df name="libraries">
+            <df name="A_STM32_Examples">
+              <df name="examples">
+                <df name="Analog">
+                  <df name="AnalogInOutSerial">
+                    <in>AnalogInOutSerial.ino</in>
+                  </df>
+                  <df name="AnalogInput">
+                    <in>AnalogInput.ino</in>
+                  </df>
+                  <df name="AnalogInSerial">
+                    <in>AnalogInSerial.ino</in>
+                  </df>
+                  <df name="Calibration">
+                    <in>Calibration.ino</in>
+                  </df>
+                  <df name="Fading">
+                    <in>Fading.ino</in>
+                  </df>
+                  <df name="Smoothing">
+                    <in>Smoothing.ino</in>
+                  </df>
+                </df>
+                <df name="Communication">
+                  <df name="ASCIITable">
+                    <in>ASCIITable.ino</in>
+                  </df>
+                  <df name="Dimmer">
+                    <in>Dimmer.ino</in>
+                  </df>
+                  <df name="Graph">
+                    <in>Graph.ino</in>
+                  </df>
+                  <df name="MIDI">
+                    <in>Midi.ino</in>
+                  </df>
+                  <df name="PhysicalPixel">
+                    <in>PhysicalPixel.ino</in>
+                  </df>
+                  <df name="SerialCallResponse">
+                    <in>SerialCallResponse.ino</in>
+                  </df>
+                  <df name="SerialCallResponseASCII">
+                    <in>SerialCallResponseASCII.ino</in>
+                  </df>
+                  <df name="SerialPassthrough">
+                    <in>SerialPassthrough.ino</in>
+                  </df>
+                  <df name="USB-uart-w-signals">
+                    <in>USB-uart-w-signals.ino</in>
+                  </df>
+                  <df name="VirtualColorMixer">
+                    <in>VirtualColorMixer.ino</in>
+                  </df>
+                </df>
+                <df name="Control">
+                  <df name="Arrays">
+                    <in>Arrays.ino</in>
+                  </df>
+                  <df name="ForLoopIteration">
+                    <in>ForLoopIteration.ino</in>
+                  </df>
+                  <df name="IfStatementConditional">
+                    <in>IfStatementConditional.ino</in>
+                  </df>
+                  <df name="switchCase">
+                    <in>switchCase.ino</in>
+                  </df>
+                  <df name="switchCase2">
+                    <in>switchCase2.ino</in>
+                  </df>
+                  <df name="WhileStatementConditional">
+                    <in>WhileStatementConditional.ino</in>
+                  </df>
+                </df>
+                <df name="Digital">
+                  <df name="Blink">
+                    <in>Blink.ino</in>
+                  </df>
+                  <df name="BlinkWithoutDelay">
+                    <in>BlinkWithoutDelay.ino</in>
+                  </df>
+                  <df name="Button">
+                    <in>Button.ino</in>
+                  </df>
+                  <df name="Debounce">
+                    <in>Debounce.ino</in>
+                  </df>
+                  <df name="MapleMorse">
+                    <in>MapleMorse.ino</in>
+                  </df>
+                  <df name="StateChangeDetection">
+                    <in>StateChangeDetection.ino</in>
+                  </df>
+                </df>
+                <df name="Display">
+                  <df name="barGraph">
+                    <in>barGraph.ino</in>
+                  </df>
+                  <df name="RowColumnScanning">
+                    <in>RowColumnScanning.ino</in>
+                  </df>
+                </df>
+                <df name="General">
+                  <df name="Blink">
+                    <in>Blink.ino</in>
+                  </df>
+                  <df name="BlinkNcount">
+                    <in>BlinkNcount.ino</in>
+                  </df>
+                  <df name="FadingOnboard">
+                    <in>FadingOnboard.ino</in>
+                  </df>
+                  <df name="IntegerInput">
+                    <in>IntegerInput.ino</in>
+                  </df>
+                  <df name="IntegerInput_FloatOutput">
+                    <in>IntegerInput_FloatOutput.ino</in>
+                  </df>
+                  <df name="InternalTempSensor">
+                    <in>InternalTempSensor.ino</in>
+                  </df>
+                  <df name="PrimeNos">
+                    <in>PrimeNos.ino</in>
+                  </df>
+                  <df name="PrimeNos2">
+                    <in>PrimeNos2.ino</in>
+                  </df>
+                  <df name="PrimeNos3">
+                    <in>PrimeNos3.ino</in>
+                  </df>
+                  <df name="Print_Binary">
+                    <in>Print_Binary.ino</in>
+                  </df>
+                  <df name="Print_Float">
+                    <in>Print_Float.ino</in>
+                  </df>
+                  <df name="Print_HEX">
+                    <in>Print_HEX.ino</in>
+                  </df>
+                  <df name="SerialReadUntil">
+                    <in>SerialReadUntil.ino</in>
+                  </df>
+                  <df name="StringEx_Parsing">
+                    <in>StringEx_Parsing.ino</in>
+                  </df>
+                  <df name="strtol_DecEquivalents">
+                    <in>strtol_DecEquivalents.ino</in>
+                  </df>
+                  <df name="USB_ASCII">
+                    <in>USB_ASCII.ino</in>
+                  </df>
+                </df>
+                <df name="Maple">
+                  <df name="CrudeVGA">
+                    <in>CrudeVGA.ino</in>
+                  </df>
+                  <df name="InteractiveTest">
+                    <in>InteractiveTest.ino</in>
+                  </df>
+                  <df name="QASlave">
+                    <in>QASlave.ino</in>
+                  </df>
+                  <df name="StressSerialUSB">
+                    <in>StressSerialUSB.ino</in>
+                  </df>
+                  <df name="TimerInterrupts">
+                    <in>TimerInterrupts.ino</in>
+                  </df>
+                </df>
+                <df name="Sensors">
+                  <df name="HardTimerAsEncoder">
+                    <in>HardTimerAsEncoder.ino</in>
+                  </df>
+                  <df name="HardwareTimerOnePulseMode">
+                    <in>HardwareTimerOnePulseMode.ino</in>
+                  </df>
+                  <df name="HardwareTimerPWMInput">
+                    <in>HardwareTimerPWMInput.ino</in>
+                  </df>
+                  <df name="Knock">
+                    <in>Knock.ino</in>
+                  </df>
+                </df>
+                <df name="Stubs">
+                  <df name="AnalogReadPWMWrite">
+                    <in>AnalogReadPWMWrite.ino</in>
+                  </df>
+                  <df name="AnalogReadSerial">
+                    <in>AnalogReadSerial.ino</in>
+                  </df>
+                  <df name="BareMinumum">
+                    <in>BareMinumum.ino</in>
+                  </df>
+                  <df name="DigitalReadSerial">
+                    <in>DigitalReadSerial.ino</in>
+                  </df>
+                  <df name="DigitalReadWrite">
+                    <in>DigitalReadWrite.ino</in>
+                  </df>
+                  <df name="HelloWorld">
+                    <in>HelloWorld.ino</in>
+                  </df>
+                </df>
+              </df>
+              <in>A_STM32_Examples.h</in>
+              <in>keywords.txt</in>
+            </df>
+            <df name="Adafruit_GFX_AS">
+              <in>Adafruit_GFX_AS.cpp</in>
+              <in>Adafruit_GFX_AS.h</in>
+              <in>Font16.c</in>
+              <in>Font16.h</in>
+              <in>Font32.c</in>
+              <in>Font32.h</in>
+              <in>Font64.c</in>
+              <in>Font64.h</in>
+              <in>Font7s.c</in>
+              <in>Font7s.h</in>
+              <in>Load_fonts.h</in>
+              <in>README.txt</in>
+              <in>glcdfont.c</in>
+              <in>license.txt</in>
+            </df>
+            <df name="Adafruit_ILI9341">
+              <df name="examples">
+                <df name="breakouttouchpaint">
+                  <in>breakouttouchpaint.ino</in>
+                </df>
+                <df name="graphicstest">
+                  <in>graphicstest.ino</in>
+                </df>
+                <df name="onoffbutton">
+                  <in>onoffbutton.ino</in>
+                </df>
+                <df name="onoffbutton_breakout">
+                  <in>onoffbutton_breakout.ino</in>
+                </df>
+                <df name="spitftbitmap">
+                  <in>spitftbitmap.ino</in>
+                </df>
+                <df name="stm32_graphicstest">
+                  <in>stm32_graphicstest.ino</in>
+                </df>
+                <df name="touchpaint">
+                  <in>touchpaint.ino</in>
+                </df>
+              </df>
+              <in>Adafruit_ILI9341.cpp</in>
+              <in>Adafruit_ILI9341.h</in>
+              <in>README.txt</in>
+            </df>
+            <df name="Adafruit_ILI9341_STM">
+              <df name="examples">
+                <df name="breakouttouchpaint">
+                  <in>breakouttouchpaint.ino</in>
+                </df>
+                <df name="graphicstest">
+                  <in>graphicstest.ino</in>
+                </df>
+                <df name="onoffbutton">
+                  <in>onoffbutton.ino</in>
+                </df>
+                <df name="onoffbutton_breakout">
+                  <in>onoffbutton_breakout.ino</in>
+                </df>
+                <df name="spitftbitmap">
+                  <in>spitftbitmap.ino</in>
+                </df>
+                <df name="stm32_graphicstest">
+                  <in>stm32_graphicstest.ino</in>
+                </df>
+                <df name="TFT_Clock_Digital_ILI9341">
+                  <in>TFT_Clock_Digital_ILI9341.ino</in>
+                </df>
+                <df name="TFT_Clock_ILI9341">
+                  <in>TFT_Clock_ILI9341.ino</in>
+                </df>
+                <df name="TFT_Rainbow_ILI9341">
+                  <in>TFT_Rainbow_ILI9341.ino</in>
+                </df>
+                <df name="TFT_Show_Font_ILI9341">
+                  <in>TFT_Show_Font_ILI9341.ino</in>
+                </df>
+                <df name="touchpaint">
+                  <in>touchpaint.ino</in>
+                </df>
+              </df>
+              <in>Adafruit_ILI9341_STM.cpp</in>
+              <in>Adafruit_ILI9341_STM.h</in>
+              <in>License.h</in>
+              <in>README.txt</in>
+            </df>
+            <df name="Adafruit_SSD1306">
+              <df name="examples">
+                <df name="ssd1306_128x32_i2c">
+                  <in>ssd1306_128x32_i2c.ino</in>
+                </df>
+                <df name="ssd1306_128x32_spi">
+                  <in>ssd1306_128x32_spi.ino</in>
+                </df>
+                <df name="ssd1306_128x64_i2c_STM32">
+                  <in>ssd1306_128x64_i2c_STM32.ino</in>
+                </df>
+                <df name="ssd1306_128x64_spi">
+                  <in>ssd1306_128x64_spi.ino</in>
+                </df>
+              </df>
+              <in>Adafruit_SSD1306_STM32.cpp</in>
+              <in>Adafruit_SSD1306_STM32.h</in>
+              <in>README.txt</in>
+              <in>STM32 README.txt</in>
+              <in>license.txt</in>
+            </df>
+            <df name="EEPROM">
+              <df name="examples">
+                <df name="EEPROM_example">
+                  <in>EEPROM_example.ino</in>
+                </df>
+              </df>
+              <in>EEPROM.cpp</in>
+              <in>EEPROM.h</in>
+              <in>flash_stm32.c</in>
+              <in>flash_stm32.h</in>
+              <in>keywords.txt</in>
+            </df>
+            <df name="Ethernet_STM">
+              <df name="examples">
+                <df name="AdvancedChatServer">
+                  <in>AdvancedChatServer.ino</in>
+                </df>
+                <df name="BarometricPressureWebServer">
+                  <in>BarometricPressureWebServer.ino</in>
+                </df>
+                <df name="ChatServer">
+                  <in>ChatServer.ino</in>
+                </df>
+                <df name="DhcpAddressPrinter">
+                  <in>DhcpAddressPrinter.ino</in>
+                </df>
+                <df name="DhcpChatServer">
+                  <in>DhcpChatServer.ino</in>
+                </df>
+                <df name="TelnetClient">
+                  <in>TelnetClient.ino</in>
+                </df>
+                <df name="Twitter_Serial_GW">
+                  <in>Twitter_Serial_GW.ino</in>
+                </df>
+                <df name="Twitter_SimplePost">
+                  <in>Twitter_SimplePost.ino</in>
+                </df>
+                <df name="UdpNtpClient">
+                  <in>UdpNtpClient.ino</in>
+                </df>
+                <df name="UDPSendReceiveString">
+                  <in>UDPSendReceiveString.ino</in>
+                </df>
+                <df name="WebClient">
+                  <in>WebClient.ino</in>
+                </df>
+                <df name="WebClientRepeating">
+                  <in>WebClientRepeating.ino</in>
+                </df>
+                <df name="WebServer">
+                  <in>WebServer.ino</in>
+                </df>
+                <df name="XivelyClient">
+                  <in>XivelyClient.ino</in>
+                </df>
+                <df name="XivelyClientString">
+                  <in>XivelyClientString.ino</in>
+                </df>
+              </df>
+              <df name="pictures">
+              </df>
+              <df name="src">
+                <df name="utility">
+                  <in>socket.cpp</in>
+                  <in>socket.h</in>
+                  <in>util.h</in>
+                  <in>w5100.cpp</in>
+                  <in>w5100.h</in>
+                  <in>w5200.cpp</in>
+                  <in>w5200.h</in>
+                  <in>w5500.cpp</in>
+                  <in>w5500.h</in>
+                </df>
+                <in>Dhcp.cpp</in>
+                <in>Dhcp.h</in>
+                <in>Dns.cpp</in>
+                <in>Dns.h</in>
+                <in>EthernetClient.cpp</in>
+                <in>EthernetClient.h</in>
+                <in>EthernetServer.cpp</in>
+                <in>EthernetServer.h</in>
+                <in>EthernetUdp.cpp</in>
+                <in>EthernetUdp.h</in>
+                <in>Ethernet_STM.cpp</in>
+                <in>Ethernet_STM.h</in>
+                <in>Twitter.cpp</in>
+                <in>Twitter.h</in>
+                <in>util.h</in>
+              </df>
+              <in>keywords.txt</in>
+            </df>
+            <df name="FreeRTOS701">
+              <df name="utility">
+                <in>FreeRTOS.h</in>
+                <in>FreeRTOSConfig.h</in>
+                <in>StackMacros.h</in>
+                <in>croutine.c</in>
+                <in>croutine.h</in>
+                <in>heap_2.c</in>
+                <in>list.c</in>
+                <in>list.h</in>
+                <in>mpu_wrappers.h</in>
+                <in>port.c</in>
+                <in>portable.h</in>
+                <in>portmacro.h</in>
+                <in>projdefs.h</in>
+                <in>queue.c</in>
+                <in>queue.h</in>
+                <in>semphr.h</in>
+                <in>task.h</in>
+                <in>tasks.c</in>
+                <in>timers.c</in>
+                <in>timers.h</in>
+              </df>
+              <in>MapleFreeRTOS.cpp</in>
+              <in>MapleFreeRTOS.h</in>
+              <in>keywords.txt</in>
+            </df>
+            <df name="FreeRTOS821">
+              <df name="examples">
+                <df name="rtos_blink">
+                  <in>rtos_blink.ino</in>
+                </df>
+                <df name="rtos_display_blink">
+                  <in>rtos_display_blink.ino</in>
+                </df>
+              </df>
+              <df name="utility">
+                <df name="MemMang">
+                  <in>heap_1.c</in>
+                  <in>heap_2.c</in>
+                  <in>heap_3.c</in>
+                  <in>heap_4.c</in>
+                  <in>heap_5.c</in>
+                </df>
+                <in>FreeRTOS.h</in>
+                <in>FreeRTOSConfig.h</in>
+                <in>StackMacros.h</in>
+                <in>croutine.c</in>
+                <in>croutine.h</in>
+                <in>deprecated_definitions.h</in>
+                <in>event_groups.c</in>
+                <in>event_groups.h</in>
+                <in>heap_1.c</in>
+                <in>list.c</in>
+                <in>list.h</in>
+                <in>mpu_wrappers.h</in>
+                <in>port.c</in>
+                <in>portable.h</in>
+                <in>portmacro.h</in>
+                <in>projdefs.h</in>
+                <in>queue.c</in>
+                <in>queue.h</in>
+                <in>readme.txt</in>
+                <in>semphr.h</in>
+                <in>task.h</in>
+                <in>tasks.c</in>
+                <in>timers.c</in>
+                <in>timers.h</in>
+              </df>
+              <in>MapleFreeRTOS821.cpp</in>
+              <in>MapleFreeRTOS821.h</in>
+              <in>keywords.txt</in>
+            </df>
+            <df name="FreeRTOS900">
+              <df name="examples">
+                <df name="rtos_blink">
+                  <in>rtos_blink.ino</in>
+                </df>
+                <df name="rtos_display_blink">
+                  <in>rtos_display_blink.ino</in>
+                </df>
+              </df>
+              <df name="utility">
+                <df name="MemMang">
+                  <in>heap_1.c</in>
+                  <in>heap_2.c</in>
+                  <in>heap_3.c</in>
+                  <in>heap_4.c</in>
+                  <in>heap_5.c</in>
+                </df>
+                <in>FreeRTOS.h</in>
+                <in>FreeRTOSConfig.h</in>
+                <in>StackMacros.h</in>
+                <in>croutine.c</in>
+                <in>croutine.h</in>
+                <in>deprecated_definitions.h</in>
+                <in>event_groups.c</in>
+                <in>event_groups.h</in>
+                <in>heap_1.c</in>
+                <in>list.c</in>
+                <in>list.h</in>
+                <in>mpu_prototypes.h</in>
+                <in>mpu_wrappers.h</in>
+                <in>port.c</in>
+                <in>portable.h</in>
+                <in>portmacro.h</in>
+                <in>projdefs.h</in>
+                <in>queue.c</in>
+                <in>queue.h</in>
+                <in>readme.txt</in>
+                <in>semphr.h</in>
+                <in>task.h</in>
+                <in>tasks.c</in>
+                <in>timers.c</in>
+                <in>timers.h</in>
+              </df>
+              <in>MapleFreeRTOS900.cpp</in>
+              <in>MapleFreeRTOS900.h</in>
+            </df>
+            <df name="Lcd7920_STM">
+              <df name="examples">
+                <df name="Lcd7920_STM">
+                  <in>Lcd7920_STM.ino</in>
+                </df>
+              </df>
+              <in>glcd10x10_STM.cpp</in>
+              <in>glcd16x16_STM.cpp</in>
+              <in>glcd5x5_STM.cpp</in>
+              <in>glcd5x7_STM.cpp</in>
+              <in>lcd7920_STM.cpp</in>
+              <in>lcd7920_STM.h</in>
+            </df>
+            <df name="LiquidCrystal">
+              <in>LiquidCrystal.cpp</in>
+              <in>LiquidCrystal.h</in>
+            </df>
+            <df name="MapleCoOS">
+              <df name="examples">
+                <df name="coos_display_blink">
+                  <in>coos_display_blink.ino</in>
+                </df>
+              </df>
+              <df name="utility">
+                <in>CoOS.h</in>
+                <in>OsArch.c</in>
+                <in>OsArch.h</in>
+                <in>OsConfig.h</in>
+                <in>OsCore.c</in>
+                <in>OsCore.h</in>
+                <in>OsError.h</in>
+                <in>OsEvent.c</in>
+                <in>OsEvent.h</in>
+                <in>OsFlag.c</in>
+                <in>OsFlag.h</in>
+                <in>OsHook.c</in>
+                <in>OsKernelHeap.c</in>
+                <in>OsKernelHeap.h</in>
+                <in>OsMM.h</in>
+                <in>OsMbox.c</in>
+                <in>OsMm.c</in>
+                <in>OsMutex.c</in>
+                <in>OsMutex.h</in>
+                <in>OsPort.c</in>
+                <in>OsQueue.c</in>
+                <in>OsQueue.h</in>
+                <in>OsSem.c</in>
+                <in>OsServiceReq.c</in>
+                <in>OsServiceReq.h</in>
+                <in>OsTask.c</in>
+                <in>OsTask.h</in>
+                <in>OsTime.c</in>
+                <in>OsTime.h</in>
+                <in>OsTimer.c</in>
+                <in>OsTimer.h</in>
+                <in>OsUtility.c</in>
+                <in>OsUtility.h</in>
+                <in>coocox.h</in>
+              </df>
+              <in>MapleCoOS.h</in>
+              <in>keywords.txt</in>
+            </df>
+            <df name="MapleCoOS116">
+              <df name="examples">
+                <df name="coos_display_blink">
+                  <in>SPICoOS.cpp</in>
+                  <in>SPICoOS.h</in>
+                  <in>TFT_ILI9163C.cpp</in>
+                  <in>TFT_ILI9163C.h</in>
+                  <in>coos_display_blink.ino</in>
+                </df>
+              </df>
+              <df name="utility">
+                <in>CoOS.h</in>
+                <in>OsArch.h</in>
+                <in>OsConfig.h</in>
+                <in>OsCore.h</in>
+                <in>OsError.h</in>
+                <in>OsEvent.h</in>
+                <in>OsFlag.h</in>
+                <in>OsKernelHeap.h</in>
+                <in>OsMM.h</in>
+                <in>OsMutex.h</in>
+                <in>OsQueue.h</in>
+                <in>OsServiceReq.h</in>
+                <in>OsTask.h</in>
+                <in>OsTime.h</in>
+                <in>OsTimer.h</in>
+                <in>arch.c</in>
+                <in>coocox.h</in>
+                <in>core.c</in>
+                <in>event.c</in>
+                <in>flag.c</in>
+                <in>hook.c</in>
+                <in>kernelHeap.c</in>
+                <in>mbox.c</in>
+                <in>mm.c</in>
+                <in>mutex.c</in>
+                <in>port.c</in>
+                <in>queue.c</in>
+                <in>sem.c</in>
+                <in>serviceReq.c</in>
+                <in>task.c</in>
+                <in>time.c</in>
+                <in>timer.c</in>
+                <in>utility.c</in>
+                <in>utility.h</in>
+              </df>
+              <in>MapleCoOS116.h</in>
+              <in>keywords.txt</in>
+            </df>
+            <df name="OLED_I2C">
+              <df name="Documentation">
+                <in>version.txt</in>
+              </df>
+              <df name="examples">
+                <df name="Arduino">
+                  <df name="OLED_I2C_3D_Cube">
+                    <in>OLED_I2C_3D_Cube.ino</in>
+                  </df>
+                  <df name="OLED_I2C_Bitmap">
+                    <in>OLED_I2C_Bitmap.ino</in>
+                    <in>graphics.c</in>
+                  </df>
+                  <df name="OLED_I2C_Brightness">
+                    <in>OLED_I2C_Brightness.ino</in>
+                  </df>
+                  <df name="OLED_I2C_Graph_Demo">
+                    <in>OLED_I2C_Graph_Demo.ino</in>
+                    <in>graphics.c</in>
+                  </df>
+                  <df name="OLED_I2C_NumberFonts">
+                    <in>OLED_I2C_NumberFonts.ino</in>
+                  </df>
+                  <df name="OLED_I2C_Scrolling_Text">
+                    <in>OLED_I2C_Scrolling_Text.ino</in>
+                  </df>
+                  <df name="OLED_I2C_TinyFont_View">
+                    <in>OLED_I2C_TinyFont_View.ino</in>
+                  </df>
+                  <df name="OLED_I2C_ViewFont">
+                    <in>OLED_I2C_ViewFont.ino</in>
+                  </df>
+                </df>
+                <df name="chipKit">
+                  <df name="OLED_I2C_3D_Cube">
+                  </df>
+                  <df name="OLED_I2C_Bitmap">
+                    <in>OLED_I2C_Bitmap.ino</in>
+                    <in>graphics.c</in>
+                  </df>
+                  <df name="OLED_I2C_Brightness">
+                    <in>OLED_I2C_Brightness.ino</in>
+                  </df>
+                  <df name="OLED_I2C_Graph_Demo">
+                    <in>OLED_I2C_Graph_Demo.ino</in>
+                    <in>graphics.c</in>
+                  </df>
+                  <df name="OLED_I2C_NumberFonts">
+                    <in>OLED_I2C_NumberFonts.ino</in>
+                  </df>
+                  <df name="OLED_I2C_Scrolling_Text">
+                    <in>OLED_I2C_Scrolling_Text.ino</in>
+                  </df>
+                  <df name="OLED_I2C_TinyFont_View">
+                    <in>OLED_I2C_TinyFont_View.ino</in>
+                  </df>
+                  <df name="OLED_I2C_ViewFont">
+                    <in>OLED_I2C_ViewFont.ino</in>
+                  </df>
+                </df>
+              </df>
+              <df name="hardware">
+                <df name="arm">
+                  <in>HW_ARM.h</in>
+                  <in>HW_ARM_defines.h</in>
+                  <in>HW_STM32.h</in>
+                  <in>HW_STM32_defines.h</in>
+                </df>
+                <df name="avr">
+                  <in>HW_AVR.h</in>
+                  <in>HW_AVR_defines.h</in>
+                </df>
+                <df name="pic32">
+                  <in>HW_PIC32.h</in>
+                  <in>HW_PIC32_defines.h</in>
+                </df>
+              </df>
+              <df name="License">
+              </df>
+              <in>DefaultFonts.c</in>
+              <in>OLED_I2C.cpp</in>
+              <in>OLED_I2C.h</in>
+              <in>keywords.txt</in>
+            </df>
+            <df name="OneWireSTM">
+              <df name="examples">
+                <df name="DS18x20_Temperature">
+                  <in>DS18x20_Temperature.ino</in>
+                </df>
+                <df name="DS2408_Switch">
+                  <in>DS2408_Switch.ino</in>
+                </df>
+                <df name="DS250x_PROM">
+                  <in>DS250x_PROM.ino</in>
+                </df>
+              </df>
+              <df name="src">
+                <in>OneWireSTM.cpp</in>
+                <in>OneWireSTM.h</in>
+              </df>
+              <in>keywords.txt</in>
+            </df>
+            <df name="RTClock">
+              <df name="examples">
+                <df name="BluePill-RTClock-test">
+                  <in>BluePill-RTClock-test.ino</in>
+                </df>
+                <df name="Gilchrist_RTC">
+                  <in>Gilchrist_RTC.ino</in>
+                </df>
+                <df name="RTCAdj">
+                  <in>RTCAdjust.ino</in>
+                  <in>rtadjust.cpp</in>
+                  <in>rtadjust.h</in>
+                </df>
+                <df name="Test_RTClock">
+                  <in>Test_RTClock.ino</in>
+                </df>
+              </df>
+              <df name="src">
+                <df name="utility">
+                  <in>rtc_util.c</in>
+                  <in>rtc_util.h</in>
+                </df>
+                <in>RTClock.cpp</in>
+                <in>RTClock.h</in>
+              </df>
+              <in>keywords.txt</in>
+            </df>
+            <df name="SDIO">
+              <in>SdioF1.cpp</in>
+              <in>SdioF1.h</in>
+            </df>
+            <df name="Serasidis_EtherCard_STM">
+              <df name="examples">
+                <df name="backSoon">
+                  <in>backSoon.ino</in>
+                </df>
+                <df name="etherNode">
+                  <in>etherNode.ino</in>
+                </df>
+                <df name="getDHCPandDNS">
+                  <in>getDHCPandDNS.ino</in>
+                </df>
+                <df name="getStaticIP">
+                  <in>getStaticIP.ino</in>
+                </df>
+                <df name="getViaDNS">
+                  <in>getViaDNS.ino</in>
+                </df>
+                <df name="JeeUdp">
+                  <in>JeeUdp.ino</in>
+                </df>
+                <df name="multipacket">
+                  <in>multipacket.ino</in>
+                </df>
+                <df name="multipacketSD">
+                  <in>multipacketSD.ino</in>
+                </df>
+                <df name="nanether">
+                  <in>nanether.ino</in>
+                </df>
+                <df name="noipClient">
+                  <in>noipClient.ino</in>
+                </df>
+                <df name="pings">
+                  <in>pings.ino</in>
+                </df>
+                <df name="rbbb_server">
+                  <in>rbbb_server.ino</in>
+                </df>
+                <df name="SSDP">
+                  <in>SSDP.ino</in>
+                </df>
+                <df name="stashTest">
+                  <in>stashTest.ino</in>
+                </df>
+                <df name="testDHCP">
+                  <in>testDHCP.ino</in>
+                </df>
+                <df name="twitter">
+                  <in>twitter.ino</in>
+                </df>
+                <df name="udpClientSendOnly">
+                  <df name="Java_ClientAndServer">
+                  </df>
+                  <in>udpClientSendOnly.ino</in>
+                </df>
+                <df name="udpListener">
+                  <in>udpListener.ino</in>
+                </df>
+                <df name="webClient">
+                  <in>webClient.ino</in>
+                </df>
+                <df name="xively">
+                  <in>xively.ino</in>
+                </df>
+              </df>
+              <df name="src">
+                <in>EtherCard_STM.cpp</in>
+                <in>EtherCard_STM.h</in>
+                <in>dhcp.cpp</in>
+                <in>dns.cpp</in>
+                <in>enc28j60.cpp</in>
+                <in>enc28j60.h</in>
+                <in>net.h</in>
+                <in>tcpip.cpp</in>
+                <in>udpserver.cpp</in>
+                <in>webutil.cpp</in>
+              </df>
+              <in>keywords.txt</in>
+            </df>
+            <df name="Serasidis_VS1003B_STM">
+              <df name="examples">
+                <df name="hello_STM">
+                  <in>hello_STM.ino</in>
+                </df>
+                <df name="MIDI_Classic_Mode">
+                  <in>MIDI_Classic_Mode.ino</in>
+                </df>
+              </df>
+              <df name="src">
+                <in>VS1003_STM.cpp</in>
+                <in>VS1003_STM.h</in>
+                <in>flac.h</in>
+              </df>
+              <in>keywords.txt</in>
+            </df>
+            <df name="Serasidis_XPT2046_touch">
+              <df name="examples">
+                <df name="TouchButtons">
+                  <in>TouchButtons.ino</in>
+                </df>
+                <df name="TouchTest">
+                  <in>TouchTest.ino</in>
+                </df>
+              </df>
+              <df name="src">
+                <in>XPT2046_touch.cpp</in>
+                <in>XPT2046_touch.h</in>
+              </df>
+              <in>keywords.txt</in>
+            </df>
+            <df name="Servo">
+              <df name="examples">
+                <df name="Knob">
+                  <in>Knob.ino</in>
+                </df>
+                <df name="Sweep">
+                  <in>Sweep.ino</in>
+                </df>
+              </df>
+              <df name="src">
+                <in>Servo.cpp</in>
+                <in>Servo.h</in>
+              </df>
+              <in>keywords.txt</in>
+            </df>
+            <df name="SPI">
+              <df name="examples">
+                <df name="spi_slave">
+                  <in>spi_slave.ino</in>
+                </df>
+                <df name="using_SPI_ports">
+                  <in>using_SPI_ports.ino</in>
+                </df>
+              </df>
+              <df name="src">
+                <in>README.txt</in>
+                <in>SPI.cpp</in>
+                <in>SPI.h</in>
+              </df>
+              <in>keywords.txt</in>
+            </df>
+            <df name="STM32ADC">
+              <df name="examples">
+                <df name="MultiChannelContinuousConversion">
+                  <in>MultiChannelContinuousConversion.ino</in>
+                </df>
+                <df name="MultiChannelSingleConversion">
+                  <in>MultiChannelSingleConversion.ino</in>
+                </df>
+                <df name="SingleChannelAtSampleRateCircularBuffer">
+                  <in>SingleChannelAtSampleRateCircularBuffer.ino</in>
+                </df>
+                <df name="SingleChannelContinuousConversion">
+                  <in>SingleChannelContinuousConversion.ino</in>
+                </df>
+                <df name="SingleChannelSingleConversion">
+                  <in>SingleChannelSingleConversion.ino</in>
+                </df>
+                <df name="SingleConversionInterrupt">
+                  <in>SingleConversionInterrupt.ino</in>
+                </df>
+              </df>
+              <df name="src">
+                <df name="utility">
+                  <in>util_adc.c</in>
+                  <in>util_adc.h</in>
+                </df>
+                <in>STM32ADC.cpp</in>
+                <in>STM32ADC.h</in>
+              </df>
+              <in>keywords.txt</in>
+            </df>
+            <df name="stm_fft">
+              <in>cr4_fft_1024_stm32.asm</in>
+              <in>cr4_fft_16_stm33.asm</in>
+              <in>cr4_fft_256_stm32.asm</in>
+              <in>cr4_fft_64_stm32.asm</in>
+              <in>cr4_fft_stm32.h</in>
+              <in>table_fft.h</in>
+            </df>
+            <df name="Touch-Screen-Library_STM">
+              <df name="examples">
+                <df name="touchscreendemo">
+                </df>
+                <df name="touchscreendemoshield">
+                  <in>touchscreendemoshield.ino</in>
+                </df>
+              </df>
+              <in>README.txt</in>
+              <in>TouchScreen_STM.cpp</in>
+              <in>TouchScreen_STM.h</in>
+            </df>
+            <df name="USBComposite">
+              <df name="examples">
+                <df name="absmouse">
+                  <in>absmouse.ino</in>
+                </df>
+                <df name="BootKeyboard">
+                  <in>BootKeyboard.ino</in>
+                </df>
+                <df name="consumer">
+                  <in>consumer.ino</in>
+                </df>
+                <df name="ConsumerAndKeyboard">
+                  <in>ConsumerAndKeyboard.ino</in>
+                </df>
+                <df name="digitizer">
+                  <in>digitizer.ino</in>
+                </df>
+                <df name="jigglemouse">
+                  <in>jigglemouse.ino</in>
+                </df>
+                <df name="keyboardMouse">
+                  <in>keyboardMouse.ino</in>
+                </df>
+                <df name="keyboardwithleds">
+                  <in>keyboardwithleds.ino</in>
+                </df>
+                <df name="mass">
+                  <in>image.h</in>
+                  <in>mass.ino</in>
+                </df>
+                <df name="micadc">
+                  <in>micadc.ino</in>
+                </df>
+                <df name="microphone">
+                  <in>microphone.ino</in>
+                </df>
+                <df name="micserial">
+                  <in>micserial.ino</in>
+                </df>
+                <df name="midiin">
+                  <in>midiin.ino</in>
+                </df>
+                <df name="midiout">
+                  <in>midiout.ino</in>
+                </df>
+                <df name="multiserial">
+                  <in>multiserial.ino</in>
+                </df>
+                <df name="multixbox360">
+                  <in>multixbox360.ino</in>
+                </df>
+                <df name="rawhid">
+                  <in>rawhid.ino</in>
+                </df>
+                <df name="sdreader">
+                  <in>sdreader.ino</in>
+                </df>
+                <df name="SignedJoystick">
+                  <in>SignedJoystick.ino</in>
+                </df>
+                <df name="simplejoystick">
+                  <in>simplejoystick.ino</in>
+                </df>
+                <df name="simplekeyboard">
+                  <in>simplekeyboard.ino</in>
+                </df>
+                <df name="softjoystick">
+                  <in>softjoystick.ino</in>
+                </df>
+                <df name="speaker">
+                  <in>speaker.ino</in>
+                </df>
+                <df name="tonegenerator">
+                  <in>tonegenerator.ino</in>
+                </df>
+                <df name="tonegeneratorserial">
+                  <in>tonegeneratorserial.ino</in>
+                </df>
+                <df name="twojoysticks">
+                  <in>twojoysticks.ino</in>
+                </df>
+                <df name="x360">
+                  <in>x360.ino</in>
+                </df>
+                <df name="xbox360wireless">
+                  <in>xbox360wireless.ino</in>
+                </df>
+              </df>
+              <df name="scripts">
+              </df>
+              <in>AbsMouse.cpp</in>
+              <in>Consumer.cpp</in>
+              <in>Digitizer.cpp</in>
+              <in>HIDReports.cpp</in>
+              <in>Joystick.cpp</in>
+              <in>Keyboard.cpp</in>
+              <in>MidiSpecs.h</in>
+              <in>MinSysex.c</in>
+              <in>MinSysex.h</in>
+              <in>Mouse.cpp</in>
+              <in>UPGRADING-TO-0.90.txt</in>
+              <in>USBAudio.cpp</in>
+              <in>USBAudio.h</in>
+              <in>USBComposite.cpp</in>
+              <in>USBComposite.h</in>
+              <in>USBCompositeSerial.cpp</in>
+              <in>USBCompositeSerial.h</in>
+              <in>USBHID.cpp</in>
+              <in>USBHID.h</in>
+              <in>USBMIDI.cpp</in>
+              <in>USBMIDI.h</in>
+              <in>USBMassStorage.cpp</in>
+              <in>USBMassStorage.h</in>
+              <in>USBMultiSerial.cpp</in>
+              <in>USBMultiSerial.h</in>
+              <in>USBMultiXBox360.cpp</in>
+              <in>USBMultiXBox360.h</in>
+              <in>USBXBox360.h</in>
+              <in>USBXBox360Reporter.cpp</in>
+              <in>USBXBox360W.cpp</in>
+              <in>keywords.txt</in>
+              <in>usb_audio.c</in>
+              <in>usb_audio.h</in>
+              <in>usb_composite_serial.c</in>
+              <in>usb_composite_serial.h</in>
+              <in>usb_generic.c</in>
+              <in>usb_generic.h</in>
+              <in>usb_hid.c</in>
+              <in>usb_hid.h</in>
+              <in>usb_mass.c</in>
+              <in>usb_mass.h</in>
+              <in>usb_mass_internal.h</in>
+              <in>usb_mass_mal.c</in>
+              <in>usb_mass_mal.h</in>
+              <in>usb_midi_device.c</in>
+              <in>usb_midi_device.h</in>
+              <in>usb_multi_serial.c</in>
+              <in>usb_multi_serial.h</in>
+              <in>usb_multi_x360.c</in>
+              <in>usb_multi_x360.h</in>
+              <in>usb_scsi.c</in>
+              <in>usb_scsi.h</in>
+              <in>usb_scsi_data.c</in>
+              <in>usb_setup.cpp</in>
+              <in>usb_x360_generic.c</in>
+              <in>usb_x360_generic.h</in>
+              <in>usb_x360w.c</in>
+              <in>usb_x360w.h</in>
+            </df>
+            <df name="Wire">
+              <df name="examples">
+                <df name="i2c_scanner_softwire">
+                  <in>i2c_scanner_softwire.ino</in>
+                </df>
+                <df name="i2c_scanner_wire">
+                  <in>i2c_scanner_wire.ino</in>
+                </df>
+              </df>
+              <df name="utility">
+                <in>WireBase.cpp</in>
+                <in>WireBase.h</in>
+              </df>
+              <in>SoftWire.cpp</in>
+              <in>SoftWire.h</in>
+              <in>Wire.cpp</in>
+              <in>Wire.h</in>
+              <in>keywords.txt</in>
+            </df>
+            <df name="WireSlave">
+              <df name="examples">
+                <df name="digital_potentiometer">
+                  <in>digital_potentiometer.ino</in>
+                </df>
+                <df name="i2c_libmaple_slave_reader">
+                  <in>i2c_libmaple_slave_reader.ino</in>
+                </df>
+                <df name="i2c_scanner_wire">
+                  <in>i2c_scanner_wire.ino</in>
+                </df>
+                <df name="master_reader">
+                  <in>master_reader.ino</in>
+                </df>
+                <df name="master_writer">
+                  <in>master_writer.ino</in>
+                </df>
+                <df name="selftest1">
+                  <in>code.cpp</in>
+                  <in>selftest1.ino</in>
+                </df>
+                <df name="SFRRanger_reader">
+                  <in>SFRRanger_reader.ino</in>
+                </df>
+                <df name="slave_receiver">
+                  <in>slave_receiver.ino</in>
+                </df>
+                <df name="slave_sender">
+                  <in>slave_sender.ino</in>
+                </df>
+              </df>
+              <df name="src">
+                <in>Wire.h</in>
+                <in>Wire_slave.cpp</in>
+                <in>Wire_slave.h</in>
+              </df>
+              <in>keywords.txt</in>
+            </df>
+            <df name="WS2812B">
+              <df name="examples">
+                <df name="WS2812B_test">
+                  <in>WS2812B_test.ino</in>
+                </df>
+              </df>
+              <df name="src">
+                <in>WS2812B.cpp</in>
+                <in>WS2812B.h</in>
+              </df>
+              <in>keywords.txt</in>
+            </df>
+          </df>
+          <df name="system">
+            <df name="libmaple">
+              <df name="include">
+                <df name="libmaple">
+                  <in>adc.h</in>
+                  <in>bitband.h</in>
+                  <in>bkp.h</in>
+                  <in>dac.h</in>
+                  <in>delay.h</in>
+                  <in>dma.h</in>
+                  <in>dma_common.h</in>
+                  <in>exti.h</in>
+                  <in>flash.h</in>
+                  <in>fsmc.h</in>
+                  <in>gpio.h</in>
+                  <in>i2c.h</in>
+                  <in>i2c_common.h</in>
+                  <in>iwdg.h</in>
+                  <in>libmaple.h</in>
+                  <in>libmaple_types.h</in>
+                  <in>nvic.h</in>
+                  <in>pwr.h</in>
+                  <in>rcc.h</in>
+                  <in>ring_buffer.h</in>
+                  <in>scb.h</in>
+                  <in>sdio.h</in>
+                  <in>spi.h</in>
+                  <in>stm32.h</in>
+                  <in>syscfg.h</in>
+                  <in>systick.h</in>
+                  <in>timer.h</in>
+                  <in>usart.h</in>
+                  <in>usb.h</in>
+                  <in>usb_cdcacm.h</in>
+                  <in>util.h</in>
+                </df>
+                <df name="util">
+                  <in>atomic.h</in>
+                </df>
+              </df>
+              <df name="stm32f1">
+                <df name="include">
+                  <df name="series">
+                    <in>adc.h</in>
+                    <in>dac.h</in>
+                    <in>dma.h</in>
+                    <in>exti.h</in>
+                    <in>flash.h</in>
+                    <in>gpio.h</in>
+                    <in>i2c.h</in>
+                    <in>nvic.h</in>
+                    <in>pwr.h</in>
+                    <in>rcc.h</in>
+                    <in>spi.h</in>
+                    <in>stm32.h</in>
+                    <in>timer.h</in>
+                    <in>usart.h</in>
+                  </df>
+                </df>
+              </df>
+              <df name="stm32f2">
+                <df name="include">
+                  <df name="series">
+                    <in>adc.h</in>
+                    <in>dac.h</in>
+                    <in>dma.h</in>
+                    <in>exti.h</in>
+                    <in>flash.h</in>
+                    <in>gpio.h</in>
+                    <in>nvic.h</in>
+                    <in>pwr.h</in>
+                    <in>rcc.h</in>
+                    <in>spi.h</in>
+                    <in>stm32.h</in>
+                    <in>timer.h</in>
+                    <in>usart.h</in>
+                  </df>
+                </df>
+              </df>
+              <df name="usb">
+                <df name="stm32f1">
+                  <in>usb_lib_globals.h</in>
+                  <in>usb_reg_map.h</in>
+                </df>
+                <df name="usb_lib">
+                  <in>usb_core.h</in>
+                  <in>usb_def.h</in>
+                  <in>usb_init.h</in>
+                  <in>usb_lib.h</in>
+                  <in>usb_mem.h</in>
+                  <in>usb_regs.h</in>
+                  <in>usb_type.h</in>
+                </df>
+              </df>
+              <in>dma_private.h</in>
+              <in>exti_private.h</in>
+              <in>i2c_private.h</in>
+              <in>rcc_private.h</in>
+              <in>spi_private.h</in>
+              <in>stm32_private.h</in>
+              <in>timer_private.h</in>
+              <in>usart_private.h</in>
+            </df>
+            <df name="support">
+              <df name="doxygen">
+              </df>
+              <df name="gdb">
+                <df name="gpio">
+                </df>
+                <df name="i2c">
+                </df>
+              </df>
+              <df name="ld">
+                <df name="stm32">
+                  <df name="mem">
+                    <df name="maple_native">
+                      <in>maple_native_heap.inc</in>
+                      <in>mem-flash.inc</in>
+                      <in>mem-jtag.inc</in>
+                      <in>mem-ram.inc</in>
+                    </df>
+                    <df name="sram_112k_flash_1024k">
+                      <in>mem-jtag.inc</in>
+                      <in>mem-ram.inc</in>
+                    </df>
+                    <df name="sram_20k_flash_128k">
+                      <in>mem-flash.inc</in>
+                      <in>mem-jtag.inc</in>
+                      <in>mem-ram.inc</in>
+                    </df>
+                    <df name="sram_20k_flash_128k_robotis">
+                      <in>mem-flash.inc</in>
+                      <in>mem-jtag.inc</in>
+                      <in>mem-ram.inc</in>
+                    </df>
+                    <df name="sram_64k_flash_512k">
+                      <in>mem-flash.inc</in>
+                      <in>mem-jtag.inc</in>
+                      <in>mem-ram.inc</in>
+                    </df>
+                    <df name="sram_8k_flash_128k">
+                      <in>mem-flash.inc</in>
+                      <in>mem-jtag.inc</in>
+                      <in>mem-ram.inc</in>
+                    </df>
+                  </df>
+                  <df name="series">
+                    <df name="stm32f1">
+                      <df name="performance">
+                        <in>vector_symbols.inc</in>
+                      </df>
+                      <df name="value">
+                        <in>vector_symbols.inc</in>
+                      </df>
+                    </df>
+                    <df name="stm32f2">
+                      <in>vector_symbols.inc</in>
+                    </df>
+                  </df>
+                </df>
+                <df name="toolchains">
+                  <df name="gcc-arm-embedded">
+                    <in>extra_libs.inc</in>
+                  </df>
+                  <df name="generic">
+                    <in>extra_libs.inc</in>
+                  </df>
+                </df>
+                <in>common.inc</in>
+              </df>
+              <df name="make">
+                <df name="board-includes">
+                </df>
+              </df>
+              <df name="scripts">
+              </df>
+            </df>
+          </df>
+          <df name="variants">
+            <df name="generic_gd32f103c">
+              <df name="board">
+                <in>board.h</in>
+              </df>
+              <df name="ld">
+                <in>common.inc</in>
+                <in>extra_libs.inc</in>
+                <in>mem-flash.inc</in>
+                <in>mem-jtag.inc</in>
+                <in>mem-ram.inc</in>
+                <in>vector_symbols.inc</in>
+              </df>
+              <df name="wirish">
+                <in>boards.cpp</in>
+                <in>boards_setup.cpp</in>
+                <in>start.S</in>
+                <in>start_c.c</in>
+                <in>syscalls.c</in>
+              </df>
+              <in>board.cpp</in>
+              <in>pins_arduino.h</in>
+              <in>variant.h</in>
+            </df>
+            <df name="generic_stm32f103c">
+              <df name="board">
+                <in>board.h</in>
+              </df>
+              <df name="ld">
+                <in>common.inc</in>
+                <in>extra_libs.inc</in>
+                <in>mem-flash.inc</in>
+                <in>mem-jtag.inc</in>
+                <in>mem-ram.inc</in>
+                <in>vector_symbols.inc</in>
+              </df>
+              <df name="wirish">
+                <in>boards.cpp</in>
+                <in>boards_setup.cpp</in>
+                <in>start.S</in>
+                <in>start_c.c</in>
+                <in>syscalls.c</in>
+              </df>
+              <in>board.cpp</in>
+              <in>pins_arduino.h</in>
+              <in>variant.h</in>
+            </df>
+            <df name="generic_stm32f103r">
+              <df name="board">
+                <in>board.h</in>
+              </df>
+              <df name="ld">
+                <in>common.inc</in>
+                <in>extra_libs.inc</in>
+                <in>mem-flash.inc</in>
+                <in>mem-jtag.inc</in>
+                <in>mem-ram.inc</in>
+                <in>vector_symbols.inc</in>
+              </df>
+              <df name="wirish">
+                <in>boards.cpp</in>
+                <in>boards_setup.cpp</in>
+                <in>start.S</in>
+                <in>start_c.c</in>
+                <in>syscalls.c</in>
+              </df>
+              <in>board.cpp</in>
+              <in>pins_arduino.h</in>
+              <in>variant.h</in>
+            </df>
+            <df name="generic_stm32f103r8">
+              <df name="board">
+                <in>board.h</in>
+              </df>
+              <df name="ld">
+                <in>common.inc</in>
+                <in>extra_libs.inc</in>
+                <in>mem-flash.inc</in>
+                <in>mem-jtag.inc</in>
+                <in>mem-ram.inc</in>
+                <in>vector_symbols.inc</in>
+              </df>
+              <df name="wirish">
+                <in>boards.cpp</in>
+                <in>boards_setup.cpp</in>
+                <in>start.S</in>
+                <in>start_c.c</in>
+                <in>syscalls.c</in>
+              </df>
+              <in>board.cpp</in>
+              <in>pins_arduino.h</in>
+              <in>variant.h</in>
+            </df>
+            <df name="generic_stm32f103t">
+              <df name="board">
+                <in>board.h</in>
+              </df>
+              <df name="ld">
+                <in>common.inc</in>
+                <in>extra_libs.inc</in>
+                <in>mem-flash.inc</in>
+                <in>mem-jtag.inc</in>
+                <in>mem-ram.inc</in>
+                <in>vector_symbols.inc</in>
+              </df>
+              <df name="wirish">
+                <in>boards.cpp</in>
+                <in>boards_setup.cpp</in>
+                <in>start.S</in>
+                <in>start_c.c</in>
+                <in>syscalls.c</in>
+              </df>
+              <in>board.cpp</in>
+              <in>pins_arduino.h</in>
+              <in>variant.h</in>
+            </df>
+            <df name="generic_stm32f103v">
+              <df name="board">
+                <in>board.h</in>
+              </df>
+              <df name="ld">
+                <in>common.inc</in>
+                <in>extra_libs.inc</in>
+                <in>mem-flash.inc</in>
+                <in>mem-jtag.inc</in>
+                <in>mem-ram.inc</in>
+                <in>vector_symbols.inc</in>
+              </df>
+              <df name="wirish">
+                <in>boards.cpp</in>
+                <in>boards_setup.cpp</in>
+                <in>start.S</in>
+                <in>start_c.c</in>
+                <in>syscalls.c</in>
+              </df>
+              <in>board.cpp</in>
+              <in>pins_arduino.h</in>
+              <in>variant.h</in>
+            </df>
+            <df name="generic_stm32f103vb">
+              <df name="board">
+                <in>board.h</in>
+              </df>
+              <df name="ld">
+                <in>common.inc</in>
+                <in>extra_libs.inc</in>
+                <in>mem-flash.inc</in>
+                <in>mem-jtag.inc</in>
+                <in>mem-ram.inc</in>
+                <in>vector_symbols.inc</in>
+              </df>
+              <df name="wirish">
+                <in>boards.cpp</in>
+                <in>boards_setup.cpp</in>
+                <in>start.S</in>
+                <in>start_c.c</in>
+                <in>syscalls.c</in>
+              </df>
+              <in>board.cpp</in>
+              <in>pins_arduino.h</in>
+              <in>variant.h</in>
+            </df>
+            <df name="generic_stm32f103z">
+              <df name="board">
+                <in>board.h</in>
+              </df>
+              <df name="ld">
+                <in>common.inc</in>
+                <in>extra_libs.inc</in>
+                <in>vector_symbols.inc</in>
+              </df>
+              <df name="wirish">
+                <in>boards.cpp</in>
+                <in>boards_setup.cpp</in>
+                <in>start.S</in>
+                <in>start_c.c</in>
+                <in>syscalls.c</in>
+              </df>
+              <in>board.cpp</in>
+              <in>pins_arduino.h</in>
+              <in>variant.h</in>
+            </df>
+            <df name="hytiny_stm32f103t">
+              <df name="board">
+                <in>board.h</in>
+              </df>
+              <df name="ld">
+                <in>common.inc</in>
+                <in>extra_libs.inc</in>
+                <in>mem-flash.inc</in>
+                <in>mem-jtag.inc</in>
+                <in>mem-ram.inc</in>
+                <in>vector_symbols.inc</in>
+              </df>
+              <df name="wirish">
+                <in>boards.cpp</in>
+                <in>boards_setup.cpp</in>
+                <in>start.S</in>
+                <in>start_c.c</in>
+                <in>syscalls.c</in>
+              </df>
+              <in>board.cpp</in>
+              <in>pins_arduino.h</in>
+              <in>variant.h</in>
+            </df>
+            <df name="maple">
+              <df name="board">
+                <in>board.h</in>
+              </df>
+              <df name="ld">
+                <in>common.inc</in>
+                <in>extra_libs.inc</in>
+                <in>mem-flash.inc</in>
+                <in>mem-jtag.inc</in>
+                <in>mem-ram.inc</in>
+                <in>vector_symbols.inc</in>
+              </df>
+              <df name="wirish">
+                <in>boards.cpp</in>
+                <in>boards_setup.cpp</in>
+                <in>start.S</in>
+                <in>start_c.c</in>
+                <in>syscalls.c</in>
+              </df>
+              <in>board.cpp</in>
+              <in>pins_arduino.h</in>
+              <in>variant.h</in>
+            </df>
+            <df name="maple_mini">
+              <df name="board">
+                <in>board.h</in>
+              </df>
+              <df name="ld">
+                <in>common.inc</in>
+                <in>extra_libs.inc</in>
+                <in>mem-flash.inc</in>
+                <in>mem-jtag.inc</in>
+                <in>mem-ram.inc</in>
+                <in>vector_symbols.inc</in>
+              </df>
+              <df name="wirish">
+                <in>boards.cpp</in>
+                <in>boards_setup.cpp</in>
+                <in>start.S</in>
+                <in>start_c.c</in>
+                <in>syscalls.c</in>
+              </df>
+              <in>board.cpp</in>
+              <in>pins_arduino.h</in>
+              <in>variant.h</in>
+            </df>
+            <df name="maple_ret6">
+              <df name="board">
+                <in>board.h</in>
+              </df>
+              <df name="ld">
+                <in>common.inc</in>
+                <in>extra_libs.inc</in>
+                <in>mem-flash.inc</in>
+                <in>mem-jtag.inc</in>
+                <in>mem-ram.inc</in>
+                <in>vector_symbols.inc</in>
+              </df>
+              <df name="wirish">
+                <in>boards.cpp</in>
+                <in>boards_setup.cpp</in>
+                <in>start.S</in>
+                <in>start_c.c</in>
+                <in>syscalls.c</in>
+              </df>
+              <in>board.cpp</in>
+              <in>pins_arduino.h</in>
+              <in>variant.h</in>
+            </df>
+            <df name="microduino">
+              <df name="board">
+                <in>board.h</in>
+              </df>
+              <df name="ld">
+                <in>common.inc</in>
+                <in>extra_libs.inc</in>
+                <in>mem-flash.inc</in>
+                <in>mem-jtag.inc</in>
+                <in>mem-ram.inc</in>
+                <in>vector_symbols.inc</in>
+              </df>
+              <df name="wirish">
+                <in>boards.cpp</in>
+                <in>boards_setup.cpp</in>
+                <in>start.S</in>
+                <in>start_c.c</in>
+                <in>syscalls.c</in>
+              </df>
+              <in>board.cpp</in>
+              <in>pins_arduino.h</in>
+              <in>variant.h</in>
+            </df>
+            <df name="nucleo_f103rb">
+              <df name="board">
+                <in>board.h</in>
+              </df>
+              <df name="infos_pdf">
+              </df>
+              <df name="ld">
+                <in>common.inc</in>
+                <in>extra_libs.inc</in>
+                <in>mem-flash.inc</in>
+                <in>mem-jtag.inc</in>
+                <in>mem-ram.inc</in>
+                <in>vector_symbols.inc</in>
+              </df>
+              <df name="wirish">
+                <in>boards.cpp</in>
+                <in>boards_setup.cpp</in>
+                <in>start.S</in>
+                <in>start_c.c</in>
+                <in>syscalls.c</in>
+              </df>
+              <in>board.cpp</in>
+              <in>pins_arduino.h</in>
+              <in>variant.h</in>
+            </df>
+            <df name="STM32VLD">
+              <df name="board">
+                <in>board.h</in>
+              </df>
+              <df name="ld">
+                <in>common.inc</in>
+                <in>extra_libs.inc</in>
+                <in>vector_symbols.inc</in>
+              </df>
+              <df name="wirish">
+                <in>boards.cpp</in>
+                <in>boards_setup.cpp</in>
+                <in>start.S</in>
+                <in>start_c.c</in>
+                <in>syscalls.c</in>
+              </df>
+              <in>board.cpp</in>
+              <in>pins_arduino.h</in>
+              <in>variant.h</in>
+            </df>
+          </df>
+          <in>boards.txt</in>
+          <in>platform.txt</in>
+        </df>
+        <df name="STM32F4">
+          <df name="cores">
+            <df name="maple">
+              <df name="avr">
+                <in>dtostrf.c</in>
+                <in>dtostrf.h</in>
+                <in>pgmspace.h</in>
+              </df>
+              <df name="libmaple">
+                <df name="usbF4">
+                  <df name="STM32_USB_Device_Library">
+                    <df name="Class">
+                      <df name="audio">
+                        <df name="inc">
+                          <in>usbd_audio_core.h</in>
+                          <in>usbd_audio_out_if.h</in>
+                        </df>
+                      </df>
+                      <df name="cdc">
+                        <df name="inc">
+                          <in>usbd_cdc_core.h</in>
+                          <in>usbd_cdc_if_template.h</in>
+                        </df>
+                        <df name="src">
+                          <in>usbd_cdc_core.c</in>
+                        </df>
+                      </df>
+                      <df name="dfu">
+                        <df name="inc">
+                          <in>usbd_dfu_core.h</in>
+                          <in>usbd_dfu_mal.h</in>
+                          <in>usbd_flash_if.h</in>
+                          <in>usbd_mem_if_template.h</in>
+                          <in>usbd_otp_if.h</in>
+                        </df>
+                      </df>
+                      <df name="hid">
+                        <df name="inc">
+                          <in>usbd_hid_core.h</in>
+                        </df>
+                      </df>
+                      <df name="msc">
+                        <df name="inc">
+                          <in>usbd_msc_bot.h</in>
+                          <in>usbd_msc_core.h</in>
+                          <in>usbd_msc_data.h</in>
+                          <in>usbd_msc_mem.h</in>
+                          <in>usbd_msc_scsi.h</in>
+                        </df>
+                      </df>
+                    </df>
+                    <df name="Core">
+                      <df name="inc">
+                        <in>usbd_conf_template.h</in>
+                        <in>usbd_core.h</in>
+                        <in>usbd_def.h</in>
+                        <in>usbd_ioreq.h</in>
+                        <in>usbd_req.h</in>
+                        <in>usbd_usr.h</in>
+                      </df>
+                      <df name="src">
+                        <in>usbd_core.c</in>
+                        <in>usbd_ioreq.c</in>
+                        <in>usbd_req.c</in>
+                      </df>
+                    </df>
+                  </df>
+                  <df name="STM32_USB_OTG_Driver">
+                    <df name="inc">
+                      <in>usb_bsp.h</in>
+                      <in>usb_conf_template.h</in>
+                      <in>usb_core.h</in>
+                      <in>usb_dcd.h</in>
+                      <in>usb_dcd_int.h</in>
+                      <in>usb_defines.h</in>
+                      <in>usb_hcd.h</in>
+                      <in>usb_hcd_int.h</in>
+                      <in>usb_otg.h</in>
+                      <in>usb_regs.h</in>
+                    </df>
+                    <df name="src">
+                      <in>usb_core.c</in>
+                      <in>usb_dcd.c</in>
+                      <in>usb_dcd_int.c</in>
+                    </df>
+                  </df>
+                  <df name="VCP">
+                    <in>core_cm4.h</in>
+                    <in>core_cmInstr.h</in>
+                    <in>misc.c</in>
+                    <in>misc.h</in>
+                    <in>usb_bsp.c</in>
+                    <in>usb_conf.h</in>
+                    <in>usbd_cdc_vcp.c</in>
+                    <in>usbd_cdc_vcp.h</in>
+                    <in>usbd_conf.h</in>
+                    <in>usbd_desc.c</in>
+                    <in>usbd_desc.h</in>
+                    <in>usbd_usr.c</in>
+                  </df>
+                  <in>usb.c</in>
+                  <in>usb.h</in>
+                </df>
+                <in>HardwareSerial.cpp</in>
+                <in>HardwareSerial.h</in>
+                <in>adc.c</in>
+                <in>adc.h</in>
+                <in>bitband.h</in>
+                <in>bkp.c</in>
+                <in>bkp.h</in>
+                <in>dac.c</in>
+                <in>dac.h</in>
+                <in>dcmi.c</in>
+                <in>dcmi.h</in>
+                <in>delay.h</in>
+                <in>dma.h</in>
+                <in>dmaF4.c</in>
+                <in>dmaF4.h</in>
+                <in>ethernet.c</in>
+                <in>ethernet.h</in>
+                <in>exc.S</in>
+                <in>exti.c</in>
+                <in>exti.h</in>
+                <in>flash.h</in>
+                <in>fpu.c</in>
+                <in>fpu.h</in>
+                <in>fsmc.c</in>
+                <in>fsmc.h</in>
+                <in>gpio.c</in>
+                <in>gpio.h</in>
+                <in>gpio_def.h</in>
+                <in>i2c.c</in>
+                <in>i2c.h</in>
+                <in>iwdg.c</in>
+                <in>iwdg.h</in>
+                <in>libc_repl.c</in>
+                <in>libmaple.h</in>
+                <in>libmaple_types.h</in>
+                <in>main.cpp</in>
+                <in>nvic.c</in>
+                <in>nvic.h</in>
+                <in>pwr.c</in>
+                <in>pwr.h</in>
+                <in>rcc.h</in>
+                <in>rccF4.c</in>
+                <in>rccF4.h</in>
+                <in>ring_buffer.h</in>
+                <in>rtc.c</in>
+                <in>rtc.h</in>
+                <in>scb.h</in>
+                <in>sdio.c</in>
+                <in>sdio.h</in>
+                <in>spi.c</in>
+                <in>spi.h</in>
+                <in>spiF4.h</in>
+                <in>spi_f4.c</in>
+                <in>start.S</in>
+                <in>start_c.c</in>
+                <in>stm32.h</in>
+                <in>stm32_isrs.S</in>
+                <in>stm32_vector_table.S</in>
+                <in>syscalls.c</in>
+                <in>systick.c</in>
+                <in>systick.h</in>
+                <in>timer.c</in>
+                <in>timer.h</in>
+                <in>timer_map.c</in>
+                <in>usart.c</in>
+                <in>usart.h</in>
+                <in>util.c</in>
+                <in>util.h</in>
+              </df>
+              <in>Client.h</in>
+              <in>HardwareTimer.cpp</in>
+              <in>HardwareTimer.h</in>
+              <in>IPAddress.cpp</in>
+              <in>IPAddress.h</in>
+              <in>Print.cpp</in>
+              <in>Print.h</in>
+              <in>Printable.h</in>
+              <in>Server.h</in>
+              <in>Stream.cpp</in>
+              <in>Stream.h</in>
+              <in>Streaming.h</in>
+              <in>Udp.h</in>
+              <in>WProgram.h</in>
+              <in>WString.cpp</in>
+              <in>WString.h</in>
+              <in>bit_constants.h</in>
+              <in>bits.h</in>
+              <in>boards.cpp</in>
+              <in>boards.h</in>
+              <in>cxxabi-compat.cpp</in>
+              <in>ext_interrupts.cpp</in>
+              <in>ext_interrupts.h</in>
+              <in>io.h</in>
+              <in>itoa.c</in>
+              <in>itoa.h</in>
+              <in>new.cpp</in>
+              <in>pwm.cpp</in>
+              <in>pwm.h</in>
+              <in>usb_serial.cpp</in>
+              <in>usb_serial.h</in>
+              <in>wirish.h</in>
+              <in>wirish_analog.cpp</in>
+              <in>wirish_constants.h</in>
+              <in>wirish_debug.h</in>
+              <in>wirish_digital.cpp</in>
+              <in>wirish_math.cpp</in>
+              <in>wirish_math.h</in>
+              <in>wirish_shift.cpp</in>
+              <in>wirish_time.cpp</in>
+              <in>wirish_time.h</in>
+            </df>
+          </df>
+          <df name="examples">
+            <df name="whetstone">
+              <in>fpu.txt</in>
+              <in>whetmain.ino</in>
+              <in>whetstone.cpp</in>
+              <in>whetstone.h</in>
+            </df>
+          </df>
+          <df name="libraries">
+            <df name="arduino_uip">
+              <df name="examples">
+                <df name="AdvancedChatServer">
+                  <in>AdvancedChatServer.ino</in>
+                </df>
+                <df name="EchoServer">
+                  <in>EchoServer.ino</in>
+                </df>
+                <df name="TcpClient">
+                  <in>TcpClient.ino</in>
+                </df>
+                <df name="TcpServer">
+                  <in>TcpServer.ino</in>
+                </df>
+                <df name="UdpClient">
+                  <in>UdpClient.ino</in>
+                </df>
+                <df name="UdpServer">
+                  <in>UdpServer.ino</in>
+                </df>
+              </df>
+              <df name="tests">
+                <df name="perl">
+                </df>
+              </df>
+              <df name="utility">
+                <in>Enc28J60Network.cpp</in>
+                <in>Enc28J60Network.h</in>
+                <in>clock-arch.cpp</in>
+                <in>clock-arch.h</in>
+                <in>enc28j60.h</in>
+                <in>mempool.cpp</in>
+                <in>mempool.h</in>
+                <in>mempool_conf.h</in>
+                <in>uip-conf.h</in>
+                <in>uip.c</in>
+                <in>uip.h</in>
+                <in>uip_arch.h</in>
+                <in>uip_arp.c</in>
+                <in>uip_arp.h</in>
+                <in>uip_clock.h</in>
+                <in>uip_debug.cpp</in>
+                <in>uip_debug.h</in>
+                <in>uip_timer.c</in>
+                <in>uip_timer.h</in>
+                <in>uipethernet-conf.h</in>
+                <in>uipopt.h</in>
+                <in>util.h</in>
+              </df>
+              <in>Dhcp.cpp</in>
+              <in>Dhcp.h</in>
+              <in>Dns.cpp</in>
+              <in>Dns.h</in>
+              <in>UIPClient.cpp</in>
+              <in>UIPClient.h</in>
+              <in>UIPEthernet.cpp</in>
+              <in>UIPEthernet.h</in>
+              <in>UIPServer.cpp</in>
+              <in>UIPServer.h</in>
+              <in>UIPUdp.cpp</in>
+              <in>UIPUdp.h</in>
+              <in>ethernet_comp.h</in>
+              <in>keywords.txt</in>
+            </df>
+            <df name="RTClock">
+              <df name="examples">
+                <df name="Test_RTClock">
+                  <in>Test_RTClock.ino</in>
+                </df>
+              </df>
+              <df name="src">
+                <in>RTClock.cpp</in>
+                <in>RTClock.h</in>
+              </df>
+            </df>
+            <df name="SDIO">
+              <in>SdioF4.cpp</in>
+              <in>SdioF4.h</in>
+            </df>
+            <df name="SPI">
+              <df name="src">
+                <in>SPI.cpp</in>
+                <in>SPI.h</in>
+              </df>
+              <in>keywords.txt</in>
+            </df>
+            <df name="STM32F4_ADC">
+              <df name="examples">
+                <df name="MultiChannel_noDMA">
+                  <in>MultiChannel_noDMA.ino</in>
+                </df>
+                <df name="MultiChannel_withDMA">
+                  <in>MultiChannel_withDMA.ino</in>
+                </df>
+                <df name="SingleChannel_withDMA">
+                  <in>SingleChannelDMA.ino</in>
+                </df>
+              </df>
+              <df name="src">
+                <in>STM32F4ADC.cpp</in>
+                <in>STM32F4ADC.h</in>
+              </df>
+            </df>
+            <df name="Wire">
+              <df name="examples">
+                <df name="i2c_scanner_hardwire">
+                  <in>i2c_scanner_hardwire.ino</in>
+                </df>
+                <df name="i2c_scanner_softwire">
+                  <in>i2c_scanner_softwire.ino</in>
+                </df>
+                <df name="i2c_scanner_wire">
+                  <in>i2c_scanner_wire.ino</in>
+                </df>
+              </df>
+              <in>SoftWire.cpp</in>
+              <in>SoftWire.h</in>
+              <in>Wire.cpp</in>
+              <in>Wire.h</in>
+              <in>WireBase.cpp</in>
+              <in>WireBase.h</in>
+            </df>
+          </df>
+          <df name="system">
+            <df name="libmaple">
+              <in>Arduino.h</in>
+            </df>
+          </df>
+          <df name="variants">
+            <df name="arch_max">
+              <df name="ld">
+                <in>common.inc</in>
+                <in>extra_libs.inc</in>
+                <in>vector_symbols.inc</in>
+              </df>
+              <in>arch_max.cpp</in>
+              <in>arch_max.h</in>
+              <in>pins_arduino.h</in>
+              <in>variant.h</in>
+            </df>
+            <df name="blackpill_f401">
+              <df name="ld">
+                <in>common.inc</in>
+                <in>extra_libs.inc</in>
+                <in>vector_symbols.inc</in>
+              </df>
+              <in>blackpill_f401.cpp</in>
+              <in>blackpill_f401.h</in>
+              <in>pins_arduino.h</in>
+              <in>variant.h</in>
+            </df>
+            <df name="disco_f411">
+              <df name="ld">
+                <in>common.inc</in>
+                <in>extra_libs.inc</in>
+                <in>vector_symbols.inc</in>
+              </df>
+              <in>disco_f411.cpp</in>
+              <in>disco_f411.h</in>
+              <in>pins_arduino.h</in>
+              <in>variant.h</in>
+            </df>
+            <df name="discovery_f407">
+              <df name="ld">
+                <in>common.inc</in>
+                <in>extra_libs.inc</in>
+                <in>vector_symbols.inc</in>
+              </df>
+              <in>discovery_f4.cpp</in>
+              <in>discovery_f4.h</in>
+              <in>pins_arduino.h</in>
+              <in>variant.h</in>
+            </df>
+            <df name="generic_f407v">
+              <df name="ld">
+                <in>common.inc</in>
+                <in>extra_libs.inc</in>
+                <in>vector_symbols.inc</in>
+              </df>
+              <in>generic_f407v.cpp</in>
+              <in>generic_f407v.h</in>
+              <in>pins_arduino.h</in>
+              <in>variant.h</in>
+            </df>
+          </df>
+          <in>boards.txt</in>
+          <in>platform.txt</in>
+        </df>
+        <df name="tools">
+          <df name="linux">
+            <df name="dfu-util">
+            </df>
+            <df name="hid_flash">
+            </df>
+            <df name="src">
+              <df name="dfu-util">
+                <df name="device-logs">
+                </df>
+                <df name="doc">
+                  <in>SPEC-differences.txt</in>
+                </df>
+                <df name="msvc">
+                  <in>README_msvc.txt</in>
+                </df>
+                <df name="src">
+                  <in>dfu.c</in>
+                  <in>dfu.h</in>
+                  <in>dfu_file.c</in>
+                  <in>dfu_file.h</in>
+                  <in>dfu_load.c</in>
+                  <in>dfu_load.h</in>
+                  <in>dfu_util.c</in>
+                  <in>dfu_util.h</in>
+                  <in>dfuse.c</in>
+                  <in>dfuse.h</in>
+                  <in>dfuse_mem.c</in>
+                  <in>dfuse_mem.h</in>
+                  <in>main.c</in>
+                  <in>portable.h</in>
+                  <in>prefix.c</in>
+                  <in>quirks.c</in>
+                  <in>quirks.h</in>
+                  <in>suffix.c</in>
+                  <in>usb_dfu.h</in>
+                </df>
+                <df name="www">
+                </df>
+                <in>DEVICES.txt</in>
+              </df>
+              <df name="maple_loader">
+                <df name="build">
+                  <df name="classes">
+                    <df name="CliTemplate">
+                    </df>
+                    <df name="processing">
+                      <df name="app">
+                        <df name="debug">
+                        </df>
+                        <df name="helpers">
+                        </df>
+                      </df>
+                    </df>
+                  </df>
+                </df>
+                <df name="dist">
+                  <df name="lib">
+                  </df>
+                </df>
+                <df name="jars">
+                </df>
+                <df name="src">
+                  <df name="CliTemplate">
+                  </df>
+                  <df name="processing">
+                    <df name="app">
+                      <df name="debug">
+                      </df>
+                      <df name="helpers">
+                      </df>
+                    </df>
+                  </df>
+                </df>
+              </df>
+              <df name="stm32flash_serial">
+                <df name="src">
+                  <df name="parsers">
+                    <in>binary.c</in>
+                    <in>binary.h</in>
+                    <in>hex.c</in>
+                    <in>hex.h</in>
+                    <in>parser.h</in>
+                  </df>
+                  <in>I2C.txt</in>
+                  <in>dev_table.c</in>
+                  <in>gpl-2.0.txt</in>
+                  <in>i2c.c</in>
+                  <in>init.c</in>
+                  <in>init.h</in>
+                  <in>main.c</in>
+                  <in>port.c</in>
+                  <in>port.h</in>
+                  <in>protocol.txt</in>
+                  <in>serial.h</in>
+                  <in>serial_common.c</in>
+                  <in>serial_platform.c</in>
+                  <in>serial_posix.c</in>
+                  <in>serial_w32.c</in>
+                  <in>stm32.c</in>
+                  <in>stm32.h</in>
+                  <in>utils.c</in>
+                  <in>utils.h</in>
+                </df>
+              </df>
+              <df name="upload-reset">
+                <in>upload-reset.c</in>
+              </df>
+            </df>
+            <df name="stlink">
+            </df>
+            <df name="stm32flash">
+            </df>
+            <in>readme.txt</in>
+          </df>
+          <df name="linux64">
+            <df name="dfu-util">
+            </df>
+            <df name="src">
+              <df name="dfu-util">
+                <df name="device-logs">
+                </df>
+                <df name="doc">
+                  <in>SPEC-differences.txt</in>
+                </df>
+                <df name="msvc">
+                  <in>README_msvc.txt</in>
+                </df>
+                <df name="src">
+                  <in>dfu.c</in>
+                  <in>dfu.h</in>
+                  <in>dfu_file.c</in>
+                  <in>dfu_file.h</in>
+                  <in>dfu_load.c</in>
+                  <in>dfu_load.h</in>
+                  <in>dfu_util.c</in>
+                  <in>dfu_util.h</in>
+                  <in>dfuse.c</in>
+                  <in>dfuse.h</in>
+                  <in>dfuse_mem.c</in>
+                  <in>dfuse_mem.h</in>
+                  <in>main.c</in>
+                  <in>portable.h</in>
+                  <in>prefix.c</in>
+                  <in>quirks.c</in>
+                  <in>quirks.h</in>
+                  <in>suffix.c</in>
+                  <in>usb_dfu.h</in>
+                </df>
+                <df name="www">
+                </df>
+                <in>DEVICES.txt</in>
+              </df>
+              <df name="maple_loader">
+                <df name="build">
+                  <df name="classes">
+                    <df name="CliTemplate">
+                    </df>
+                    <df name="processing">
+                      <df name="app">
+                        <df name="debug">
+                        </df>
+                        <df name="helpers">
+                        </df>
+                      </df>
+                    </df>
+                  </df>
+                </df>
+                <df name="dist">
+                  <df name="lib">
+                  </df>
+                </df>
+                <df name="jars">
+                </df>
+                <df name="src">
+                  <df name="CliTemplate">
+                  </df>
+                  <df name="processing">
+                    <df name="app">
+                      <df name="debug">
+                      </df>
+                      <df name="helpers">
+                      </df>
+                    </df>
+                  </df>
+                </df>
+              </df>
+              <df name="stm32flash_serial">
+                <df name="src">
+                  <df name="parsers">
+                    <in>binary.c</in>
+                    <in>binary.h</in>
+                    <in>hex.c</in>
+                    <in>hex.h</in>
+                    <in>parser.h</in>
+                  </df>
+                  <in>I2C.txt</in>
+                  <in>dev_table.c</in>
+                  <in>gpl-2.0.txt</in>
+                  <in>i2c.c</in>
+                  <in>init.c</in>
+                  <in>init.h</in>
+                  <in>main.c</in>
+                  <in>port.c</in>
+                  <in>port.h</in>
+                  <in>protocol.txt</in>
+                  <in>serial.h</in>
+                  <in>serial_common.c</in>
+                  <in>serial_platform.c</in>
+                  <in>serial_posix.c</in>
+                  <in>serial_w32.c</in>
+                  <in>stm32.c</in>
+                  <in>stm32.h</in>
+                  <in>utils.c</in>
+                  <in>utils.h</in>
+                </df>
+              </df>
+              <df name="upload-reset">
+                <in>upload-reset.c</in>
+              </df>
+            </df>
+            <df name="stlink">
+            </df>
+            <df name="stm32flash">
+            </df>
+            <in>readme.txt</in>
+          </df>
+          <df name="macosx">
+            <df name="dfu-util">
+            </df>
+            <df name="src">
+              <df name="dfu-util">
+                <df name="device-logs">
+                </df>
+                <df name="doc">
+                  <in>SPEC-differences.txt</in>
+                </df>
+                <df name="msvc">
+                  <in>README_msvc.txt</in>
+                </df>
+                <df name="src">
+                  <in>dfu.c</in>
+                  <in>dfu.h</in>
+                  <in>dfu_file.c</in>
+                  <in>dfu_file.h</in>
+                  <in>dfu_load.c</in>
+                  <in>dfu_load.h</in>
+                  <in>dfu_util.c</in>
+                  <in>dfu_util.h</in>
+                  <in>dfuse.c</in>
+                  <in>dfuse.h</in>
+                  <in>dfuse_mem.c</in>
+                  <in>dfuse_mem.h</in>
+                  <in>main.c</in>
+                  <in>portable.h</in>
+                  <in>prefix.c</in>
+                  <in>quirks.c</in>
+                  <in>quirks.h</in>
+                  <in>suffix.c</in>
+                  <in>usb_dfu.h</in>
+                </df>
+                <df name="www">
+                </df>
+                <in>DEVICES.txt</in>
+              </df>
+              <df name="maple_loader">
+                <df name="build">
+                  <df name="classes">
+                    <df name="CliTemplate">
+                    </df>
+                    <df name="processing">
+                      <df name="app">
+                        <df name="debug">
+                        </df>
+                        <df name="helpers">
+                        </df>
+                      </df>
+                    </df>
+                  </df>
+                </df>
+                <df name="dist">
+                  <df name="lib">
+                  </df>
+                </df>
+                <df name="jars">
+                </df>
+                <df name="src">
+                  <df name="CliTemplate">
+                  </df>
+                  <df name="processing">
+                    <df name="app">
+                      <df name="debug">
+                      </df>
+                      <df name="helpers">
+                      </df>
+                    </df>
+                  </df>
+                </df>
+              </df>
+              <df name="stm32flash_serial">
+                <df name="src">
+                  <df name="parsers">
+                    <in>binary.c</in>
+                    <in>binary.h</in>
+                    <in>hex.c</in>
+                    <in>hex.h</in>
+                    <in>parser.h</in>
+                  </df>
+                  <in>I2C.txt</in>
+                  <in>dev_table.c</in>
+                  <in>gpl-2.0.txt</in>
+                  <in>i2c.c</in>
+                  <in>init.c</in>
+                  <in>init.h</in>
+                  <in>main.c</in>
+                  <in>port.c</in>
+                  <in>port.h</in>
+                  <in>protocol.txt</in>
+                  <in>serial.h</in>
+                  <in>serial_common.c</in>
+                  <in>serial_platform.c</in>
+                  <in>serial_posix.c</in>
+                  <in>serial_w32.c</in>
+                  <in>stm32.c</in>
+                  <in>stm32.h</in>
+                  <in>utils.c</in>
+                  <in>utils.h</in>
+                </df>
+              </df>
+              <df name="upload-reset">
+                <in>upload-reset.c</in>
+              </df>
+            </df>
+            <df name="stlink">
+              <df name="texan_stlink_src">
+                <df name="doc">
+                  <df name="tutorial">
+                  </df>
+                </df>
+                <df name="flash">
+                  <in>main.c</in>
+                </df>
+                <df name="flashloaders">
+                  <in>stm32f0.s</in>
+                  <in>stm32f4.s</in>
+                  <in>stm32l0x.s</in>
+                  <in>stm32lx.s</in>
+                </df>
+                <df name="gdbserver">
+                  <in>gdb-remote.c</in>
+                  <in>gdb-remote.h</in>
+                  <in>gdb-server.c</in>
+                  <in>gdb-server.h</in>
+                </df>
+                <df name="gui">
+                  <in>stlink-gui.c</in>
+                  <in>stlink-gui.h</in>
+                </df>
+                <df name="mingw">
+                  <in>mingw.c</in>
+                  <in>mingw.h</in>
+                </df>
+                <df name="src">
+                  <in>mmap.c</in>
+                  <in>mmap.h</in>
+                  <in>st-info.c</in>
+                  <in>st-term.c</in>
+                  <in>stlink-common.c</in>
+                  <in>stlink-common.h</in>
+                  <in>stlink-sg.c</in>
+                  <in>stlink-sg.h</in>
+                  <in>stlink-usb.c</in>
+                  <in>stlink-usb.h</in>
+                  <in>test_sg.c</in>
+                  <in>test_usb.c</in>
+                  <in>uglylogging.c</in>
+                  <in>uglylogging.h</in>
+                </df>
+                <df name="stlinkv1_macosx_driver">
+                </df>
+              </df>
+            </df>
+            <df name="stm32flash">
+            </df>
+          </df>
+          <df name="win">
+            <df name="dfu-util-0.9-win64">
+              <in>README.txt</in>
+            </df>
+            <df name="lib">
+            </df>
+            <df name="src">
+              <df name="dfu-util">
+                <df name="device-logs">
+                </df>
+                <df name="doc">
+                  <in>SPEC-differences.txt</in>
+                </df>
+                <df name="msvc">
+                  <in>README_msvc.txt</in>
+                </df>
+                <df name="src">
+                  <in>dfu.c</in>
+                  <in>dfu.h</in>
+                  <in>dfu_file.c</in>
+                  <in>dfu_file.h</in>
+                  <in>dfu_load.c</in>
+                  <in>dfu_load.h</in>
+                  <in>dfu_util.c</in>
+                  <in>dfu_util.h</in>
+                  <in>dfuse.c</in>
+                  <in>dfuse.h</in>
+                  <in>dfuse_mem.c</in>
+                  <in>dfuse_mem.h</in>
+                  <in>main.c</in>
+                  <in>portable.h</in>
+                  <in>prefix.c</in>
+                  <in>quirks.c</in>
+                  <in>quirks.h</in>
+                  <in>suffix.c</in>
+                  <in>usb_dfu.h</in>
+                </df>
+                <df name="www">
+                </df>
+                <in>DEVICES.txt</in>
+              </df>
+              <df name="maple_loader">
+                <df name="build">
+                  <df name="classes">
+                    <df name="CliTemplate">
+                    </df>
+                    <df name="processing">
+                      <df name="app">
+                        <df name="debug">
+                        </df>
+                        <df name="helpers">
+                        </df>
+                      </df>
+                    </df>
+                  </df>
+                </df>
+                <df name="dist">
+                  <df name="lib">
+                  </df>
+                </df>
+                <df name="jars">
+                </df>
+                <df name="src">
+                  <df name="CliTemplate">
+                  </df>
+                  <df name="processing">
+                    <df name="app">
+                      <df name="debug">
+                      </df>
+                      <df name="helpers">
+                      </df>
+                    </df>
+                  </df>
+                </df>
+              </df>
+              <df name="stm32flash_serial">
+                <df name="src">
+                  <df name="parsers">
+                    <in>binary.c</in>
+                    <in>binary.h</in>
+                    <in>hex.c</in>
+                    <in>hex.h</in>
+                    <in>parser.h</in>
+                  </df>
+                  <in>I2C.txt</in>
+                  <in>dev_table.c</in>
+                  <in>gpl-2.0.txt</in>
+                  <in>i2c.c</in>
+                  <in>init.c</in>
+                  <in>init.h</in>
+                  <in>main.c</in>
+                  <in>port.c</in>
+                  <in>port.h</in>
+                  <in>protocol.txt</in>
+                  <in>serial.h</in>
+                  <in>serial_common.c</in>
+                  <in>serial_platform.c</in>
+                  <in>serial_posix.c</in>
+                  <in>serial_w32.c</in>
+                  <in>stm32.c</in>
+                  <in>stm32.h</in>
+                  <in>utils.c</in>
+                  <in>utils.h</in>
+                </df>
+              </df>
+              <df name="upload-reset">
+                <in>upload-reset.c</in>
+              </df>
+            </df>
+            <df name="stlink">
+              <df name="Docs">
+              </df>
+              <df name="FlashLoader">
+              </df>
+              <df name="ST-LINK_USB_V2_1_Driver">
+                <df name="amd64">
+                </df>
+                <df name="x86">
+                </df>
+              </df>
+            </df>
+            <df name="texane-stlink">
+            </df>
+          </df>
+          <in>boards.txt</in>
+        </df>
+      </df>
+      <df name="assets">
+        <df name="backgrounds">
+          <df name="generated">
+            <in>background_compressed.h</in>
+            <in>background_decl.h</in>
+            <in>bat0_compressed.h</in>
+            <in>bat0_decl.h</in>
+            <in>bat1_compressed.h</in>
+            <in>bat1_decl.h</in>
+            <in>bat2_compressed.h</in>
+            <in>bat2_decl.h</in>
+            <in>bat3_compressed.h</in>
+            <in>bat3_decl.h</in>
+            <in>bat4_compressed.h</in>
+            <in>bat4_decl.h</in>
+            <in>bat5_compressed.h</in>
+            <in>bat5_decl.h</in>
+            <in>bat6_compressed.h</in>
+            <in>bat6_decl.h</in>
+            <in>li_ion_compressed.h</in>
+            <in>li_ion_decl.h</in>
+          </df>
+          <in>CMakeLists.txt</in>
+          <in>assets.cpp</in>
+          <in>fonts.cpp</in>
+          <in>gfxfont.h</in>
+        </df>
+        <df name="fontCompressor">
+          <df name="build">
+            <df name="CMakeFiles">
+              <df name="3.16.3">
+                <df name="CompilerIdC">
+                  <df name="tmp">
+                  </df>
+                  <in>CMakeCCompilerId.c</in>
+                </df>
+                <df name="CompilerIdCXX">
+                  <df name="tmp">
+                  </df>
+                  <in>CMakeCXXCompilerId.cpp</in>
+                </df>
+              </df>
+              <df name="CMakeTmp">
+              </df>
+              <df name="fontCompressor.dir">
+                <in>link.txt</in>
+              </df>
+              <in>TargetDirectories.txt</in>
+            </df>
+            <in>CMakeCache.txt</in>
+          </df>
+          <in>CMakeLists.txt</in>
+          <in>fontCompressor.cpp</in>
+        </df>
+        <df name="fonts">
+          <in>FreeMono12pt7b.h</in>
+          <in>FreeMono18pt7b.h</in>
+          <in>FreeMono24pt7b.h</in>
+          <in>FreeMono9pt7b.h</in>
+          <in>FreeMonoBold12pt7b.h</in>
+          <in>FreeMonoBold18pt7b.h</in>
+          <in>FreeMonoBold24pt7b.h</in>
+          <in>FreeMonoBold9pt7b.h</in>
+          <in>FreeMonoBoldOblique12pt7b.h</in>
+          <in>FreeMonoBoldOblique18pt7b.h</in>
+          <in>FreeMonoBoldOblique24pt7b.h</in>
+          <in>FreeMonoBoldOblique9pt7b.h</in>
+          <in>FreeMonoOblique12pt7b.h</in>
+          <in>FreeMonoOblique18pt7b.h</in>
+          <in>FreeMonoOblique24pt7b.h</in>
+          <in>FreeMonoOblique9pt7b.h</in>
+          <in>FreeSans12pt7b.h</in>
+          <in>FreeSans18pt7b.h</in>
+          <in>FreeSans24pt7b.h</in>
+          <in>FreeSans9pt7b.h</in>
+          <in>FreeSansBold12pt7b.h</in>
+          <in>FreeSansBold18pt7b.h</in>
+          <in>FreeSansBold24pt7b.h</in>
+          <in>FreeSansBold9pt7b.h</in>
+          <in>FreeSansBoldOblique12pt7b.h</in>
+          <in>FreeSansBoldOblique18pt7b.h</in>
+          <in>FreeSansBoldOblique24pt7b.h</in>
+          <in>FreeSansBoldOblique9pt7b.h</in>
+          <in>FreeSansOblique12pt7b.h</in>
+          <in>FreeSansOblique18pt7b.h</in>
+          <in>FreeSansOblique24pt7b.h</in>
+          <in>FreeSansOblique9pt7b.h</in>
+          <in>FreeSerif12pt7b.h</in>
+          <in>FreeSerif18pt7b.h</in>
+          <in>FreeSerif24pt7b.h</in>
+          <in>FreeSerif9pt7b.h</in>
+          <in>FreeSerifBold12pt7b.h</in>
+          <in>FreeSerifBold18pt7b.h</in>
+          <in>FreeSerifBold24pt7b.h</in>
+          <in>FreeSerifBold9pt7b.h</in>
+          <in>FreeSerifBoldItalic12pt7b.h</in>
+          <in>FreeSerifBoldItalic18pt7b.h</in>
+          <in>FreeSerifBoldItalic24pt7b.h</in>
+          <in>FreeSerifBoldItalic9pt7b.h</in>
+          <in>FreeSerifItalic12pt7b.h</in>
+          <in>FreeSerifItalic18pt7b.h</in>
+          <in>FreeSerifItalic24pt7b.h</in>
+          <in>FreeSerifItalic9pt7b.h</in>
+          <in>Org_01.h</in>
+          <in>Picopixel.h</in>
+          <in>TomThumb.h</in>
+          <in>lcd_bold_18.h</in>
+        </df>
+        <df name="github">
+        </df>
+        <in>CMakeLists.txt</in>
+      </df>
+      <df name="backgrounds">
+        <in>assets.cpp</in>
+        <in>fonts.cpp</in>
+      </df>
+      <df name="build">
+        <df name="assets">
+          <df name="backgrounds">
+            <df name="CMakeFiles">
+              <df name="genericSTM32F103C_backgrounds.dir">
+                <in>link.txt</in>
+              </df>
+            </df>
+          </df>
+          <df name="CMakeFiles">
+          </df>
+        </df>
+        <df name="CMakeFiles">
+          <df name="3.16.3">
+            <df name="CompilerIdASM">
+            </df>
+            <df name="CompilerIdC">
+              <df name="tmp">
+              </df>
+              <in>CMakeCCompilerId.c</in>
+            </df>
+            <df name="CompilerIdCXX">
+              <df name="tmp">
+              </df>
+              <in>CMakeCXXCompilerId.cpp</in>
+            </df>
+          </df>
+          <df name="CMakeTmp">
+          </df>
+          <df name="componentTester_STM32F103-upload.dir">
+          </df>
+          <df name="componentTester_STM32F103.dir">
+            <df name="Arduino_STM32">
+              <df name="STM32F1">
+                <df name="variants">
+                  <df name="generic_stm32f103c">
+                    <df name="wirish">
+                    </df>
+                  </df>
+                </df>
+              </df>
+            </df>
+            <df name="embedded_printf">
+            </df>
+            <in>link.txt</in>
+          </df>
+          <df name="genericSTM32F103C_CORE.dir">
+            <df name="Arduino_STM32">
+              <df name="STM32F1">
+                <df name="cores">
+                  <df name="maple">
+                    <df name="avr">
+                    </df>
+                    <df name="libmaple">
+                      <df name="stm32f1">
+                        <df name="performance">
+                        </df>
+                      </df>
+                      <df name="usb">
+                        <df name="stm32f1">
+                        </df>
+                        <df name="usb_lib">
+                        </df>
+                      </df>
+                    </df>
+                    <df name="stm32f1">
+                    </df>
+                  </df>
+                </df>
+              </df>
+            </df>
+            <in>link.txt</in>
+          </df>
+          <df name="genericSTM32F103C_EEPROM.dir">
+            <df name="Arduino_STM32">
+              <df name="STM32F1">
+                <df name="libraries">
+                  <df name="EEPROM">
+                  </df>
+                </df>
+              </df>
+            </df>
+            <in>link.txt</in>
+          </df>
+          <df name="genericSTM32F103C_simpler_INA219.dir">
+            <df name="simpler_INA219">
+            </df>
+            <in>link.txt</in>
+          </df>
+          <df name="genericSTM32F103C_simplerMCP4725.dir">
+            <df name="simplerMCP4725">
+            </df>
+            <in>link.txt</in>
+          </df>
+          <df name="genericSTM32F103C_SPI.dir">
+            <df name="Arduino_STM32">
+              <df name="STM32F1">
+                <df name="libraries">
+                  <df name="SPI">
+                    <df name="src">
+                    </df>
+                  </df>
+                </df>
+              </df>
+            </df>
+            <in>link.txt</in>
+          </df>
+          <df name="genericSTM32F103C_Wire.dir">
+            <df name="Arduino_STM32">
+              <df name="STM32F1">
+                <df name="libraries">
+                  <df name="Wire">
+                    <df name="utility">
+                    </df>
+                  </df>
+                </df>
+              </df>
+            </df>
+            <in>link.txt</in>
+          </df>
+          <df name="upload.dir">
+          </df>
+          <in>CMakeRuleHashes.txt</in>
+          <in>TargetDirectories.txt</in>
+        </df>
+        <df name="FreeRTOS">
+          <df name="CMakeFiles">
+            <df name="genericSTM32F103C_FreeRTOS.dir">
+              <df name="Source">
+                <df name="portable">
+                  <df name="MemMang">
+                  </df>
+                  <df name="Stm32duino">
+                  </df>
+                </df>
+              </df>
+              <in>link.txt</in>
+            </df>
+          </df>
+        </df>
+        <df name="RotaryEncoder">
+          <df name="CMakeFiles">
+            <df name="genericSTM32F103C_RotaryEncoder.dir">
+              <df name="Rotary">
+              </df>
+              <in>link.txt</in>
+            </df>
+          </df>
+        </df>
+        <df name="TFT_eSPI">
+          <df name="CMakeFiles">
+            <df name="genericSTM32F103C_TFT_eSPI.dir">
+              <df name="tft">
+              </df>
+              <in>link.txt</in>
+            </df>
+          </df>
+        </df>
+        <df name="XPT2046">
+          <df name="CMakeFiles">
+            <df name="genericSTM32F103C_XPT2046.dir">
+              <in>link.txt</in>
+            </df>
+          </df>
+        </df>
+        <in>CMakeCache.txt</in>
+        <in>componentTester_STM32F103_batteryTester2.ino.cpp</in>
+      </df>
+      <df name="cmake">
+        <df name=".idea">
+          <df name="codeStyles">
+          </df>
+        </df>
+        <df name="example">
+          <df name="avr">
+            <df name="Blink">
+              <in>Blink.ino</in>
+              <in>config.h</in>
+            </df>
+            <in>CMakeLists.txt</in>
+            <in>blink.cpp</in>
+            <in>blink_lib.cpp</in>
+            <in>blink_lib.h</in>
+            <in>serial.cpp</in>
+          </df>
+          <df name="esp32">
+            <df name="cmake">
+              <df name=".idea">
+                <df name="codeStyles">
+                </df>
+              </df>
+              <df name="example">
+                <df name="avr">
+                  <df name="Blink">
+                    <in>Blink.ino</in>
+                    <in>config.h</in>
+                  </df>
+                  <in>CMakeLists.txt</in>
+                  <in>blink.cpp</in>
+                  <in>blink_lib.cpp</in>
+                  <in>blink_lib.h</in>
+                  <in>serial.cpp</in>
+                </df>
+                <df name="esp32">
+                  <df name="build">
+                    <df name="CMakeFiles">
+                      <df name="3.13.4">
+                        <df name="CompilerIdASM">
+                        </df>
+                        <df name="CompilerIdC">
+                          <df name="tmp">
+                          </df>
+                          <in>CMakeCCompilerId.c</in>
+                        </df>
+                        <df name="CompilerIdCXX">
+                          <df name="tmp">
+                          </df>
+                          <in>CMakeCXXCompilerId.cpp</in>
+                        </df>
+                      </df>
+                      <df name="Blink2-upload.dir">
+                      </df>
+                      <df name="Blink2.dir">
+                        <in>link.txt</in>
+                      </df>
+                      <df name="CMakeTmp">
+                      </df>
+                      <df name="esp32_CORE.dir">
+                        <df name="home">
+                          <df name="fx">
+                            <df name="Arduino">
+                              <df name="hardware">
+                                <df name="espressif">
+                                  <df name="esp32">
+                                    <df name="cores">
+                                      <df name="esp32">
+                                        <df name="libb64">
+                                        </df>
+                                      </df>
+                                    </df>
+                                  </df>
+                                </df>
+                              </df>
+                            </df>
+                          </df>
+                        </df>
+                        <in>link.txt</in>
+                      </df>
+                      <df name="upload.dir">
+                      </df>
+                      <in>CMakeRuleHashes.txt</in>
+                      <in>TargetDirectories.txt</in>
+                    </df>
+                    <in>Blink2_Blink.ino.cpp</in>
+                    <in>CMakeCache.txt</in>
+                  </df>
+                  <in>Blink.ino</in>
+                  <in>CMakeLists.txt</in>
+                </df>
+                <df name="stm32">
+                  <df name="build">
+                    <df name="CMakeFiles">
+                      <df name="3.13.4">
+                        <df name="CompilerIdASM">
+                        </df>
+                        <df name="CompilerIdC">
+                          <df name="tmp">
+                          </df>
+                          <in>CMakeCCompilerId.c</in>
+                        </df>
+                        <df name="CompilerIdCXX">
+                          <df name="tmp">
+                          </df>
+                          <in>CMakeCXXCompilerId.cpp</in>
+                        </df>
+                      </df>
+                      <df name="CMakeTmp">
+                      </df>
+                      <df name="genericSTM32F103C_CORE.dir">
+                        <df name="home">
+                          <df name="fx">
+                            <df name="Arduino">
+                              <df name="hardware">
+                                <df name="stm32">
+                                  <df name="STM32F1">
+                                    <df name="cores">
+                                      <df name="maple">
+                                        <df name="avr">
+                                        </df>
+                                        <df name="libmaple">
+                                          <df name="stm32f1">
+                                            <df name="performance">
+                                            </df>
+                                          </df>
+                                          <df name="usb">
+                                            <df name="stm32f1">
+                                            </df>
+                                            <df name="usb_lib">
+                                            </df>
+                                          </df>
+                                        </df>
+                                        <df name="stm32f1">
+                                        </df>
+                                      </df>
+                                    </df>
+                                  </df>
+                                </df>
+                              </df>
+                            </df>
+                          </df>
+                        </df>
+                        <in>link.txt</in>
+                      </df>
+                      <df name="hello-upload.dir">
+                      </df>
+                      <df name="hello.dir">
+                        <df name="home">
+                          <df name="fx">
+                            <df name="Arduino">
+                              <df name="hardware">
+                                <df name="stm32">
+                                  <df name="STM32F1">
+                                    <df name="variants">
+                                      <df name="generic_stm32f103c">
+                                        <df name="wirish">
+                                        </df>
+                                      </df>
+                                    </df>
+                                  </df>
+                                </df>
+                              </df>
+                            </df>
+                          </df>
+                        </df>
+                        <in>link.txt</in>
+                      </df>
+                      <df name="upload.dir">
+                      </df>
+                      <in>CMakeRuleHashes.txt</in>
+                      <in>TargetDirectories.txt</in>
+                    </df>
+                    <in>CMakeCache.txt</in>
+                    <in>hello_hello.ino.cpp</in>
+                  </df>
+                  <in>CMakeLists.txt</in>
+                  <in>hello.ino</in>
+                </df>
+              </df>
+              <df name="Platform">
+                <df name="Core">
+                  <df name="BoardFlags">
+                  </df>
+                  <df name="Examples">
+                  </df>
+                  <df name="Libraries">
+                  </df>
+                  <df name="Sketch">
+                  </df>
+                  <df name="Targets">
+                  </df>
+                </df>
+                <df name="Extras">
+                </df>
+                <df name="Generation">
+                </df>
+                <df name="Initialization">
+                </df>
+              </df>
+              <in>CMakeLists.txt</in>
+            </df>
+            <in>Blink.ino</in>
+            <in>CMakeLists.txt</in>
+          </df>
+          <df name="stm32">
+            <in>CMakeLists.txt</in>
+            <in>hello.ino</in>
+          </df>
+        </df>
+        <df name="Platform">
+          <df name="Core">
+            <df name="BoardFlags">
+            </df>
+            <df name="Examples">
+            </df>
+            <df name="Libraries">
+            </df>
+            <df name="Sketch">
+            </df>
+            <df name="Targets">
+            </df>
+          </df>
+          <df name="Extras">
+          </df>
+          <df name="Generation">
+          </df>
+          <df name="Initialization">
+          </df>
+        </df>
+        <in>CMakeLists.txt</in>
+      </df>
+      <df name="embedded_printf">
+        <df name="test">
+          <in>catch.hpp</in>
+          <in>test_suite.cpp</in>
+        </df>
+        <in>printf.c</in>
+        <in>printf.h</in>
+      </df>
+      <df name="enclosure">
+      </df>
+      <df name="FreeRTOS">
+        <df name="examples">
+          <df name="cmake_pp_semaphore">
+            <in>CMakeLists.txt</in>
+            <in>myCode.cpp</in>
+            <in>test.ino</in>
+          </df>
+          <df name="rtos_blink">
+            <in>rtos_blink.ino</in>
+          </df>
+          <df name="rtos_display_blink">
+            <in>rtos_display_blink.ino</in>
+          </df>
+        </df>
+        <df name="License">
+          <in>license.txt</in>
+        </df>
+        <df name="Source">
+          <df name="include">
+            <in>FreeRTOS.h</in>
+            <in>StackMacros.h</in>
+            <in>croutine.h</in>
+            <in>deprecated_definitions.h</in>
+            <in>event_groups.h</in>
+            <in>list.h</in>
+            <in>message_buffer.h</in>
+            <in>mpu_prototypes.h</in>
+            <in>mpu_wrappers.h</in>
+            <in>portable.h</in>
+            <in>projdefs.h</in>
+            <in>queue.h</in>
+            <in>semphr.h</in>
+            <in>stack_macros.h</in>
+            <in>stream_buffer.h</in>
+            <in>task.h</in>
+            <in>timers.h</in>
+          </df>
+          <df name="portable">
+            <df name="Common">
+              <in>mpu_wrappers.c</in>
+            </df>
+            <df name="GCC">
+              <df name="ARM_CM0">
+                <in>port.c</in>
+                <in>portmacro.h</in>
+              </df>
+              <df name="ARM_CM23">
+                <df name="non_secure">
+                  <in>port.c</in>
+                  <in>portasm.c</in>
+                  <in>portasm.h</in>
+                  <in>portmacro.h</in>
+                </df>
+                <df name="secure">
+                  <in>secure_context.c</in>
+                  <in>secure_context.h</in>
+                  <in>secure_context_port.c</in>
+                  <in>secure_heap.c</in>
+                  <in>secure_heap.h</in>
+                  <in>secure_init.c</in>
+                  <in>secure_init.h</in>
+                  <in>secure_port_macros.h</in>
+                </df>
+              </df>
+              <df name="ARM_CM23_NTZ">
+                <df name="non_secure">
+                  <in>port.c</in>
+                  <in>portasm.c</in>
+                  <in>portasm.h</in>
+                  <in>portmacro.h</in>
+                </df>
+              </df>
+              <df name="ARM_CM3">
+                <in>port.c</in>
+                <in>portmacro.h</in>
+              </df>
+              <df name="ARM_CM33">
+                <df name="non_secure">
+                  <in>port.c</in>
+                  <in>portasm.c</in>
+                  <in>portasm.h</in>
+                  <in>portmacro.h</in>
+                </df>
+                <df name="secure">
+                  <in>secure_context.c</in>
+                  <in>secure_context.h</in>
+                  <in>secure_context_port.c</in>
+                  <in>secure_heap.c</in>
+                  <in>secure_heap.h</in>
+                  <in>secure_init.c</in>
+                  <in>secure_init.h</in>
+                  <in>secure_port_macros.h</in>
+                </df>
+              </df>
+              <df name="ARM_CM33_NTZ">
+                <df name="non_secure">
+                  <in>port.c</in>
+                  <in>portasm.c</in>
+                  <in>portasm.h</in>
+                  <in>portmacro.h</in>
+                </df>
+              </df>
+              <df name="ARM_CM3_MPU">
+                <in>port.c</in>
+                <in>portmacro.h</in>
+              </df>
+            </df>
+            <df name="MemMang">
+              <in>heap_1.c</in>
+              <in>heap_2.c</in>
+              <in>heap_3.c</in>
+              <in>heap_4.c</in>
+              <in>heap_5.c</in>
+            </df>
+            <df name="Stm32duino">
+              <in>port.c</in>
+              <in>portmacro.h</in>
+            </df>
+            <in>readme.txt</in>
+          </df>
+          <in>croutine.c</in>
+          <in>event_groups.c</in>
+          <in>list.c</in>
+          <in>queue.c</in>
+          <in>readme.txt</in>
+          <in>stream_buffer.c</in>
+          <in>tasks.c</in>
+          <in>timers.c</in>
+        </df>
+        <in>CMakeLists.txt</in>
+        <in>MapleFreeRTOS1000.h</in>
+        <in>MapleFreeRTOS1000_pp.cpp</in>
+        <in>MapleFreeRTOS1000_pp.h</in>
+      </df>
+      <df name="rotaryEncoder">
+        <df name="Rotary">
+          <in>Rotary.cpp</in>
+        </df>
+        <in>wav_irotary.cpp</in>
+      </df>
+      <df name="RotaryEncoder">
+        <df name="Rotary">
+          <df name="examples">
+            <df name="Interrupt">
+              <in>Interrupt.ino</in>
+            </df>
+            <df name="InterruptProMicro">
+              <in>InterruptProMicro.ino</in>
+            </df>
+            <df name="Polling">
+              <in>Polling.ino</in>
+            </df>
+          </df>
+          <in>Rotary.cpp</in>
+          <in>Rotary.h</in>
+          <in>keywords.txt</in>
+        </df>
+        <in>CMakeLists.txt</in>
+        <in>wav_irotary.cpp</in>
+        <in>wav_irotary.h</in>
+      </df>
+      <df name="schematics">
+        <df name="batteryTester">
+        </df>
+      </df>
+      <df name="simpler_INA219">
+        <df name="examples">
+          <df name="getcurrent">
+            <in>simplerIna219.ino</in>
+          </df>
+        </df>
+        <in>license.txt</in>
+        <in>simpler_INA219.cpp</in>
+        <in>simpler_INA219.h</in>
+        <in>simpler_INA219_internal.h</in>
+      </df>
+      <df name="simplerMCP4725">
+        <in>simplerMCP4725.cpp</in>
+        <in>simplerMCP4725.h</in>
+      </df>
+      <df name="TFT_eSPI">
+        <df name="tft">
+          <df name="examples">
+            <df name="160 x 128">
+              <df name="Arduino_Life">
+                <in>Arduino_Life.ino</in>
+              </df>
+              <df name="Pong_v3">
+                <in>Pong_v3.ino</in>
+              </df>
+              <df name="RLE_Font_test">
+                <in>RLE_Font_test.ino</in>
+              </df>
+              <df name="TFT_Char_times">
+                <in>TFT_Char_times.ino</in>
+              </df>
+              <df name="TFT_Clock">
+                <in>TFT_Clock.ino</in>
+              </df>
+              <df name="TFT_Clock_Digital">
+                <in>TFT_Clock_Digital.ino</in>
+              </df>
+              <df name="TFT_Ellipse">
+                <in>TFT_Ellipse.ino</in>
+              </df>
+              <df name="TFT_flash_jpg">
+                <in>TFT_flash_jpg.ino</in>
+                <in>jpeg1.h</in>
+                <in>jpeg2.h</in>
+                <in>jpeg3.h</in>
+                <in>jpeg4.h</in>
+              </df>
+              <df name="TFT_graphicstest_PDQ3">
+                <in>TFT_graphicstest_PDQ3.ino</in>
+              </df>
+              <df name="TFT_graphicstest_small">
+                <in>TFT_graphicstest_small.ino</in>
+              </df>
+              <df name="TFT_Meter_5">
+                <in>TFT_Meter_5.ino</in>
+              </df>
+              <df name="TFT_Print_Test">
+                <in>TFT_Print_Test.ino</in>
+              </df>
+              <df name="TFT_Rainbow">
+                <in>TFT_Rainbow.ino</in>
+              </df>
+              <df name="UTFT_demo_fast">
+                <in>UTFT_demo_fast.ino</in>
+              </df>
+            </df>
+            <df name="320 x 240">
+              <df name="All_Free_Fonts_Demo">
+                <in>All_Free_Fonts_Demo.ino</in>
+                <in>Free_Fonts.h</in>
+              </df>
+              <df name="Cellular_Automata">
+                <in>Cellular_Automata.ino</in>
+              </df>
+              <df name="Free_Font_Demo">
+                <in>Free_Font_Demo.ino</in>
+                <in>Free_Fonts.h</in>
+              </df>
+              <df name="Keypad_240x320">
+                <in>Keypad_240x320.ino</in>
+              </df>
+              <df name="Read_ID_bitbash">
+                <in>Read_ID_bitbash.ino</in>
+              </df>
+              <df name="RLE_Font_test">
+                <in>RLE_Font_test.ino</in>
+              </df>
+              <df name="TFT_ArcFill">
+                <in>TFT_ArcFill.ino</in>
+              </df>
+              <df name="TFT_Char_times">
+                <in>TFT_Char_times.ino</in>
+              </df>
+              <df name="TFT_Clock">
+                <in>TFT_Clock.ino</in>
+              </df>
+              <df name="TFT_Clock_Digital">
+                <in>TFT_Clock_Digital.ino</in>
+              </df>
+              <df name="TFT_Custom_Fonts">
+                <in>TFT_Custom_Fonts.ino</in>
+              </df>
+              <df name="TFT_Ellipse">
+                <in>TFT_Ellipse.ino</in>
+              </df>
+              <df name="TFT_FillArcSpiral">
+                <in>TFT_FillArcSpiral.ino</in>
+              </df>
+              <df name="TFT_Float_Test">
+                <in>TFT_Float_Test.ino</in>
+              </df>
+              <df name="TFT_graphicstest_one_lib">
+                <in>TFT_graphicstest_one_lib.ino</in>
+              </df>
+              <df name="TFT_graphicstest_PDQ">
+                <in>TFT_graphicstest_PDQ.ino</in>
+              </df>
+              <df name="TFT_Mandlebrot">
+                <in>TFT_Mandlebrot.ino</in>
+              </df>
+              <df name="TFT_Matrix">
+                <in>TFT_Matrix.ino</in>
+              </df>
+              <df name="TFT_Meter_linear">
+                <in>TFT_Meter_linear.ino</in>
+              </df>
+              <df name="TFT_Meters">
+                <in>TFT_Meters.ino</in>
+              </df>
+              <df name="TFT_Pie_Chart">
+                <in>TFT_Pie_Chart.ino</in>
+              </df>
+              <df name="TFT_Pong">
+                <in>TFT_Pong.ino</in>
+              </df>
+              <df name="TFT_Print_Test">
+                <in>TFT_Print_Test.ino</in>
+              </df>
+              <df name="TFT_Rainbow_one_lib">
+                <in>TFT_Rainbow_one_lib.ino</in>
+              </df>
+              <df name="TFT_Read_Reg">
+                <in>TFT_Read_Reg.ino</in>
+              </df>
+              <df name="TFT_Spiro">
+                <in>TFT_Spiro.ino</in>
+              </df>
+              <df name="TFT_Starfield">
+                <in>TFT_Starfield.ino</in>
+              </df>
+              <df name="TFT_String_Align">
+                <in>TFT_String_Align.ino</in>
+              </df>
+              <df name="TFT_Terminal">
+                <in>TFT_Terminal.ino</in>
+              </df>
+              <df name="UTFT_demo">
+                <in>UTFT_demo.ino</in>
+              </df>
+            </df>
+            <df name="480 x 320">
+              <df name="Cellular_Automata">
+                <in>Cellular_Automata.ino</in>
+              </df>
+              <df name="Demo_3D_cube">
+                <in>Demo_3D_cube.ino</in>
+              </df>
+              <df name="Free_Font_Demo">
+                <in>Free_Font_Demo.ino</in>
+                <in>Free_Fonts.h</in>
+              </df>
+              <df name="Graph_2">
+                <in>Graph_2.ino</in>
+              </df>
+              <df name="Keypad_480x320">
+                <in>Keypad_480x320.ino</in>
+              </df>
+              <df name="TFT_Char_times">
+                <in>TFT_Char_times.ino</in>
+              </df>
+              <df name="TFT_Ellipse">
+                <in>TFT_Ellipse.ino</in>
+              </df>
+              <df name="TFT_flash_jpg">
+                <in>TFT_flash_jpg.ino</in>
+                <in>jpeg1.h</in>
+                <in>jpeg2.h</in>
+                <in>jpeg3.h</in>
+                <in>jpeg4.h</in>
+              </df>
+              <df name="TFT_graphicstest_one_lib">
+                <in>TFT_graphicstest_one_lib.ino</in>
+              </df>
+              <df name="TFT_Meter_4">
+                <in>TFT_Meter_4.ino</in>
+              </df>
+              <df name="TFT_Meters">
+                <in>TFT_Meters.ino</in>
+              </df>
+              <df name="TFT_Padding_demo">
+                <in>TFT_Padding_demo.ino</in>
+              </df>
+              <df name="TFT_Print_Test">
+                <in>TFT_Print_Test.ino</in>
+              </df>
+              <df name="TFT_Rainbow480">
+                <in>TFT_Rainbow480.ino</in>
+              </df>
+              <df name="TFT_ring_meter">
+                <in>Alert.h</in>
+                <in>TFT_ring_meter.ino</in>
+              </df>
+              <df name="TFT_String_Align">
+                <in>TFT_String_Align.ino</in>
+              </df>
+              <df name="Touch_Controller_Demo">
+                <in>Touch_Controller_Demo.ino</in>
+              </df>
+              <df name="UTFT_Demo_480x320">
+                <in>UTFT_Demo_480x320.ino</in>
+              </df>
+            </df>
+            <df name="DMA test">
+              <df name="boing_ball">
+                <in>boing_ball.ino</in>
+                <in>graphic.h</in>
+              </df>
+              <df name="Flash_Jpg_DMA">
+                <in>Flash_Jpg_DMA.ino</in>
+                <in>panda.h</in>
+              </df>
+              <df name="SpriteRotatingCube">
+                <in>SpriteRotatingCube.ino</in>
+              </df>
+            </df>
+            <df name="ePaper">
+              <df name="Floyd_Steinberg">
+                <df name="data">
+                </df>
+                <in>EPD_Support.h</in>
+                <in>Floyd_Steinberg.ino</in>
+                <in>Floyd_Steinberg_BMP.ino</in>
+                <in>SPIFFS.ino</in>
+              </df>
+            </df>
+            <df name="Generic">
+              <df name="alphaBlend_Test">
+                <in>alphaBlend_Test.ino</in>
+              </df>
+              <df name="drawXBitmap">
+                <in>drawXBitmap.ino</in>
+                <in>xbm.h</in>
+              </df>
+              <df name="ESP32_SDcard_jpeg">
+                <df name="Data">
+                </df>
+                <in>ESP32_SDcard_jpeg.ino</in>
+              </df>
+              <df name="ESP8266_uncannyEyes">
+                <in>ESP8266_uncannyEyes.ino</in>
+                <in>defaultEye.h</in>
+                <in>dragonEye.h</in>
+                <in>goatEye.h</in>
+                <in>noScleraEye.h</in>
+                <in>screenshotToConsole.ino</in>
+              </df>
+              <df name="Local_Custom_Fonts">
+                <in>Local_Custom_Fonts.ino</in>
+                <in>MyFont.h</in>
+              </df>
+              <df name="On_Off_Button">
+                <in>On_Off_Button.ino</in>
+              </df>
+              <df name="TFT_Button_Label_Datum">
+                <in>TFT_Button_Label_Datum.ino</in>
+              </df>
+              <df name="TFT_Flash_Bitmap">
+                <in>Alert.h</in>
+                <in>Close.h</in>
+                <in>Info.h</in>
+                <in>TFT_Flash_Bitmap.ino</in>
+              </df>
+              <df name="TFT_Screen_Capture">
+                <in>TFT_Screen_Capture.ino</in>
+                <in>processing_sketch.ino</in>
+                <in>screenServer.ino</in>
+              </df>
+              <df name="TFT_SPIFFS_BMP">
+                <df name="data">
+                </df>
+                <in>BMP_functions.ino</in>
+                <in>TFT_SPIFFS_BMP.ino</in>
+              </df>
+              <df name="Touch_calibrate">
+                <in>Touch_calibrate.ino</in>
+              </df>
+            </df>
+            <df name="Smooth Fonts">
+              <df name="FLASH_Array">
+                <df name="Font_Demo_1_Array">
+                  <in>Font_Demo_1_Array.ino</in>
+                  <in>Notes.ino</in>
+                  <in>NotoSansBold15.h</in>
+                  <in>NotoSansBold36.h</in>
+                </df>
+                <df name="Font_Demo_2_Array">
+                  <in>Font_Demo_2_Array.ino</in>
+                  <in>Notes.ino</in>
+                  <in>NotoSansBold15.h</in>
+                  <in>NotoSansBold36.h</in>
+                </df>
+                <df name="Font_Demo_3_Array">
+                  <in>Font_Demo_3_Array.ino</in>
+                  <in>Notes.ino</in>
+                  <in>NotoSansBold15.h</in>
+                  <in>NotoSansBold36.h</in>
+                  <in>NotoSansMonoSCB20.h</in>
+                </df>
+                <df name="Font_Demo_4_Array">
+                  <in>Font_Demo_4_Array.ino</in>
+                  <in>Notes.ino</in>
+                  <in>NotoSansBold15.h</in>
+                  <in>NotoSansBold36.h</in>
+                </df>
+                <df name="Print_Smooth_Font">
+                  <in>Final_Frontier_28.h</in>
+                  <in>Print_Smooth_Font.ino</in>
+                </df>
+                <df name="Smooth_font_gradient">
+                  <in>NotoSansBold15.h</in>
+                  <in>NotoSansBold36.h</in>
+                  <in>Smooth_font_gradient.ino</in>
+                </df>
+                <df name="Smooth_font_reading_TFT">
+                  <in>NotoSansBold15.h</in>
+                  <in>NotoSansBold36.h</in>
+                  <in>Smooth_font_reading_TFT.ino</in>
+                </df>
+                <df name="Unicode_test">
+                  <df name="data">
+                  </df>
+                  <in>Final_Frontier_28.h</in>
+                  <in>Latin_Hiragana_24.h</in>
+                  <in>Unicode_Test_72.h</in>
+                  <in>Unicode_test.ino</in>
+                </df>
+              </df>
+              <df name="SD_Card">
+                <df name="ESP32_Smooth_Font_SD">
+                  <df name="data">
+                  </df>
+                  <in>ESP32_Smooth_Font_SD.ino</in>
+                </df>
+              </df>
+              <df name="SPIFFS">
+                <df name="Font_Demo_1">
+                  <df name="data">
+                  </df>
+                  <in>Font_Demo_1.ino</in>
+                  <in>Notes.ino</in>
+                </df>
+                <df name="Font_Demo_2">
+                  <df name="data">
+                  </df>
+                  <in>Font_Demo_2.ino</in>
+                  <in>Notes.ino</in>
+                </df>
+                <df name="Font_Demo_3">
+                  <df name="data">
+                  </df>
+                  <in>Font_Demo_3.ino</in>
+                  <in>Notes.ino</in>
+                </df>
+                <df name="Font_Demo_4">
+                  <df name="data">
+                  </df>
+                  <in>Font_Demo_4.ino</in>
+                  <in>Notes.ino</in>
+                </df>
+                <df name="Print_Smooth_Font">
+                  <df name="data">
+                  </df>
+                  <in>Print_Smooth_Font.ino</in>
+                </df>
+                <df name="Smooth_font_gradient">
+                  <df name="data">
+                  </df>
+                  <in>Smooth_font_gradient.ino</in>
+                </df>
+                <df name="Smooth_font_reading_TFT">
+                  <df name="data">
+                  </df>
+                  <in>Smooth_font_reading_TFT.ino</in>
+                </df>
+                <df name="Unicode_test">
+                  <df name="data">
+                  </df>
+                  <in>SPIFFS_functions.ino</in>
+                  <in>Unicode_test.ino</in>
+                </df>
+              </df>
+            </df>
+            <df name="Sprite">
+              <df name="Animated_dial">
+                <df name="data">
+                </df>
+                <in>Animated_dial.ino</in>
+                <in>NotoSansBold36.h</in>
+                <in>dial.h</in>
+              </df>
+              <df name="One_bit_Sprite_Demo">
+                <in>One_bit_Sprite_Demo.ino</in>
+              </df>
+              <df name="One_bit_Yin_Yang">
+                <in>One_bit_Yin_Yang.ino</in>
+              </df>
+              <df name="Rotated_Sprite_1">
+                <in>Rotated_Sprite_1.ino</in>
+              </df>
+              <df name="Rotated_Sprite_2">
+                <in>Rotated_Sprite_2.ino</in>
+              </df>
+              <df name="Rotated_Sprite_3">
+                <df name="data">
+                </df>
+                <in>Rotated_Sprite_3.ino</in>
+              </df>
+              <df name="Sprite_draw">
+                <in>Sprite_draw.ino</in>
+              </df>
+              <df name="Sprite_draw_4bit">
+                <in>Sprite_draw_4bit.ino</in>
+              </df>
+              <df name="Sprite_image_4bit">
+                <in>Sprite_image_4bit.ino</in>
+                <in>sample_images.h</in>
+                <in>starImage.cpp</in>
+              </df>
+              <df name="Sprite_RLE_Font_test">
+                <in>Sprite_RLE_Font_test.ino</in>
+              </df>
+              <df name="Sprite_scroll">
+                <in>Sprite_scroll.ino</in>
+              </df>
+              <df name="Sprite_scroll_16bit">
+                <in>Sprite_scroll_16bit.ino</in>
+              </df>
+              <df name="Sprite_scroll_1bit">
+                <in>Sprite_scroll_1bit.ino</in>
+              </df>
+              <df name="Sprite_scroll_4bit">
+                <in>Sprite_scroll_4bit.ino</in>
+              </df>
+              <df name="Sprite_scroll_8bit">
+                <in>Sprite_scroll_8bit.ino</in>
+              </df>
+              <df name="Sprite_scroll_wrap_1bit">
+                <in>Sprite_scroll_wrap_1bit.ino</in>
+              </df>
+              <df name="Sprite_TFT_Rainbow">
+                <in>Sprite_TFT_Rainbow.ino</in>
+              </df>
+              <df name="Transparent_Sprite_Demo">
+                <in>Transparent_Sprite_Demo.ino</in>
+              </df>
+              <df name="Transparent_Sprite_Demo_4bit">
+                <in>Transparent_Sprite_Demo_4bit.ino</in>
+              </df>
+            </df>
+            <df name="Test and diagnostics">
+              <df name="Colour_Test">
+                <in>Colour_Test.ino</in>
+              </df>
+              <df name="Read_User_Setup">
+                <in>Read_User_Setup.ino</in>
+              </df>
+              <df name="Test_Touch_Controller">
+                <in>Test_Touch_Controller.ino</in>
+              </df>
+            </df>
+          </df>
+          <df name="Extensions">
+            <in>Button.cpp</in>
+            <in>Button.h</in>
+            <in>Smooth_font.cpp</in>
+            <in>Smooth_font.h</in>
+            <in>Sprite.cpp</in>
+            <in>Sprite.h</in>
+            <in>Touch.cpp</in>
+            <in>Touch.h</in>
+          </df>
+          <df name="Fonts">
+            <df name="Custom">
+              <in>Orbitron_Light_24.h</in>
+              <in>Orbitron_Light_32.h</in>
+              <in>Roboto_Thin_24.h</in>
+              <in>Satisfy_24.h</in>
+              <in>Yellowtail_32.h</in>
+            </df>
+            <df name="GFXFF">
+              <in>FreeMono12pt7b.h</in>
+              <in>FreeMono18pt7b.h</in>
+              <in>FreeMono24pt7b.h</in>
+              <in>FreeMono9pt7b.h</in>
+              <in>FreeMonoBold12pt7b.h</in>
+              <in>FreeMonoBold18pt7b.h</in>
+              <in>FreeMonoBold24pt7b.h</in>
+              <in>FreeMonoBold9pt7b.h</in>
+              <in>FreeMonoBoldOblique12pt7b.h</in>
+              <in>FreeMonoBoldOblique18pt7b.h</in>
+              <in>FreeMonoBoldOblique24pt7b.h</in>
+              <in>FreeMonoBoldOblique9pt7b.h</in>
+              <in>FreeMonoOblique12pt7b.h</in>
+              <in>FreeMonoOblique18pt7b.h</in>
+              <in>FreeMonoOblique24pt7b.h</in>
+              <in>FreeMonoOblique9pt7b.h</in>
+              <in>FreeSans12pt7b.h</in>
+              <in>FreeSans18pt7b.h</in>
+              <in>FreeSans24pt7b.h</in>
+              <in>FreeSans9pt7b.h</in>
+              <in>FreeSansBold12pt7b.h</in>
+              <in>FreeSansBold18pt7b.h</in>
+              <in>FreeSansBold24pt7b.h</in>
+              <in>FreeSansBold9pt7b.h</in>
+              <in>FreeSansBoldOblique12pt7b.h</in>
+              <in>FreeSansBoldOblique18pt7b.h</in>
+              <in>FreeSansBoldOblique24pt7b.h</in>
+              <in>FreeSansBoldOblique9pt7b.h</in>
+              <in>FreeSansOblique12pt7b.h</in>
+              <in>FreeSansOblique18pt7b.h</in>
+              <in>FreeSansOblique24pt7b.h</in>
+              <in>FreeSansOblique9pt7b.h</in>
+              <in>FreeSerif12pt7b.h</in>
+              <in>FreeSerif18pt7b.h</in>
+              <in>FreeSerif24pt7b.h</in>
+              <in>FreeSerif9pt7b.h</in>
+              <in>FreeSerifBold12pt7b.h</in>
+              <in>FreeSerifBold18pt7b.h</in>
+              <in>FreeSerifBold24pt7b.h</in>
+              <in>FreeSerifBold9pt7b.h</in>
+              <in>FreeSerifBoldItalic12pt7b.h</in>
+              <in>FreeSerifBoldItalic18pt7b.h</in>
+              <in>FreeSerifBoldItalic24pt7b.h</in>
+              <in>FreeSerifBoldItalic9pt7b.h</in>
+              <in>FreeSerifItalic12pt7b.h</in>
+              <in>FreeSerifItalic18pt7b.h</in>
+              <in>FreeSerifItalic24pt7b.h</in>
+              <in>FreeSerifItalic9pt7b.h</in>
+              <in>TomThumb.h</in>
+              <in>gfxfont.h</in>
+              <in>license.txt</in>
+              <in>print.txt</in>
+            </df>
+            <df name="TrueType">
+              <in>Not_yet_supported.txt</in>
+            </df>
+            <in>Font16.c</in>
+            <in>Font16.h</in>
+            <in>Font32rle.c</in>
+            <in>Font32rle.h</in>
+            <in>Font64rle.c</in>
+            <in>Font64rle.h</in>
+            <in>Font72rle.c</in>
+            <in>Font72rle.h</in>
+            <in>Font72x53rle.c</in>
+            <in>Font72x53rle.h</in>
+            <in>Font7srle.c</in>
+            <in>Font7srle.h</in>
+            <in>glcdfont.c</in>
+          </df>
+          <df name="Processors">
+            <in>TFT_eSPI_ESP32.c</in>
+            <in>TFT_eSPI_ESP32.h</in>
+            <in>TFT_eSPI_ESP8266.c</in>
+            <in>TFT_eSPI_ESP8266.h</in>
+            <in>TFT_eSPI_Generic.c</in>
+            <in>TFT_eSPI_Generic.h</in>
+            <in>TFT_eSPI_STM32.c</in>
+            <in>TFT_eSPI_STM32.h</in>
+          </df>
+          <df name="TFT_Drivers">
+            <in>EPD_Defines.h</in>
+            <in>HX8357D_Defines.h</in>
+            <in>HX8357D_Init.h</in>
+            <in>HX8357D_Rotation.h</in>
+            <in>ILI9163_Defines.h</in>
+            <in>ILI9163_Init.h</in>
+            <in>ILI9163_Rotation.h</in>
+            <in>ILI9341_Defines.h</in>
+            <in>ILI9341_Init.h</in>
+            <in>ILI9341_Rotation.h</in>
+            <in>ILI9481_Defines.h</in>
+            <in>ILI9481_Init.h</in>
+            <in>ILI9481_Rotation.h</in>
+            <in>ILI9486_Defines.h</in>
+            <in>ILI9486_Init.h</in>
+            <in>ILI9486_Rotation.h</in>
+            <in>ILI9488_Defines.h</in>
+            <in>ILI9488_Init.h</in>
+            <in>ILI9488_Rotation.h</in>
+            <in>R61581_Defines.h</in>
+            <in>R61581_Init.h</in>
+            <in>R61581_Rotation.h</in>
+            <in>RM68140_Defines.h</in>
+            <in>RM68140_Init.h</in>
+            <in>RM68140_Rotation.h</in>
+            <in>S6D02A1_Defines.h</in>
+            <in>S6D02A1_Init.h</in>
+            <in>S6D02A1_Rotation.h</in>
+            <in>SSD1963_Defines.h</in>
+            <in>SSD1963_Init.h</in>
+            <in>SSD1963_Rotation.h</in>
+            <in>ST7735_Defines.h</in>
+            <in>ST7735_Init.h</in>
+            <in>ST7735_Rotation.h</in>
+            <in>ST7789_2_Defines.h</in>
+            <in>ST7789_2_Init.h</in>
+            <in>ST7789_2_Rotation.h</in>
+            <in>ST7789_Defines.h</in>
+            <in>ST7789_Init.h</in>
+            <in>ST7789_Rotation.h</in>
+            <in>ST7796_Defines.h</in>
+            <in>ST7796_Init.h</in>
+            <in>ST7796_Rotation.h</in>
+          </df>
+          <df name="Tools">
+            <df name="Create_Smooth_Font">
+              <df name="Create_font">
+                <df name="data">
+                </df>
+                <df name="FontFiles">
+                </df>
+              </df>
+            </df>
+            <df name="ESP32 UNO board mod">
+            </df>
+            <df name="Images">
+            </df>
+            <df name="PlatformIO">
+              <in>Configuring options.txt</in>
+            </df>
+            <df name="Screenshot_client">
+            </df>
+          </df>
+          <df name="User_Setups">
+            <in>Setup10_RPi_touch_ILI9486.h</in>
+            <in>Setup11_RPi_touch_ILI9486.h</in>
+            <in>Setup12_M5Stack.h</in>
+            <in>Setup135_ST7789.h</in>
+            <in>Setup13_ILI9481_Parallel.h</in>
+            <in>Setup14_ILI9341_Parallel.h</in>
+            <in>Setup15_HX8357D.h</in>
+            <in>Setup16_ILI9488_Parallel.h</in>
+            <in>Setup17_ePaper.h</in>
+            <in>Setup18_ST7789.h</in>
+            <in>Setup19_RM68140_Parallel.h</in>
+            <in>Setup1_ILI9341.h</in>
+            <in>Setup20_ILI9488.h</in>
+            <in>Setup21_ILI9488.h</in>
+            <in>Setup22_TTGO_T4.h</in>
+            <in>Setup22_TTGO_T4_v1.3.h</in>
+            <in>Setup23_TTGO_TM.h</in>
+            <in>Setup24_ST7789.h</in>
+            <in>Setup25_TTGO_T_Display.h</in>
+            <in>Setup26_TTGO_T_Wristband.h</in>
+            <in>Setup27_RPi_ST7796_ESP32.h</in>
+            <in>Setup28_RPi_ST7796_ESP8266.h</in>
+            <in>Setup29_ILI9341_STM32.h</in>
+            <in>Setup2_ST7735.h</in>
+            <in>Setup30_ILI9341_Parallel_STM32.h</in>
+            <in>Setup31_ST7796_Parallel_STM32.h</in>
+            <in>Setup32_ILI9341_STM32F103.h</in>
+            <in>Setup33_RPi_ILI9486_STM32.h</in>
+            <in>Setup34_ILI9481_Parallel_STM32.h</in>
+            <in>Setup35_ILI9341_STM32_Port_Bus.h</in>
+            <in>Setup36_RPi_touch_ILI9341.h</in>
+            <in>Setup3_ILI9163.h</in>
+            <in>Setup43_ST7735.h</in>
+            <in>Setup44_TTGO_CameraPlus.h</in>
+            <in>Setup45_TTGO_T_Watch.h</in>
+            <in>Setup4_S6D02A1.h</in>
+            <in>Setup5_RPi_ILI9486.h</in>
+            <in>Setup6_RPi_Wr_ILI9486.h</in>
+            <in>Setup7_ST7735_128x128.h</in>
+            <in>Setup8_ILI9163_128x128.h</in>
+            <in>Setup9_ST7735_Overlap.h</in>
+            <in>SetupX_Template.h</in>
+            <in>User_Custom_Fonts.h</in>
+          </df>
+          <in>README.txt</in>
+          <in>TFT_eSPI.cpp</in>
+          <in>TFT_eSPI.h</in>
+          <in>TFT_eSPI_draw.cpp</in>
+          <in>TFT_eSPI_font.cpp</in>
+          <in>keywords.txt</in>
+          <in>license.txt</in>
+        </df>
+        <in>CMakeLists.txt</in>
+        <in>TFT_eSPI_Custom.c</in>
+        <in>TFT_eSPI_Custom.h</in>
+        <in>TFT_eSPI_extended.cpp</in>
+        <in>TFT_eSPI_extended.h</in>
+        <in>TFT_eSPI_extended_glyph.cpp</in>
+        <in>TFT_eSPI_extended_glyph_hl.cpp</in>
+        <in>User_Setup.h</in>
+        <in>User_Setup_Select.h</in>
+      </df>
+      <df name="XPT2046">
+        <in>CMakeLists.txt</in>
+        <in>xpt2046.cpp</in>
+        <in>xpt2046.h</in>
+        <in>xpt2046_priv.h</in>
+      </df>
+      <in>CMakeLists.txt</in>
+      <in>FreeRTOSConfig.h</in>
+      <in>ad_timer.h</in>
+      <in>batteryTester2.ino</in>
+      <in>calibration.cpp</in>
+      <in>dso_debug.h</in>
+      <in>dso_eeprom.cpp</in>
+      <in>dso_eeprom.h</in>
+      <in>dso_logger.cpp</in>
+      <in>heap.cpp</in>
+      <in>items.cpp</in>
+      <in>mainCode.cpp</in>
+      <in>push_button.cpp</in>
+      <in>push_button.h</in>
+      <in>screenBase.cpp</in>
+      <in>screenBase.h</in>
+      <in>screenCalibration.cpp</in>
+      <in>screenCalibration.h</in>
+      <in>screenDischarging.cpp</in>
+      <in>screenDischarging.h</in>
+      <in>screenError.cpp</in>
+      <in>screenError.h</in>
+      <in>screenFinished.cpp</in>
+      <in>screenFinished.h</in>
+      <in>screenIdle.cpp</in>
+      <in>screenIdle.h</in>
+      <in>screenInclude.h</in>
+      <in>screenSetup.cpp</in>
+      <in>screenSetup.h</in>
+      <in>screenSetup_internal.h</in>
+      <in>settings.cpp</in>
+      <in>settings.h</in>
+      <in>voltage.h</in>
+    </df>
+  </logicalFolder>
+  <projectmakefile></projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>2</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <rundir>build</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+  </confs>
+</configurationDescriptor>

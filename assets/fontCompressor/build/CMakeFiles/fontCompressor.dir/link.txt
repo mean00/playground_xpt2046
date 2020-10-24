@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/fontCompressor.dir/fontCompressor.o  -o fontCompressor 

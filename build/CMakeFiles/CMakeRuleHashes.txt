@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+461249f86a223adf51f7d4a5c8d10ca5 CMakeFiles/componentTester_STM32F103-upload
+14bd894112909ad27c6bbb4981929f64 componentTester_STM32F103_batteryTester2.ino.cpp
