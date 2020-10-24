@@ -1,2 +1,0 @@
-/home/fx/Arduino_stm32/arm-none-eabi-gcc/download/gcc-arm-none-eabi-8.2.1-1.7/bin/arm-none-eabi-ar qc libgenericSTM32F103C_SPI.a  CMakeFiles/genericSTM32F103C_SPI.dir/Arduino_STM32/STM32F1/libraries/SPI/src/SPI.cpp.obj
-/home/fx/Arduino_stm32/arm-none-eabi-gcc/download/gcc-arm-none-eabi-8.2.1-1.7/bin/arm-none-eabi-ranlib libgenericSTM32F103C_SPI.a

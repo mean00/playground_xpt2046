@@ -1,2 +1,0 @@
-/home/fx/Arduino_stm32/arm-none-eabi-gcc/download/gcc-arm-none-eabi-8.2.1-1.7/bin/arm-none-eabi-ar qc libgenericSTM32F103C_simplerMCP4725.a  CMakeFiles/genericSTM32F103C_simplerMCP4725.dir/simplerMCP4725/simplerMCP4725.cpp.obj
-/home/fx/Arduino_stm32/arm-none-eabi-gcc/download/gcc-arm-none-eabi-8.2.1-1.7/bin/arm-none-eabi-ranlib libgenericSTM32F103C_simplerMCP4725.a
