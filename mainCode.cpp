@@ -71,7 +71,7 @@ void MainTask::initTft()
  
     spiMutex=new xMutex();
 
-    tft = new TFT_eSPI_extended(spiMutex,320,240,PB10,PB0,PB1);
+    tft = new TFT_eSPI_extended(spiMutex,240,320,PB10,PB0,PB1);
     
     tft->init();  
     tft->setRotation(3);
@@ -85,6 +85,8 @@ void MainTask::initTft()
  */
 void mySetup() 
 {
+      afio_cfg_debug_ports( AFIO_DEBUG_SW_ONLY); // get PB3 & PB4
+
   // switch to uart ASAP    
   Serial.end();
   Serial1.begin(115200);  //Wire.begin();
@@ -163,4 +165,10 @@ void myLoop()
 {
     
 }
+// Defining this mostly disable usb altogether and we gain ~ 4 kB of code
+extern "C" void __irq_usb_lp_can_rx0()
+{
+
+}
+
 //--EOF

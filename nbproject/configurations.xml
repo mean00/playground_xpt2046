@@ -1156,8 +1156,6 @@
             <pElem>FreeRTOS/Source/portable/Stm32duino</pElem>
             <pElem>assets/backgrounds/generated</pElem>
             <pElem>TFT_eSPI</pElem>
-            <pElem>TFT_eSPI/tft</pElem>
-            <pElem>TFT_eSPI/tft/Fonts/GFXFF</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>

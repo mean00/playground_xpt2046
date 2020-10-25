@@ -2991,6 +2991,43 @@
         </df>
         <in>CMakeLists.txt</in>
       </df>
+      <df name="attic">
+        <df name="TFT_eSPI">
+          <df name="TFT_Drivers">
+            <in>EPD_Defines.h</in>
+            <in>ILI9163_Defines.h</in>
+            <in>ILI9163_Init.h</in>
+            <in>ILI9163_Rotation.h</in>
+            <in>ILI9341_Defines.h</in>
+            <in>ILI9341_Init.h</in>
+            <in>ILI9341_Rotation.h</in>
+            <in>ILI9481_Defines.h</in>
+            <in>ILI9481_Init.h</in>
+            <in>ILI9481_Rotation.h</in>
+            <in>ILI9486_Defines.h</in>
+            <in>ILI9486_Init.h</in>
+            <in>ILI9486_Rotation.h</in>
+            <in>ILI9488_Defines.h</in>
+            <in>ILI9488_Init.h</in>
+            <in>ILI9488_Rotation.h</in>
+          </df>
+          <in>CMakeLists.txt</in>
+          <in>TFT_eSPI.cpp</in>
+          <in>TFT_eSPI.h</in>
+          <in>TFT_eSPI_Custom.c</in>
+          <in>TFT_eSPI_Custom.h</in>
+          <in>TFT_eSPI_Generic.h</in>
+          <in>TFT_eSPI_draw.cpp</in>
+          <in>TFT_eSPI_extended.cpp</in>
+          <in>TFT_eSPI_extended.h</in>
+          <in>TFT_eSPI_extended_glyph.cpp</in>
+          <in>TFT_eSPI_extended_glyph_hl.cpp</in>
+          <in>User_Setup.h</in>
+          <in>User_Setup_Select.h</in>
+          <in>gfxfont.h</in>
+          <in>license.txt</in>
+        </df>
+      </df>
       <df name="build">
         <df name="assets">
           <df name="backgrounds">
@@ -3113,8 +3150,6 @@
         <df name="TFT_eSPI">
           <df name="CMakeFiles">
             <df name="genericSTM32F103C_TFT_eSPI.dir">
-              <df name="tft">
-              </df>
               <in>link.txt</in>
             </df>
           </df>
@@ -3504,43 +3539,42 @@
       </df>
       <df name="TFT_eSPI">
         <df name="tft">
-          <df name="TFT_Drivers">
-            <in>EPD_Defines.h</in>
-            <in>ILI9163_Defines.h</in>
-            <in>ILI9163_Init.h</in>
-            <in>ILI9163_Rotation.h</in>
-            <in>ILI9341_Defines.h</in>
-            <in>ILI9341_Init.h</in>
-            <in>ILI9341_Rotation.h</in>
-            <in>ILI9481_Defines.h</in>
-            <in>ILI9481_Init.h</in>
-            <in>ILI9481_Rotation.h</in>
-            <in>ILI9486_Defines.h</in>
-            <in>ILI9486_Init.h</in>
-            <in>ILI9486_Rotation.h</in>
-            <in>ILI9488_Defines.h</in>
-            <in>ILI9488_Init.h</in>
-            <in>ILI9488_Rotation.h</in>
-          </df>
-          <in>README.txt</in>
           <in>TFT_eSPI.cpp</in>
-          <in>TFT_eSPI.h</in>
-          <in>TFT_eSPI_Generic.h</in>
           <in>TFT_eSPI_draw.cpp</in>
-          <in>TFT_eSPI_font.cpp</in>
-          <in>gfxfont.h</in>
-          <in>keywords.txt</in>
-          <in>license.txt</in>
+        </df>
+        <df name="TFT_Drivers">
+          <in>EPD_Defines.h</in>
+          <in>ILI9163_Defines.h</in>
+          <in>ILI9163_Init.h</in>
+          <in>ILI9163_Rotation.h</in>
+          <in>ILI9341_Defines.h</in>
+          <in>ILI9341_Init.h</in>
+          <in>ILI9341_Rotation.h</in>
+          <in>ILI9481_Defines.h</in>
+          <in>ILI9481_Init.h</in>
+          <in>ILI9481_Rotation.h</in>
+          <in>ILI9486_Defines.h</in>
+          <in>ILI9486_Init.h</in>
+          <in>ILI9486_Rotation.h</in>
+          <in>ILI9488_Defines.h</in>
+          <in>ILI9488_Init.h</in>
+          <in>ILI9488_Rotation.h</in>
         </df>
         <in>CMakeLists.txt</in>
+        <in>TFT_eSPI.cpp</in>
+        <in>TFT_eSPI.h</in>
         <in>TFT_eSPI_Custom.c</in>
         <in>TFT_eSPI_Custom.h</in>
+        <in>TFT_eSPI_Generic.h</in>
+        <in>TFT_eSPI_draw.cpp</in>
         <in>TFT_eSPI_extended.cpp</in>
         <in>TFT_eSPI_extended.h</in>
         <in>TFT_eSPI_extended_glyph.cpp</in>
         <in>TFT_eSPI_extended_glyph_hl.cpp</in>
         <in>User_Setup.h</in>
         <in>User_Setup_Select.h</in>
+        <in>gfxfont.h</in>
+        <in>license.txt</in>
       </df>
       <in>CMakeLists.txt</in>
       <in>FreeRTOSConfig.h</in>
