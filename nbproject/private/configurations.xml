@@ -3566,6 +3566,7 @@
         <in>TFT_eSPI_Custom.c</in>
         <in>TFT_eSPI_Custom.h</in>
         <in>TFT_eSPI_Generic.h</in>
+        <in>TFT_eSPI_color.h</in>
         <in>TFT_eSPI_draw.cpp</in>
         <in>TFT_eSPI_extended.cpp</in>
         <in>TFT_eSPI_extended.h</in>

@@ -115,6 +115,16 @@ void    MainTask::run(void)
     
   initTft();   
   char s[200];
+  
+  tft->fillScreen(ILI9341_BLACK);
+  xDelay(2000);
+    tft->fillScreen(ILI9341_RED);
+    xDelay(2000);
+    tft->fillScreen(ILI9341_GREEN);
+    xDelay(2000);
+    tft->fillScreen(ILI9341_BLUE);
+    xDelay(2000);
+  
   for(int i=0;i<5;i++)
   {
     StopWatch w;
