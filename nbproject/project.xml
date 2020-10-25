@@ -3,7 +3,7 @@
     <type>org.netbeans.modules.cnd.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>batteryTester2</name>
+            <name>ILI_speedTest</name>
             <c-extensions>c</c-extensions>
             <cpp-extensions>cpp,ino</cpp-extensions>
             <header-extensions>h,hpp,inc,rc,txt</header-extensions>

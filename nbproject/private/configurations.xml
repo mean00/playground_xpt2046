@@ -2,14 +2,6 @@
 <configurationDescriptor version="100">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root="." name="0">
-      <df name="Adafruit_GFX">
-        <in>Adafruit_GFX.cpp</in>
-        <in>Adafruit_SPITFT.cpp</in>
-        <in>glcdfont.c</in>
-      </df>
-      <df name="Adafruit_ILI9341_STM">
-        <in>Adafruit_ILI9341_STM.cpp</in>
-      </df>
       <df name="Arduino_STM32">
         <df name="drivers">
           <df name="win">
@@ -2999,10 +2991,6 @@
         </df>
         <in>CMakeLists.txt</in>
       </df>
-      <df name="backgrounds">
-        <in>assets.cpp</in>
-        <in>fonts.cpp</in>
-      </df>
       <df name="build">
         <df name="assets">
           <df name="backgrounds">
@@ -3076,27 +3064,6 @@
             </df>
             <in>link.txt</in>
           </df>
-          <df name="genericSTM32F103C_EEPROM.dir">
-            <df name="Arduino_STM32">
-              <df name="STM32F1">
-                <df name="libraries">
-                  <df name="EEPROM">
-                  </df>
-                </df>
-              </df>
-            </df>
-            <in>link.txt</in>
-          </df>
-          <df name="genericSTM32F103C_simpler_INA219.dir">
-            <df name="simpler_INA219">
-            </df>
-            <in>link.txt</in>
-          </df>
-          <df name="genericSTM32F103C_simplerMCP4725.dir">
-            <df name="simplerMCP4725">
-            </df>
-            <in>link.txt</in>
-          </df>
           <df name="genericSTM32F103C_SPI.dir">
             <df name="Arduino_STM32">
               <df name="STM32F1">
@@ -3143,27 +3110,11 @@
             </df>
           </df>
         </df>
-        <df name="RotaryEncoder">
-          <df name="CMakeFiles">
-            <df name="genericSTM32F103C_RotaryEncoder.dir">
-              <df name="Rotary">
-              </df>
-              <in>link.txt</in>
-            </df>
-          </df>
-        </df>
         <df name="TFT_eSPI">
           <df name="CMakeFiles">
             <df name="genericSTM32F103C_TFT_eSPI.dir">
               <df name="tft">
               </df>
-              <in>link.txt</in>
-            </df>
-          </df>
-        </df>
-        <df name="XPT2046">
-          <df name="CMakeFiles">
-            <df name="genericSTM32F103C_XPT2046.dir">
               <in>link.txt</in>
             </df>
           </df>
@@ -3547,622 +3498,14 @@
         <in>MapleFreeRTOS1000_pp.cpp</in>
         <in>MapleFreeRTOS1000_pp.h</in>
       </df>
-      <df name="rotaryEncoder">
-        <df name="Rotary">
-          <in>Rotary.cpp</in>
-        </df>
-        <in>wav_irotary.cpp</in>
-      </df>
-      <df name="RotaryEncoder">
-        <df name="Rotary">
-          <df name="examples">
-            <df name="Interrupt">
-              <in>Interrupt.ino</in>
-            </df>
-            <df name="InterruptProMicro">
-              <in>InterruptProMicro.ino</in>
-            </df>
-            <df name="Polling">
-              <in>Polling.ino</in>
-            </df>
-          </df>
-          <in>Rotary.cpp</in>
-          <in>Rotary.h</in>
-          <in>keywords.txt</in>
-        </df>
-        <in>CMakeLists.txt</in>
-        <in>wav_irotary.cpp</in>
-        <in>wav_irotary.h</in>
-      </df>
       <df name="schematics">
         <df name="batteryTester">
         </df>
       </df>
-      <df name="simpler_INA219">
-        <df name="examples">
-          <df name="getcurrent">
-            <in>simplerIna219.ino</in>
-          </df>
-        </df>
-        <in>license.txt</in>
-        <in>simpler_INA219.cpp</in>
-        <in>simpler_INA219.h</in>
-        <in>simpler_INA219_internal.h</in>
-      </df>
-      <df name="simplerMCP4725">
-        <in>simplerMCP4725.cpp</in>
-        <in>simplerMCP4725.h</in>
-      </df>
       <df name="TFT_eSPI">
         <df name="tft">
-          <df name="examples">
-            <df name="160 x 128">
-              <df name="Arduino_Life">
-                <in>Arduino_Life.ino</in>
-              </df>
-              <df name="Pong_v3">
-                <in>Pong_v3.ino</in>
-              </df>
-              <df name="RLE_Font_test">
-                <in>RLE_Font_test.ino</in>
-              </df>
-              <df name="TFT_Char_times">
-                <in>TFT_Char_times.ino</in>
-              </df>
-              <df name="TFT_Clock">
-                <in>TFT_Clock.ino</in>
-              </df>
-              <df name="TFT_Clock_Digital">
-                <in>TFT_Clock_Digital.ino</in>
-              </df>
-              <df name="TFT_Ellipse">
-                <in>TFT_Ellipse.ino</in>
-              </df>
-              <df name="TFT_flash_jpg">
-                <in>TFT_flash_jpg.ino</in>
-                <in>jpeg1.h</in>
-                <in>jpeg2.h</in>
-                <in>jpeg3.h</in>
-                <in>jpeg4.h</in>
-              </df>
-              <df name="TFT_graphicstest_PDQ3">
-                <in>TFT_graphicstest_PDQ3.ino</in>
-              </df>
-              <df name="TFT_graphicstest_small">
-                <in>TFT_graphicstest_small.ino</in>
-              </df>
-              <df name="TFT_Meter_5">
-                <in>TFT_Meter_5.ino</in>
-              </df>
-              <df name="TFT_Print_Test">
-                <in>TFT_Print_Test.ino</in>
-              </df>
-              <df name="TFT_Rainbow">
-                <in>TFT_Rainbow.ino</in>
-              </df>
-              <df name="UTFT_demo_fast">
-                <in>UTFT_demo_fast.ino</in>
-              </df>
-            </df>
-            <df name="320 x 240">
-              <df name="All_Free_Fonts_Demo">
-                <in>All_Free_Fonts_Demo.ino</in>
-                <in>Free_Fonts.h</in>
-              </df>
-              <df name="Cellular_Automata">
-                <in>Cellular_Automata.ino</in>
-              </df>
-              <df name="Free_Font_Demo">
-                <in>Free_Font_Demo.ino</in>
-                <in>Free_Fonts.h</in>
-              </df>
-              <df name="Keypad_240x320">
-                <in>Keypad_240x320.ino</in>
-              </df>
-              <df name="Read_ID_bitbash">
-                <in>Read_ID_bitbash.ino</in>
-              </df>
-              <df name="RLE_Font_test">
-                <in>RLE_Font_test.ino</in>
-              </df>
-              <df name="TFT_ArcFill">
-                <in>TFT_ArcFill.ino</in>
-              </df>
-              <df name="TFT_Char_times">
-                <in>TFT_Char_times.ino</in>
-              </df>
-              <df name="TFT_Clock">
-                <in>TFT_Clock.ino</in>
-              </df>
-              <df name="TFT_Clock_Digital">
-                <in>TFT_Clock_Digital.ino</in>
-              </df>
-              <df name="TFT_Custom_Fonts">
-                <in>TFT_Custom_Fonts.ino</in>
-              </df>
-              <df name="TFT_Ellipse">
-                <in>TFT_Ellipse.ino</in>
-              </df>
-              <df name="TFT_FillArcSpiral">
-                <in>TFT_FillArcSpiral.ino</in>
-              </df>
-              <df name="TFT_Float_Test">
-                <in>TFT_Float_Test.ino</in>
-              </df>
-              <df name="TFT_graphicstest_one_lib">
-                <in>TFT_graphicstest_one_lib.ino</in>
-              </df>
-              <df name="TFT_graphicstest_PDQ">
-                <in>TFT_graphicstest_PDQ.ino</in>
-              </df>
-              <df name="TFT_Mandlebrot">
-                <in>TFT_Mandlebrot.ino</in>
-              </df>
-              <df name="TFT_Matrix">
-                <in>TFT_Matrix.ino</in>
-              </df>
-              <df name="TFT_Meter_linear">
-                <in>TFT_Meter_linear.ino</in>
-              </df>
-              <df name="TFT_Meters">
-                <in>TFT_Meters.ino</in>
-              </df>
-              <df name="TFT_Pie_Chart">
-                <in>TFT_Pie_Chart.ino</in>
-              </df>
-              <df name="TFT_Pong">
-                <in>TFT_Pong.ino</in>
-              </df>
-              <df name="TFT_Print_Test">
-                <in>TFT_Print_Test.ino</in>
-              </df>
-              <df name="TFT_Rainbow_one_lib">
-                <in>TFT_Rainbow_one_lib.ino</in>
-              </df>
-              <df name="TFT_Read_Reg">
-                <in>TFT_Read_Reg.ino</in>
-              </df>
-              <df name="TFT_Spiro">
-                <in>TFT_Spiro.ino</in>
-              </df>
-              <df name="TFT_Starfield">
-                <in>TFT_Starfield.ino</in>
-              </df>
-              <df name="TFT_String_Align">
-                <in>TFT_String_Align.ino</in>
-              </df>
-              <df name="TFT_Terminal">
-                <in>TFT_Terminal.ino</in>
-              </df>
-              <df name="UTFT_demo">
-                <in>UTFT_demo.ino</in>
-              </df>
-            </df>
-            <df name="480 x 320">
-              <df name="Cellular_Automata">
-                <in>Cellular_Automata.ino</in>
-              </df>
-              <df name="Demo_3D_cube">
-                <in>Demo_3D_cube.ino</in>
-              </df>
-              <df name="Free_Font_Demo">
-                <in>Free_Font_Demo.ino</in>
-                <in>Free_Fonts.h</in>
-              </df>
-              <df name="Graph_2">
-                <in>Graph_2.ino</in>
-              </df>
-              <df name="Keypad_480x320">
-                <in>Keypad_480x320.ino</in>
-              </df>
-              <df name="TFT_Char_times">
-                <in>TFT_Char_times.ino</in>
-              </df>
-              <df name="TFT_Ellipse">
-                <in>TFT_Ellipse.ino</in>
-              </df>
-              <df name="TFT_flash_jpg">
-                <in>TFT_flash_jpg.ino</in>
-                <in>jpeg1.h</in>
-                <in>jpeg2.h</in>
-                <in>jpeg3.h</in>
-                <in>jpeg4.h</in>
-              </df>
-              <df name="TFT_graphicstest_one_lib">
-                <in>TFT_graphicstest_one_lib.ino</in>
-              </df>
-              <df name="TFT_Meter_4">
-                <in>TFT_Meter_4.ino</in>
-              </df>
-              <df name="TFT_Meters">
-                <in>TFT_Meters.ino</in>
-              </df>
-              <df name="TFT_Padding_demo">
-                <in>TFT_Padding_demo.ino</in>
-              </df>
-              <df name="TFT_Print_Test">
-                <in>TFT_Print_Test.ino</in>
-              </df>
-              <df name="TFT_Rainbow480">
-                <in>TFT_Rainbow480.ino</in>
-              </df>
-              <df name="TFT_ring_meter">
-                <in>Alert.h</in>
-                <in>TFT_ring_meter.ino</in>
-              </df>
-              <df name="TFT_String_Align">
-                <in>TFT_String_Align.ino</in>
-              </df>
-              <df name="Touch_Controller_Demo">
-                <in>Touch_Controller_Demo.ino</in>
-              </df>
-              <df name="UTFT_Demo_480x320">
-                <in>UTFT_Demo_480x320.ino</in>
-              </df>
-            </df>
-            <df name="DMA test">
-              <df name="boing_ball">
-                <in>boing_ball.ino</in>
-                <in>graphic.h</in>
-              </df>
-              <df name="Flash_Jpg_DMA">
-                <in>Flash_Jpg_DMA.ino</in>
-                <in>panda.h</in>
-              </df>
-              <df name="SpriteRotatingCube">
-                <in>SpriteRotatingCube.ino</in>
-              </df>
-            </df>
-            <df name="ePaper">
-              <df name="Floyd_Steinberg">
-                <df name="data">
-                </df>
-                <in>EPD_Support.h</in>
-                <in>Floyd_Steinberg.ino</in>
-                <in>Floyd_Steinberg_BMP.ino</in>
-                <in>SPIFFS.ino</in>
-              </df>
-            </df>
-            <df name="Generic">
-              <df name="alphaBlend_Test">
-                <in>alphaBlend_Test.ino</in>
-              </df>
-              <df name="drawXBitmap">
-                <in>drawXBitmap.ino</in>
-                <in>xbm.h</in>
-              </df>
-              <df name="ESP32_SDcard_jpeg">
-                <df name="Data">
-                </df>
-                <in>ESP32_SDcard_jpeg.ino</in>
-              </df>
-              <df name="ESP8266_uncannyEyes">
-                <in>ESP8266_uncannyEyes.ino</in>
-                <in>defaultEye.h</in>
-                <in>dragonEye.h</in>
-                <in>goatEye.h</in>
-                <in>noScleraEye.h</in>
-                <in>screenshotToConsole.ino</in>
-              </df>
-              <df name="Local_Custom_Fonts">
-                <in>Local_Custom_Fonts.ino</in>
-                <in>MyFont.h</in>
-              </df>
-              <df name="On_Off_Button">
-                <in>On_Off_Button.ino</in>
-              </df>
-              <df name="TFT_Button_Label_Datum">
-                <in>TFT_Button_Label_Datum.ino</in>
-              </df>
-              <df name="TFT_Flash_Bitmap">
-                <in>Alert.h</in>
-                <in>Close.h</in>
-                <in>Info.h</in>
-                <in>TFT_Flash_Bitmap.ino</in>
-              </df>
-              <df name="TFT_Screen_Capture">
-                <in>TFT_Screen_Capture.ino</in>
-                <in>processing_sketch.ino</in>
-                <in>screenServer.ino</in>
-              </df>
-              <df name="TFT_SPIFFS_BMP">
-                <df name="data">
-                </df>
-                <in>BMP_functions.ino</in>
-                <in>TFT_SPIFFS_BMP.ino</in>
-              </df>
-              <df name="Touch_calibrate">
-                <in>Touch_calibrate.ino</in>
-              </df>
-            </df>
-            <df name="Smooth Fonts">
-              <df name="FLASH_Array">
-                <df name="Font_Demo_1_Array">
-                  <in>Font_Demo_1_Array.ino</in>
-                  <in>Notes.ino</in>
-                  <in>NotoSansBold15.h</in>
-                  <in>NotoSansBold36.h</in>
-                </df>
-                <df name="Font_Demo_2_Array">
-                  <in>Font_Demo_2_Array.ino</in>
-                  <in>Notes.ino</in>
-                  <in>NotoSansBold15.h</in>
-                  <in>NotoSansBold36.h</in>
-                </df>
-                <df name="Font_Demo_3_Array">
-                  <in>Font_Demo_3_Array.ino</in>
-                  <in>Notes.ino</in>
-                  <in>NotoSansBold15.h</in>
-                  <in>NotoSansBold36.h</in>
-                  <in>NotoSansMonoSCB20.h</in>
-                </df>
-                <df name="Font_Demo_4_Array">
-                  <in>Font_Demo_4_Array.ino</in>
-                  <in>Notes.ino</in>
-                  <in>NotoSansBold15.h</in>
-                  <in>NotoSansBold36.h</in>
-                </df>
-                <df name="Print_Smooth_Font">
-                  <in>Final_Frontier_28.h</in>
-                  <in>Print_Smooth_Font.ino</in>
-                </df>
-                <df name="Smooth_font_gradient">
-                  <in>NotoSansBold15.h</in>
-                  <in>NotoSansBold36.h</in>
-                  <in>Smooth_font_gradient.ino</in>
-                </df>
-                <df name="Smooth_font_reading_TFT">
-                  <in>NotoSansBold15.h</in>
-                  <in>NotoSansBold36.h</in>
-                  <in>Smooth_font_reading_TFT.ino</in>
-                </df>
-                <df name="Unicode_test">
-                  <df name="data">
-                  </df>
-                  <in>Final_Frontier_28.h</in>
-                  <in>Latin_Hiragana_24.h</in>
-                  <in>Unicode_Test_72.h</in>
-                  <in>Unicode_test.ino</in>
-                </df>
-              </df>
-              <df name="SD_Card">
-                <df name="ESP32_Smooth_Font_SD">
-                  <df name="data">
-                  </df>
-                  <in>ESP32_Smooth_Font_SD.ino</in>
-                </df>
-              </df>
-              <df name="SPIFFS">
-                <df name="Font_Demo_1">
-                  <df name="data">
-                  </df>
-                  <in>Font_Demo_1.ino</in>
-                  <in>Notes.ino</in>
-                </df>
-                <df name="Font_Demo_2">
-                  <df name="data">
-                  </df>
-                  <in>Font_Demo_2.ino</in>
-                  <in>Notes.ino</in>
-                </df>
-                <df name="Font_Demo_3">
-                  <df name="data">
-                  </df>
-                  <in>Font_Demo_3.ino</in>
-                  <in>Notes.ino</in>
-                </df>
-                <df name="Font_Demo_4">
-                  <df name="data">
-                  </df>
-                  <in>Font_Demo_4.ino</in>
-                  <in>Notes.ino</in>
-                </df>
-                <df name="Print_Smooth_Font">
-                  <df name="data">
-                  </df>
-                  <in>Print_Smooth_Font.ino</in>
-                </df>
-                <df name="Smooth_font_gradient">
-                  <df name="data">
-                  </df>
-                  <in>Smooth_font_gradient.ino</in>
-                </df>
-                <df name="Smooth_font_reading_TFT">
-                  <df name="data">
-                  </df>
-                  <in>Smooth_font_reading_TFT.ino</in>
-                </df>
-                <df name="Unicode_test">
-                  <df name="data">
-                  </df>
-                  <in>SPIFFS_functions.ino</in>
-                  <in>Unicode_test.ino</in>
-                </df>
-              </df>
-            </df>
-            <df name="Sprite">
-              <df name="Animated_dial">
-                <df name="data">
-                </df>
-                <in>Animated_dial.ino</in>
-                <in>NotoSansBold36.h</in>
-                <in>dial.h</in>
-              </df>
-              <df name="One_bit_Sprite_Demo">
-                <in>One_bit_Sprite_Demo.ino</in>
-              </df>
-              <df name="One_bit_Yin_Yang">
-                <in>One_bit_Yin_Yang.ino</in>
-              </df>
-              <df name="Rotated_Sprite_1">
-                <in>Rotated_Sprite_1.ino</in>
-              </df>
-              <df name="Rotated_Sprite_2">
-                <in>Rotated_Sprite_2.ino</in>
-              </df>
-              <df name="Rotated_Sprite_3">
-                <df name="data">
-                </df>
-                <in>Rotated_Sprite_3.ino</in>
-              </df>
-              <df name="Sprite_draw">
-                <in>Sprite_draw.ino</in>
-              </df>
-              <df name="Sprite_draw_4bit">
-                <in>Sprite_draw_4bit.ino</in>
-              </df>
-              <df name="Sprite_image_4bit">
-                <in>Sprite_image_4bit.ino</in>
-                <in>sample_images.h</in>
-                <in>starImage.cpp</in>
-              </df>
-              <df name="Sprite_RLE_Font_test">
-                <in>Sprite_RLE_Font_test.ino</in>
-              </df>
-              <df name="Sprite_scroll">
-                <in>Sprite_scroll.ino</in>
-              </df>
-              <df name="Sprite_scroll_16bit">
-                <in>Sprite_scroll_16bit.ino</in>
-              </df>
-              <df name="Sprite_scroll_1bit">
-                <in>Sprite_scroll_1bit.ino</in>
-              </df>
-              <df name="Sprite_scroll_4bit">
-                <in>Sprite_scroll_4bit.ino</in>
-              </df>
-              <df name="Sprite_scroll_8bit">
-                <in>Sprite_scroll_8bit.ino</in>
-              </df>
-              <df name="Sprite_scroll_wrap_1bit">
-                <in>Sprite_scroll_wrap_1bit.ino</in>
-              </df>
-              <df name="Sprite_TFT_Rainbow">
-                <in>Sprite_TFT_Rainbow.ino</in>
-              </df>
-              <df name="Transparent_Sprite_Demo">
-                <in>Transparent_Sprite_Demo.ino</in>
-              </df>
-              <df name="Transparent_Sprite_Demo_4bit">
-                <in>Transparent_Sprite_Demo_4bit.ino</in>
-              </df>
-            </df>
-            <df name="Test and diagnostics">
-              <df name="Colour_Test">
-                <in>Colour_Test.ino</in>
-              </df>
-              <df name="Read_User_Setup">
-                <in>Read_User_Setup.ino</in>
-              </df>
-              <df name="Test_Touch_Controller">
-                <in>Test_Touch_Controller.ino</in>
-              </df>
-            </df>
-          </df>
-          <df name="Extensions">
-            <in>Button.cpp</in>
-            <in>Button.h</in>
-            <in>Smooth_font.cpp</in>
-            <in>Smooth_font.h</in>
-            <in>Sprite.cpp</in>
-            <in>Sprite.h</in>
-            <in>Touch.cpp</in>
-            <in>Touch.h</in>
-          </df>
-          <df name="Fonts">
-            <df name="Custom">
-              <in>Orbitron_Light_24.h</in>
-              <in>Orbitron_Light_32.h</in>
-              <in>Roboto_Thin_24.h</in>
-              <in>Satisfy_24.h</in>
-              <in>Yellowtail_32.h</in>
-            </df>
-            <df name="GFXFF">
-              <in>FreeMono12pt7b.h</in>
-              <in>FreeMono18pt7b.h</in>
-              <in>FreeMono24pt7b.h</in>
-              <in>FreeMono9pt7b.h</in>
-              <in>FreeMonoBold12pt7b.h</in>
-              <in>FreeMonoBold18pt7b.h</in>
-              <in>FreeMonoBold24pt7b.h</in>
-              <in>FreeMonoBold9pt7b.h</in>
-              <in>FreeMonoBoldOblique12pt7b.h</in>
-              <in>FreeMonoBoldOblique18pt7b.h</in>
-              <in>FreeMonoBoldOblique24pt7b.h</in>
-              <in>FreeMonoBoldOblique9pt7b.h</in>
-              <in>FreeMonoOblique12pt7b.h</in>
-              <in>FreeMonoOblique18pt7b.h</in>
-              <in>FreeMonoOblique24pt7b.h</in>
-              <in>FreeMonoOblique9pt7b.h</in>
-              <in>FreeSans12pt7b.h</in>
-              <in>FreeSans18pt7b.h</in>
-              <in>FreeSans24pt7b.h</in>
-              <in>FreeSans9pt7b.h</in>
-              <in>FreeSansBold12pt7b.h</in>
-              <in>FreeSansBold18pt7b.h</in>
-              <in>FreeSansBold24pt7b.h</in>
-              <in>FreeSansBold9pt7b.h</in>
-              <in>FreeSansBoldOblique12pt7b.h</in>
-              <in>FreeSansBoldOblique18pt7b.h</in>
-              <in>FreeSansBoldOblique24pt7b.h</in>
-              <in>FreeSansBoldOblique9pt7b.h</in>
-              <in>FreeSansOblique12pt7b.h</in>
-              <in>FreeSansOblique18pt7b.h</in>
-              <in>FreeSansOblique24pt7b.h</in>
-              <in>FreeSansOblique9pt7b.h</in>
-              <in>FreeSerif12pt7b.h</in>
-              <in>FreeSerif18pt7b.h</in>
-              <in>FreeSerif24pt7b.h</in>
-              <in>FreeSerif9pt7b.h</in>
-              <in>FreeSerifBold12pt7b.h</in>
-              <in>FreeSerifBold18pt7b.h</in>
-              <in>FreeSerifBold24pt7b.h</in>
-              <in>FreeSerifBold9pt7b.h</in>
-              <in>FreeSerifBoldItalic12pt7b.h</in>
-              <in>FreeSerifBoldItalic18pt7b.h</in>
-              <in>FreeSerifBoldItalic24pt7b.h</in>
-              <in>FreeSerifBoldItalic9pt7b.h</in>
-              <in>FreeSerifItalic12pt7b.h</in>
-              <in>FreeSerifItalic18pt7b.h</in>
-              <in>FreeSerifItalic24pt7b.h</in>
-              <in>FreeSerifItalic9pt7b.h</in>
-              <in>TomThumb.h</in>
-              <in>gfxfont.h</in>
-              <in>license.txt</in>
-              <in>print.txt</in>
-            </df>
-            <df name="TrueType">
-              <in>Not_yet_supported.txt</in>
-            </df>
-            <in>Font16.c</in>
-            <in>Font16.h</in>
-            <in>Font32rle.c</in>
-            <in>Font32rle.h</in>
-            <in>Font64rle.c</in>
-            <in>Font64rle.h</in>
-            <in>Font72rle.c</in>
-            <in>Font72rle.h</in>
-            <in>Font72x53rle.c</in>
-            <in>Font72x53rle.h</in>
-            <in>Font7srle.c</in>
-            <in>Font7srle.h</in>
-            <in>glcdfont.c</in>
-          </df>
-          <df name="Processors">
-            <in>TFT_eSPI_ESP32.c</in>
-            <in>TFT_eSPI_ESP32.h</in>
-            <in>TFT_eSPI_ESP8266.c</in>
-            <in>TFT_eSPI_ESP8266.h</in>
-            <in>TFT_eSPI_Generic.c</in>
-            <in>TFT_eSPI_Generic.h</in>
-            <in>TFT_eSPI_STM32.c</in>
-            <in>TFT_eSPI_STM32.h</in>
-          </df>
           <df name="TFT_Drivers">
             <in>EPD_Defines.h</in>
-            <in>HX8357D_Defines.h</in>
-            <in>HX8357D_Init.h</in>
-            <in>HX8357D_Rotation.h</in>
             <in>ILI9163_Defines.h</in>
             <in>ILI9163_Init.h</in>
             <in>ILI9163_Rotation.h</in>
@@ -4178,100 +3521,14 @@
             <in>ILI9488_Defines.h</in>
             <in>ILI9488_Init.h</in>
             <in>ILI9488_Rotation.h</in>
-            <in>R61581_Defines.h</in>
-            <in>R61581_Init.h</in>
-            <in>R61581_Rotation.h</in>
-            <in>RM68140_Defines.h</in>
-            <in>RM68140_Init.h</in>
-            <in>RM68140_Rotation.h</in>
-            <in>S6D02A1_Defines.h</in>
-            <in>S6D02A1_Init.h</in>
-            <in>S6D02A1_Rotation.h</in>
-            <in>SSD1963_Defines.h</in>
-            <in>SSD1963_Init.h</in>
-            <in>SSD1963_Rotation.h</in>
-            <in>ST7735_Defines.h</in>
-            <in>ST7735_Init.h</in>
-            <in>ST7735_Rotation.h</in>
-            <in>ST7789_2_Defines.h</in>
-            <in>ST7789_2_Init.h</in>
-            <in>ST7789_2_Rotation.h</in>
-            <in>ST7789_Defines.h</in>
-            <in>ST7789_Init.h</in>
-            <in>ST7789_Rotation.h</in>
-            <in>ST7796_Defines.h</in>
-            <in>ST7796_Init.h</in>
-            <in>ST7796_Rotation.h</in>
-          </df>
-          <df name="Tools">
-            <df name="Create_Smooth_Font">
-              <df name="Create_font">
-                <df name="data">
-                </df>
-                <df name="FontFiles">
-                </df>
-              </df>
-            </df>
-            <df name="ESP32 UNO board mod">
-            </df>
-            <df name="Images">
-            </df>
-            <df name="PlatformIO">
-              <in>Configuring options.txt</in>
-            </df>
-            <df name="Screenshot_client">
-            </df>
-          </df>
-          <df name="User_Setups">
-            <in>Setup10_RPi_touch_ILI9486.h</in>
-            <in>Setup11_RPi_touch_ILI9486.h</in>
-            <in>Setup12_M5Stack.h</in>
-            <in>Setup135_ST7789.h</in>
-            <in>Setup13_ILI9481_Parallel.h</in>
-            <in>Setup14_ILI9341_Parallel.h</in>
-            <in>Setup15_HX8357D.h</in>
-            <in>Setup16_ILI9488_Parallel.h</in>
-            <in>Setup17_ePaper.h</in>
-            <in>Setup18_ST7789.h</in>
-            <in>Setup19_RM68140_Parallel.h</in>
-            <in>Setup1_ILI9341.h</in>
-            <in>Setup20_ILI9488.h</in>
-            <in>Setup21_ILI9488.h</in>
-            <in>Setup22_TTGO_T4.h</in>
-            <in>Setup22_TTGO_T4_v1.3.h</in>
-            <in>Setup23_TTGO_TM.h</in>
-            <in>Setup24_ST7789.h</in>
-            <in>Setup25_TTGO_T_Display.h</in>
-            <in>Setup26_TTGO_T_Wristband.h</in>
-            <in>Setup27_RPi_ST7796_ESP32.h</in>
-            <in>Setup28_RPi_ST7796_ESP8266.h</in>
-            <in>Setup29_ILI9341_STM32.h</in>
-            <in>Setup2_ST7735.h</in>
-            <in>Setup30_ILI9341_Parallel_STM32.h</in>
-            <in>Setup31_ST7796_Parallel_STM32.h</in>
-            <in>Setup32_ILI9341_STM32F103.h</in>
-            <in>Setup33_RPi_ILI9486_STM32.h</in>
-            <in>Setup34_ILI9481_Parallel_STM32.h</in>
-            <in>Setup35_ILI9341_STM32_Port_Bus.h</in>
-            <in>Setup36_RPi_touch_ILI9341.h</in>
-            <in>Setup3_ILI9163.h</in>
-            <in>Setup43_ST7735.h</in>
-            <in>Setup44_TTGO_CameraPlus.h</in>
-            <in>Setup45_TTGO_T_Watch.h</in>
-            <in>Setup4_S6D02A1.h</in>
-            <in>Setup5_RPi_ILI9486.h</in>
-            <in>Setup6_RPi_Wr_ILI9486.h</in>
-            <in>Setup7_ST7735_128x128.h</in>
-            <in>Setup8_ILI9163_128x128.h</in>
-            <in>Setup9_ST7735_Overlap.h</in>
-            <in>SetupX_Template.h</in>
-            <in>User_Custom_Fonts.h</in>
           </df>
           <in>README.txt</in>
           <in>TFT_eSPI.cpp</in>
           <in>TFT_eSPI.h</in>
+          <in>TFT_eSPI_Generic.h</in>
           <in>TFT_eSPI_draw.cpp</in>
           <in>TFT_eSPI_font.cpp</in>
+          <in>gfxfont.h</in>
           <in>keywords.txt</in>
           <in>license.txt</in>
         </df>
@@ -4284,12 +3541,6 @@
         <in>TFT_eSPI_extended_glyph_hl.cpp</in>
         <in>User_Setup.h</in>
         <in>User_Setup_Select.h</in>
-      </df>
-      <df name="XPT2046">
-        <in>CMakeLists.txt</in>
-        <in>xpt2046.cpp</in>
-        <in>xpt2046.h</in>
-        <in>xpt2046_priv.h</in>
       </df>
       <in>CMakeLists.txt</in>
       <in>FreeRTOSConfig.h</in>
@@ -4305,24 +3556,17 @@
       <in>mainCode.cpp</in>
       <in>push_button.cpp</in>
       <in>push_button.h</in>
-      <in>screenBase.cpp</in>
       <in>screenBase.h</in>
       <in>screenCalibration.cpp</in>
-      <in>screenCalibration.h</in>
       <in>screenDischarging.cpp</in>
       <in>screenDischarging.h</in>
-      <in>screenError.cpp</in>
-      <in>screenError.h</in>
-      <in>screenFinished.cpp</in>
-      <in>screenFinished.h</in>
-      <in>screenIdle.cpp</in>
-      <in>screenIdle.h</in>
       <in>screenInclude.h</in>
       <in>screenSetup.cpp</in>
-      <in>screenSetup.h</in>
       <in>screenSetup_internal.h</in>
       <in>settings.cpp</in>
       <in>settings.h</in>
+      <in>stopWatch.cpp</in>
+      <in>stopWatch.h</in>
       <in>voltage.h</in>
     </df>
   </logicalFolder>
