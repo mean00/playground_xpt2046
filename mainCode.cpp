@@ -79,6 +79,7 @@ void MainTask::initTft()
         
     tft->setFontFamily(&FreeSans9pt7b,&FreeSans18pt7b,&FreeSans24pt7b);
     tft->setFontSize(TFT_eSPI_extended::MediumFont);
+    tft->setTextColor(ILI9341_WHITE,ILI9341_BLACK);
 }
 /**
  * 
@@ -115,7 +116,7 @@ void    MainTask::run(void)
     
   initTft();   
   char s[200];
-  
+#if 0  
   tft->fillScreen(ILI9341_BLACK);
   xDelay(2000);
     tft->fillScreen(ILI9341_RED);
@@ -124,7 +125,7 @@ void    MainTask::run(void)
     xDelay(2000);
     tft->fillScreen(ILI9341_BLUE);
     xDelay(2000);
-  
+#endif  
   for(int i=0;i<5;i++)
   {
     StopWatch w;
