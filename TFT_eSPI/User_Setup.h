@@ -11,10 +11,7 @@
 
 #include "gfxfont.h"
 
-#define SPI_FREQUENCY  40000000
+#define SPI_FREQUENCY  40*1000*1000
 // Optional reduced SPI frequency for reading TFT
-#define SPI_READ_FREQUENCY  40000000
+#define SPI_READ_FREQUENCY  40*1000*1000
 #define SPI_TOUCH_FREQUENCY  2500000
-
-#define TFT_WIDTH  320
-#define TFT_HEIGHT 240
