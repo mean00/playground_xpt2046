@@ -3538,10 +3538,6 @@
         </df>
       </df>
       <df name="TFT_eSPI">
-        <df name="tft">
-          <in>TFT_eSPI.cpp</in>
-          <in>TFT_eSPI_draw.cpp</in>
-        </df>
         <df name="TFT_Drivers">
           <in>EPD_Defines.h</in>
           <in>ILI9163_Defines.h</in>
@@ -3572,6 +3568,8 @@
         <in>TFT_eSPI_extended.h</in>
         <in>TFT_eSPI_extended_glyph.cpp</in>
         <in>TFT_eSPI_extended_glyph_hl.cpp</in>
+        <in>TFT_eSPI_init.h</in>
+        <in>TFT_eSPI_rotation.h</in>
         <in>User_Setup.h</in>
         <in>User_Setup_Select.h</in>
         <in>gfxfont.h</in>
@@ -3579,25 +3577,11 @@
       </df>
       <in>CMakeLists.txt</in>
       <in>FreeRTOSConfig.h</in>
-      <in>ad_timer.h</in>
-      <in>batteryTester2.ino</in>
-      <in>calibration.cpp</in>
       <in>dso_debug.h</in>
-      <in>dso_eeprom.cpp</in>
       <in>dso_eeprom.h</in>
       <in>dso_logger.cpp</in>
       <in>heap.cpp</in>
-      <in>items.cpp</in>
       <in>mainCode.cpp</in>
-      <in>push_button.cpp</in>
-      <in>push_button.h</in>
-      <in>screenBase.h</in>
-      <in>screenCalibration.cpp</in>
-      <in>screenDischarging.cpp</in>
-      <in>screenDischarging.h</in>
-      <in>screenInclude.h</in>
-      <in>screenSetup.cpp</in>
-      <in>screenSetup_internal.h</in>
       <in>settings.cpp</in>
       <in>settings.h</in>
       <in>stopWatch.cpp</in>

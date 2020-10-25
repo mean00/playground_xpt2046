@@ -241,10 +241,6 @@
         <in>MapleFreeRTOS1000_pp.cpp</in>
       </df>
       <df name="TFT_eSPI">
-        <df name="tft">
-          <in>TFT_eSPI.cpp</in>
-          <in>TFT_eSPI_draw.cpp</in>
-        </df>
         <in>TFT_eSPI.cpp</in>
         <in>TFT_eSPI_draw.cpp</in>
         <in>TFT_eSPI_extended.cpp</in>
@@ -445,8 +441,13 @@
             flavor2="8">
         <ccTool flags="2">
           <incDir>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
+            <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
             <pElem>../arm-none-eabi-gcc/download/gcc-arm-none-eabi-8.2.1-1.7/arm-none-eabi/include/c++/8.2.1/arm-none-eabi/thumb/v7-m/nofp/bits</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
           </incDir>
         </ccTool>
       </item>
@@ -456,8 +457,13 @@
             flavor2="8">
         <ccTool flags="2">
           <incDir>
+            <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
             <pElem>../arm-none-eabi-gcc/download/gcc-arm-none-eabi-8.2.1-1.7/arm-none-eabi/include/c++/8.2.1/arm-none-eabi/thumb/v7-m/nofp/bits</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
           </incDir>
         </ccTool>
       </item>
@@ -467,8 +473,14 @@
             flavor2="8">
         <ccTool flags="2">
           <incDir>
+            <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
             <pElem>../arm-none-eabi-gcc/download/gcc-arm-none-eabi-8.2.1-1.7/arm-none-eabi/include/c++/8.2.1/arm-none-eabi/thumb/v7-m/nofp/bits</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
+            <pElem>Arduino_STM32/STM32F1/variants/generic_stm32f103c</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
           </incDir>
         </ccTool>
       </item>
@@ -478,7 +490,11 @@
             flavor2="8">
         <ccTool flags="2">
           <incDir>
+            <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
             <pElem>../arm-none-eabi-gcc/download/gcc-arm-none-eabi-8.2.1-1.7/arm-none-eabi/include/c++/8.2.1/arm-none-eabi/thumb/v7-m/nofp/bits</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>build</pElem>
           </incDir>
         </ccTool>
       </item>
@@ -488,8 +504,14 @@
             flavor2="8">
         <ccTool flags="2">
           <incDir>
+            <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
             <pElem>../arm-none-eabi-gcc/download/gcc-arm-none-eabi-8.2.1-1.7/arm-none-eabi/include/c++/8.2.1/arm-none-eabi/thumb/v7-m/nofp/bits</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
+            <pElem>Arduino_STM32/STM32F1/variants/generic_stm32f103c</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
           </incDir>
         </ccTool>
       </item>
@@ -499,8 +521,10 @@
             flavor2="8">
         <ccTool flags="2">
           <incDir>
+            <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
             <pElem>../arm-none-eabi-gcc/download/gcc-arm-none-eabi-8.2.1-1.7/arm-none-eabi/include/c++/8.2.1/arm-none-eabi/thumb/v7-m/nofp/bits</pElem>
             <pElem>Arduino_STM32/STM32F1/cores/maple/avr</pElem>
+            <pElem>build</pElem>
           </incDir>
         </ccTool>
       </item>
@@ -517,7 +541,9 @@
             flavor2="8">
         <ccTool flags="2">
           <incDir>
+            <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
             <pElem>../arm-none-eabi-gcc/download/gcc-arm-none-eabi-8.2.1-1.7/arm-none-eabi/include/c++/8.2.1/arm-none-eabi/thumb/v7-m/nofp/bits</pElem>
+            <pElem>build</pElem>
           </incDir>
         </ccTool>
       </item>
@@ -527,7 +553,12 @@
             flavor2="8">
         <ccTool flags="2">
           <incDir>
+            <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
           </incDir>
         </ccTool>
       </item>
@@ -538,6 +569,7 @@
         <cTool flags="3">
           <incDir>
             <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -548,6 +580,7 @@
         <cTool flags="3">
           <incDir>
             <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -562,6 +595,7 @@
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -576,6 +610,7 @@
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -590,6 +625,7 @@
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -604,6 +640,7 @@
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -618,6 +655,7 @@
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -632,6 +670,7 @@
             <pElem>Arduino_STM32/STM32F1/cores/maple/libmaple</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -646,6 +685,7 @@
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -660,6 +700,7 @@
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -673,6 +714,7 @@
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -682,6 +724,7 @@
             flavor2="10">
         <cTool flags="1">
           <incDir>
+            <pElem>build</pElem>
             <pElem>stubs</pElem>
             <pElem>.</pElem>
             <pElem>FreeRTOS/Source/include</pElem>
@@ -713,6 +756,9 @@
             <Elem>F_CPU=72000000LL</Elem>
             <Elem>GENERIC_BOOTLOADER</Elem>
             <Elem>MCU_STM32F103C8</Elem>
+            <Elem>PRINTF_DISABLE_SUPPORT_EXPONENTIAL</Elem>
+            <Elem>PRINTF_DISABLE_SUPPORT_LONG_LONG</Elem>
+            <Elem>PRINTF_DISABLE_SUPPORT_PTRDIFF_T</Elem>
             <Elem>VECT_TAB_ADDR=0x8000000</Elem>
             <Elem>__STM32F1__</Elem>
           </preprocessorList>
@@ -729,6 +775,7 @@
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -743,6 +790,7 @@
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -758,6 +806,7 @@
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -773,6 +822,7 @@
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -785,6 +835,7 @@
             <pElem>Arduino_STM32/STM32F1/cores/maple/libmaple</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -799,6 +850,7 @@
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -813,6 +865,7 @@
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -827,6 +880,7 @@
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -841,6 +895,7 @@
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -855,6 +910,7 @@
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -869,6 +925,7 @@
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -881,6 +938,7 @@
             <pElem>Arduino_STM32/STM32F1/cores/maple/libmaple</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -895,6 +953,7 @@
             <pElem>Arduino_STM32/STM32F1/cores/maple/libmaple</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -904,6 +963,7 @@
             flavor2="10">
         <cTool flags="1">
           <incDir>
+            <pElem>build</pElem>
             <pElem>stubs</pElem>
             <pElem>.</pElem>
             <pElem>FreeRTOS/Source/include</pElem>
@@ -935,6 +995,9 @@
             <Elem>F_CPU=72000000LL</Elem>
             <Elem>GENERIC_BOOTLOADER</Elem>
             <Elem>MCU_STM32F103C8</Elem>
+            <Elem>PRINTF_DISABLE_SUPPORT_EXPONENTIAL</Elem>
+            <Elem>PRINTF_DISABLE_SUPPORT_LONG_LONG</Elem>
+            <Elem>PRINTF_DISABLE_SUPPORT_PTRDIFF_T</Elem>
             <Elem>VECT_TAB_ADDR=0x8000000</Elem>
             <Elem>__STM32F1__</Elem>
           </preprocessorList>
@@ -951,6 +1014,7 @@
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -965,6 +1029,7 @@
             <pElem>Arduino_STM32/STM32F1/cores/maple/libmaple</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -979,6 +1044,7 @@
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -995,6 +1061,7 @@
             <pElem>Arduino_STM32/STM32F1/system/libmaple/usb/usb_lib</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -1011,6 +1078,7 @@
             <pElem>Arduino_STM32/STM32F1/system/libmaple/usb/usb_lib</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -1024,6 +1092,7 @@
             <pElem>Arduino_STM32/STM32F1/system/libmaple/usb/stm32f1</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -1066,6 +1135,7 @@
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
           </incDir>
         </cTool>
       </item>
@@ -1074,6 +1144,10 @@
             tool="1"
             flavor2="8">
         <ccTool flags="2">
+          <incDir>
+            <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="Arduino_STM32/STM32F1/cores/maple/new.cpp"
@@ -1082,7 +1156,9 @@
             flavor2="8">
         <ccTool flags="2">
           <incDir>
+            <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
             <pElem>../arm-none-eabi-gcc/download/gcc-arm-none-eabi-8.2.1-1.7/arm-none-eabi/include/c++/8.2.1/arm-none-eabi/thumb/v7-m/nofp/bits</pElem>
+            <pElem>build</pElem>
           </incDir>
         </ccTool>
       </item>
@@ -1092,7 +1168,12 @@
             flavor2="8">
         <ccTool flags="2">
           <incDir>
+            <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
           </incDir>
         </ccTool>
       </item>
@@ -1102,8 +1183,14 @@
             flavor2="8">
         <ccTool flags="2">
           <incDir>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
+            <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
             <pElem>../arm-none-eabi-gcc/download/gcc-arm-none-eabi-8.2.1-1.7/arm-none-eabi/include/c++/8.2.1/arm-none-eabi/thumb/v7-m/nofp/bits</pElem>
+            <pElem>Arduino_STM32/STM32F1/variants/generic_stm32f103c</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
           </incDir>
         </ccTool>
       </item>
@@ -1119,6 +1206,15 @@
             tool="1"
             flavor2="8">
         <ccTool flags="2">
+          <incDir>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
+            <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
+            <pElem>Arduino_STM32/STM32F1/variants/generic_stm32f103c</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="Arduino_STM32/STM32F1/cores/maple/stm32f1/wirish_debug.cpp"
@@ -1126,6 +1222,13 @@
             tool="1"
             flavor2="8">
         <ccTool flags="2">
+          <incDir>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="Arduino_STM32/STM32F1/cores/maple/stm32f1/wirish_digital_f1.cpp"
@@ -1133,6 +1236,14 @@
             tool="1"
             flavor2="8">
         <ccTool flags="2">
+          <incDir>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
+            <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="Arduino_STM32/STM32F1/cores/maple/tone.cpp"
@@ -1141,8 +1252,14 @@
             flavor2="8">
         <ccTool flags="2">
           <incDir>
+            <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
             <pElem>../arm-none-eabi-gcc/download/gcc-arm-none-eabi-8.2.1-1.7/arm-none-eabi/include/c++/8.2.1/arm-none-eabi/thumb/v7-m/nofp/bits</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
+            <pElem>Arduino_STM32/STM32F1/variants/generic_stm32f103c</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
           </incDir>
         </ccTool>
       </item>
@@ -1152,8 +1269,14 @@
             flavor2="8">
         <ccTool flags="2">
           <incDir>
+            <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
             <pElem>../arm-none-eabi-gcc/download/gcc-arm-none-eabi-8.2.1-1.7/arm-none-eabi/include/c++/8.2.1/arm-none-eabi/thumb/v7-m/nofp/bits</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
+            <pElem>Arduino_STM32/STM32F1/variants/generic_stm32f103c</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
           </incDir>
         </ccTool>
       </item>
@@ -1163,7 +1286,12 @@
             flavor2="8">
         <ccTool flags="2">
           <incDir>
+            <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
           </incDir>
         </ccTool>
       </item>
@@ -1173,7 +1301,12 @@
             flavor2="8">
         <ccTool flags="2">
           <incDir>
+            <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
           </incDir>
         </ccTool>
       </item>
@@ -1183,7 +1316,9 @@
             flavor2="8">
         <ccTool flags="2">
           <incDir>
+            <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
             <pElem>../arm-none-eabi-gcc/download/gcc-arm-none-eabi-8.2.1-1.7/arm-none-eabi/include/c++/8.2.1/arm-none-eabi/thumb/v7-m/nofp/bits</pElem>
+            <pElem>build</pElem>
           </incDir>
         </ccTool>
       </item>
@@ -1193,8 +1328,14 @@
             flavor2="8">
         <ccTool flags="2">
           <incDir>
+            <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
             <pElem>../arm-none-eabi-gcc/download/gcc-arm-none-eabi-8.2.1-1.7/arm-none-eabi/include/c++/8.2.1/arm-none-eabi/thumb/v7-m/nofp/bits</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
+            <pElem>Arduino_STM32/STM32F1/variants/generic_stm32f103c</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>build</pElem>
           </incDir>
         </ccTool>
       </item>
@@ -1204,8 +1345,14 @@
             flavor2="8">
         <ccTool flags="2">
           <incDir>
+            <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
             <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
             <pElem>../arm-none-eabi-gcc/download/gcc-arm-none-eabi-8.2.1-1.7/arm-none-eabi/include/c++/8.2.1/arm-none-eabi/thumb/v7-m/nofp/bits</pElem>
+            <pElem>Arduino_STM32/STM32F1/variants/generic_stm32f103c</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
           </incDir>
         </ccTool>
       </item>
@@ -1221,6 +1368,19 @@
             tool="1"
             flavor2="8">
         <ccTool flags="2">
+          <incDir>
+            <pElem>Arduino_STM32/STM32F1/libraries/Wire</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
+            <pElem>Arduino_STM32/STM32F1/libraries/Wire/utility</pElem>
+            <pElem>../arm-none-eabi-gcc/download/gcc-arm-none-eabi-8.2.1-1.7/arm-none-eabi/include/c++/8.2.1/arm-none-eabi/thumb/v7-m/nofp/bits</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
+            <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
+            <pElem>Arduino_STM32/STM32F1/variants/generic_stm32f103c</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include</pElem>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="Arduino_STM32/STM32F1/libraries/Wire/Wire.cpp"
@@ -1228,6 +1388,19 @@
             tool="1"
             flavor2="8">
         <ccTool flags="2">
+          <incDir>
+            <pElem>Arduino_STM32/STM32F1/libraries/Wire</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
+            <pElem>Arduino_STM32/STM32F1/libraries/Wire/utility</pElem>
+            <pElem>../arm-none-eabi-gcc/download/gcc-arm-none-eabi-8.2.1-1.7/arm-none-eabi/include/c++/8.2.1/arm-none-eabi/thumb/v7-m/nofp/bits</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
+            <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
+            <pElem>Arduino_STM32/STM32F1/variants/generic_stm32f103c</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="Arduino_STM32/STM32F1/libraries/Wire/utility/WireBase.cpp"
@@ -1278,6 +1451,9 @@
       </item>
       <item path="FreeRTOS/Source/croutine.c" ex="false" tool="0" flavor2="3">
         <cTool flags="3">
+          <incDir>
+            <pElem>build/FreeRTOS</pElem>
+          </incDir>
         </cTool>
       </item>
       <item path="FreeRTOS/Source/event_groups.c" ex="false" tool="0" flavor2="3">
@@ -1287,6 +1463,7 @@
             <pElem>FreeRTOS/Source/portable/Stm32duino</pElem>
             <pElem>FreeRTOS/Source/include</pElem>
             <pElem>.</pElem>
+            <pElem>build/FreeRTOS</pElem>
           </incDir>
         </cTool>
       </item>
@@ -1296,6 +1473,7 @@
             <pElem>FreeRTOS/Source</pElem>
             <pElem>FreeRTOS/Source/portable/Stm32duino</pElem>
             <pElem>FreeRTOS/Source/include</pElem>
+            <pElem>build/FreeRTOS</pElem>
           </incDir>
         </cTool>
       </item>
@@ -1306,6 +1484,7 @@
         <cTool flags="3">
           <incDir>
             <pElem>FreeRTOS/Source/include</pElem>
+            <pElem>build/FreeRTOS</pElem>
           </incDir>
         </cTool>
       </item>
@@ -1317,6 +1496,7 @@
           <incDir>
             <pElem>FreeRTOS/Source/portable/Stm32duino</pElem>
             <pElem>FreeRTOS/Source/include</pElem>
+            <pElem>build/FreeRTOS</pElem>
           </incDir>
         </cTool>
       </item>
@@ -1327,6 +1507,7 @@
         <cTool flags="3">
           <incDir>
             <pElem>FreeRTOS/Source/include</pElem>
+            <pElem>build/FreeRTOS</pElem>
           </incDir>
         </cTool>
       </item>
@@ -1337,6 +1518,7 @@
         <cTool flags="3">
           <incDir>
             <pElem>FreeRTOS/Source/include</pElem>
+            <pElem>build/FreeRTOS</pElem>
           </incDir>
         </cTool>
       </item>
@@ -1348,6 +1530,7 @@
           <incDir>
             <pElem>FreeRTOS/Source/portable/Stm32duino</pElem>
             <pElem>FreeRTOS/Source/include</pElem>
+            <pElem>build/FreeRTOS</pElem>
           </incDir>
         </cTool>
       </item>
@@ -1365,6 +1548,7 @@
             <pElem>FreeRTOS/Source/portable/Stm32duino</pElem>
             <pElem>FreeRTOS/Source/include</pElem>
             <pElem>.</pElem>
+            <pElem>build/FreeRTOS</pElem>
           </incDir>
         </cTool>
       </item>
@@ -1374,6 +1558,7 @@
             <pElem>FreeRTOS/Source</pElem>
             <pElem>FreeRTOS/Source/portable/Stm32duino</pElem>
             <pElem>FreeRTOS/Source/include</pElem>
+            <pElem>build/FreeRTOS</pElem>
           </incDir>
         </cTool>
       </item>
@@ -1383,6 +1568,7 @@
             <pElem>FreeRTOS/Source</pElem>
             <pElem>FreeRTOS/Source/portable/Stm32duino</pElem>
             <pElem>FreeRTOS/Source/include</pElem>
+            <pElem>build/FreeRTOS</pElem>
           </incDir>
         </cTool>
       </item>
@@ -1392,41 +1578,98 @@
             <pElem>FreeRTOS/Source</pElem>
             <pElem>FreeRTOS/Source/portable/Stm32duino</pElem>
             <pElem>FreeRTOS/Source/include</pElem>
+            <pElem>build/FreeRTOS</pElem>
           </incDir>
         </cTool>
       </item>
       <item path="TFT_eSPI/TFT_eSPI.cpp" ex="false" tool="1" flavor2="8">
-        <ccTool flags="0">
+        <ccTool flags="2">
+          <incDir>
+            <pElem>Arduino_STM32/STM32F1/libraries/SPI/src</pElem>
+            <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
+            <pElem>TFT_eSPI/TFT_Drivers</pElem>
+            <pElem>../arm-none-eabi-gcc/download/gcc-arm-none-eabi-8.2.1-1.7/arm-none-eabi/include/c++/8.2.1/arm-none-eabi/thumb/v7-m/nofp/bits</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
+            <pElem>Arduino_STM32/STM32F1/variants/generic_stm32f103c</pElem>
+            <pElem>Arduino_STM32/STM32F1/variants/generic_stm32f103c/board</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build/TFT_eSPI</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="TFT_eSPI/TFT_eSPI_draw.cpp" ex="false" tool="1" flavor2="8">
-        <ccTool flags="0">
+        <ccTool flags="2">
+          <incDir>
+            <pElem>Arduino_STM32/STM32F1/libraries/SPI/src</pElem>
+            <pElem>../arm-none-eabi-gcc/download/gcc-arm-none-eabi-8.2.1-1.7/arm-none-eabi/include/c++/8.2.1/arm-none-eabi/thumb/v7-m/nofp/bits</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
+            <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
+            <pElem>Arduino_STM32/STM32F1/variants/generic_stm32f103c</pElem>
+            <pElem>Arduino_STM32/STM32F1/variants/generic_stm32f103c/board</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build/TFT_eSPI</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="TFT_eSPI/TFT_eSPI_extended.cpp" ex="false" tool="1" flavor2="8">
-        <ccTool flags="0">
+        <ccTool flags="2">
+          <incDir>
+            <pElem>../arm-none-eabi-gcc/download/gcc-arm-none-eabi-8.2.1-1.7/arm-none-eabi/include/c++/8.2.1/arm-none-eabi/thumb/v7-m/nofp/bits</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
+            <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
+            <pElem>Arduino_STM32/STM32F1/variants/generic_stm32f103c</pElem>
+            <pElem>FreeRTOS/Source/include</pElem>
+            <pElem>FreeRTOS</pElem>
+            <pElem>Arduino_STM32/STM32F1/libraries/SPI/src</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build/TFT_eSPI</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="TFT_eSPI/TFT_eSPI_extended_glyph.cpp"
             ex="false"
             tool="1"
             flavor2="8">
-        <ccTool flags="0">
+        <ccTool flags="2">
+          <incDir>
+            <pElem>../arm-none-eabi-gcc/download/gcc-arm-none-eabi-8.2.1-1.7/arm-none-eabi/include/c++/8.2.1/arm-none-eabi/thumb/v7-m/nofp/bits</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
+            <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
+            <pElem>Arduino_STM32/STM32F1/variants/generic_stm32f103c</pElem>
+            <pElem>FreeRTOS/Source/include</pElem>
+            <pElem>FreeRTOS</pElem>
+            <pElem>Arduino_STM32/STM32F1/libraries/SPI/src</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build/TFT_eSPI</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="TFT_eSPI/TFT_eSPI_extended_glyph_hl.cpp"
             ex="false"
             tool="1"
             flavor2="8">
-        <ccTool flags="0">
-        </ccTool>
-      </item>
-      <item path="TFT_eSPI/tft/TFT_eSPI.cpp" ex="false" tool="1" flavor2="8">
-        <ccTool flags="0">
-        </ccTool>
-      </item>
-      <item path="TFT_eSPI/tft/TFT_eSPI_draw.cpp" ex="false" tool="1" flavor2="8">
-        <ccTool flags="0">
+        <ccTool flags="2">
+          <incDir>
+            <pElem>../arm-none-eabi-gcc/download/gcc-arm-none-eabi-8.2.1-1.7/arm-none-eabi/include/c++/8.2.1/arm-none-eabi/thumb/v7-m/nofp/bits</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
+            <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
+            <pElem>Arduino_STM32/STM32F1/variants/generic_stm32f103c</pElem>
+            <pElem>FreeRTOS/Source/include</pElem>
+            <pElem>FreeRTOS</pElem>
+            <pElem>Arduino_STM32/STM32F1/libraries/SPI/src</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
+            <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
+            <pElem>build/TFT_eSPI</pElem>
+          </incDir>
         </ccTool>
       </item>
       <item path="assets/backgrounds/assets.cpp" ex="false" tool="1" flavor2="8">
@@ -1579,7 +1822,6 @@
         <ccTool>
           <incDir>
             <pElem>Arduino_STM32/STM32F1/cores/maple/stm32f1</pElem>
-            <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include/series</pElem>
           </incDir>
         </ccTool>
       </folder>
@@ -1601,7 +1843,7 @@
           </incDir>
         </ccTool>
       </folder>
-      <folder path="0/Arduino_STM32/STM32F1/libraries/Wire">
+      <folder path="0/Arduino_STM32/STM32F1/libraries/Wire/utility">
         <ccTool>
           <incDir>
             <pElem>../arm-none-eabi-gcc/download/gcc-arm-none-eabi-8.2.1-1.7/arm-none-eabi/include/c++/8.2.1/arm-none-eabi/thumb/v7-m/nofp/bits</pElem>
@@ -1715,43 +1957,8 @@
       <folder path="0/TFT_eSPI">
         <ccTool>
           <incDir>
-            <pElem>stubs</pElem>
-            <pElem>.</pElem>
-            <pElem>FreeRTOS/Source/include</pElem>
-            <pElem>FreeRTOS</pElem>
-            <pElem>FreeRTOS/Source/portable/Stm32duino</pElem>
-            <pElem>assets/backgrounds/generated</pElem>
             <pElem>TFT_eSPI</pElem>
-            <pElem>TFT_eSPI/tft</pElem>
-            <pElem>Arduino_STM32/STM32F1/system/libmaple</pElem>
-            <pElem>Arduino_STM32/STM32F1/system/libmaple/include</pElem>
-            <pElem>Arduino_STM32/STM32F1/system/libmaple/include/libmaple</pElem>
-            <pElem>Arduino_STM32/STM32F1/system/libmaple/usb/usb_lib</pElem>
-            <pElem>Arduino_STM32/STM32F1/system/libmaple/usb/stm32f1</pElem>
-            <pElem>Arduino_STM32/STM32F1/system/libmaple/stm32f1/include</pElem>
-            <pElem>Arduino_STM32/STM32F1/libraries/SPI/src</pElem>
-            <pElem>Arduino_STM32/STM32F1/cores/maple</pElem>
-            <pElem>/opt/arduino_1.8.9/libraries</pElem>
-            <pElem>Arduino_STM32/STM32F1/variants/generic_stm32f103c</pElem>
-            <pElem>build/TFT_eSPI</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>ARDUINO=10809</Elem>
-            <Elem>ARDUINO_ARCH_STM32F1</Elem>
-            <Elem>ARDUINO_GENERIC_STM32F103C</Elem>
-            <Elem>BOARD_generic_stm32f103c</Elem>
-            <Elem>CONFIG_MAPLE_MINI_NO_DISABLE_DEBUG</Elem>
-            <Elem>CUSTOM_DRIVER=1</Elem>
-            <Elem>ERROR_LED_PIN=13</Elem>
-            <Elem>ERROR_LED_PORT=GPIOC</Elem>
-            <Elem>F_CPU=72000000LL</Elem>
-            <Elem>GENERIC_BOOTLOADER</Elem>
-            <Elem>MCU_STM32F103C8</Elem>
-            <Elem>SPI_HAS_TRANSACTION</Elem>
-            <Elem>VECT_TAB_ADDR=0x8000000</Elem>
-            <Elem>__STM32F1__</Elem>
-            <Elem>ltoa=itoa</Elem>
-          </preprocessorList>
         </ccTool>
       </folder>
       <folder path="0/assets">

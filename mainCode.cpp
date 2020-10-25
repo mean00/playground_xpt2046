@@ -14,7 +14,8 @@ extern const GFXfont FreeSans24pt7b ;
 extern const GFXfont FreeSans18pt7b ;
 extern const GFXfont FreeSans9pt7b ;
 
-
+#define mySetup setup
+#define myLoop loop
 
 //#define TEST_DIS 
 
