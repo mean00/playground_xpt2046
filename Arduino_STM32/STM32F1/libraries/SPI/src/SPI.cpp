@@ -565,8 +565,9 @@ uint8 SPIClass::dmaSendAsync(const void * transmitBuf, uint16 length, bool minc)
     Victor Perez 2017
 */
 
-void SPIClass::onReceive(void(*callback)(void)) {
+void SPIClass::onReceive(void(*callback)(void *),void *cookie) {
     _currentSetting->receiveCallback = callback;
+    _currentSetting->receiveCookie = cookie;
     if (callback){
         switch (_currentSetting->spi_d->clk_id) {
             #if BOARD_NR_SPI >= 1
@@ -593,8 +594,9 @@ void SPIClass::onReceive(void(*callback)(void)) {
     }
 }
 
-void SPIClass::onTransmit(void(*callback)(void)) {
+void SPIClass::onTransmit(void(*callback)(void *),void *cookie) {
     _currentSetting->transmitCallback = callback;
+    _currentSetting->transmitCookie = cookie;
     if (callback){
         switch (_currentSetting->spi_d->clk_id) {
             #if BOARD_NR_SPI >= 1
@@ -617,6 +619,10 @@ void SPIClass::onTransmit(void(*callback)(void)) {
         }
     }
     else {
+        // MEANX : Detach will not disable the IRQ so if we alternate between sync and async transmit we'll get spurious interrupts
+        nvic_irq_disable(_currentSetting->spiDmaDev->handlers[_currentSetting->spiTxDmaChannel - 1].irq_line);
+        // MEANX
+        
         dma_detach_interrupt(_currentSetting->spiDmaDev, _currentSetting->spiTxDmaChannel);
     }
 }
@@ -639,16 +645,19 @@ void SPIClass::EventCallback() {
 
         if (_currentSetting->receiveCallback)
         {
-            _currentSetting->receiveCallback();
+            _currentSetting->receiveCallback(_currentSetting->receiveCookie);
         }
         break;
     case SPI_STATE_TRANSMIT:
         _currentSetting->state = SPI_STATE_READY;
         spi_tx_dma_disable(_currentSetting->spi_d);
+// MEANX : Detach will not disable the IRQ so if we alternate between sync and async transmit we'll get spurious interrupts
+        nvic_irq_disable(_currentSetting->spiDmaDev->handlers[_currentSetting->spiTxDmaChannel - 1].irq_line);
+///MEANX
         //dma_disable(_currentSetting->spiDmaDev, _currentSetting->spiTxDmaChannel);
         if (_currentSetting->transmitCallback)
         {
-            _currentSetting->transmitCallback();
+            _currentSetting->transmitCallback(_currentSetting->transmitCookie);
         }
 
         break;
