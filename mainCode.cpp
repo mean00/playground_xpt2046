@@ -8,7 +8,7 @@
 #include "SPI.h"
 #include "dso_debug.h"
 #include "dso_eeprom.h"
-#include "TFT_eSPI_extended.h" 
+#include "TFT_eSPI_stm32duino.h" 
 #include "stopWatch.h"
 extern const GFXfont FreeSans24pt7b ;
 extern const GFXfont FreeSans18pt7b ;
@@ -53,7 +53,7 @@ public:
             void    initTft();
             void    loop(void) ;
 protected:
-            TFT_eSPI_extended    *tft=NULL;
+            TFT_eSPI_stm32duino  *tft=NULL;
             xMutex               *spiMutex;
 };
 
@@ -72,14 +72,14 @@ void MainTask::initTft()
  
     spiMutex=new xMutex();
 
-    tft = new TFT_eSPI_extended(spiMutex,240,320,PB10,PB0,PB1);
+    tft = new TFT_eSPI_stm32duino(SPI,spiMutex,240,320,PB10,PB0,PB1);
     
     tft->init();  
     tft->setRotation(3);
     tft->fillScreen(ILI9341_BLACK);
         
     tft->setFontFamily(&FreeSans9pt7b,&FreeSans18pt7b,&FreeSans24pt7b);
-    tft->setFontSize(TFT_eSPI_extended::MediumFont);
+    tft->setFontSize(TFT_eSPI::MediumFont);
     tft->setTextColor(ILI9341_WHITE,ILI9341_BLACK);
 }
 /**
@@ -127,6 +127,8 @@ void    MainTask::run(void)
     tft->fillScreen(ILI9341_BLUE);
     xDelay(2000);
 #endif  
+    
+#if 0
   for(int i=0;i<5;i++)
   {
     StopWatch w;
@@ -136,16 +138,23 @@ void    MainTask::run(void)
     sprintf(s,"Round:%d elapsed:%d\n\r",i,t);
     Serial.print(s);
   }
-  for(int i=0;i<5;i++)
-  {
+#endif    
+    
+    
+for(int j=0;j<5;j++)    
+{
     StopWatch w;
     w.ok();
-    tft->setCursor(10, 100);
+    
+  for(int i=0;i<5;i++)
+  {
+    tft->setCursor(10, 20+i*30);
     tft->myDrawString("ABCDEGHIJKMN");
-    int t=w.msSinceOk();
-    sprintf(s,"Round:%d elapsed:%d\n\r",i,t);
-    Serial.print(s);
   }   
+    int t=w.msSinceOk();
+    sprintf(s,"elapsed:%d\n\r",t);
+    Serial.print(s);
+}   
 
     
   
@@ -176,11 +185,6 @@ void MainTask::loop(void)
 void myLoop()
 {
     
-}
-// Defining this mostly disable usb altogether and we gain ~ 4 kB of code
-extern "C" void __irq_usb_lp_can_rx0()
-{
-
 }
 
 //--EOF

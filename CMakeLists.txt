@@ -7,9 +7,23 @@ cmake_minimum_required(VERSION 3.0)
 
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 include(cmake_tools)
+include(FindPatch)
 SET(CMAKE_TOOLCHAIN_FILE cmake/ArduinoToolchain.cmake)
 Project("BatteryTester" C CXX ASM)
-include(cmake_tools)
+#
+# Patch Arduino_stm32 if needed to add gd32f303 support
+#
+include(./platformConfig.cmake)
+IF(NOT EXISTS "${PLATFORM_PATH}/patched")
+    MESSAGE(STATUS "Patching file in ${PLATFORM_PATH} to add gd32f303 support")
+    patch_file_p(2 "${PLATFORM_PATH}" "${CMAKE_SOURCE_DIR}/patches/spi_dma_async_patch2.diff")
+    file(WRITE "${PLATFORM_PATH}/patched" "patched")
+ENDIF(NOT EXISTS "${PLATFORM_PATH}/patched")
+
+
+
+
+
 SET(EXTENSION             "_STM32F103")
 set(ARDUINO_LD_FILE      jtag)      # Use that instead of default jtag-c8 to get the full 128 kB
 set(ARDUINO_DEFAULT_BOARD genericSTM32F103C)        # Default Board ID, when not specified
@@ -25,6 +39,9 @@ SET(libPrefix ${ARDUINO_DEFAULT_BOARD}_)
 MESSAGE(STATUS "**** Configuration is ** ${CONFIGURATION} **")
 SET(SUB_COMPONENTS FreeRTOS )
 SET(SUB_LIBRARIES TFT_eSPI )
+
+#add_definitions("-O0")
+
 
 add_subdirectory(assets)
 
@@ -61,6 +78,9 @@ generate_arduino_firmware(componentTester${EXTENSION}
                             dso_logger.cpp
                             heap.cpp
                             stopWatch.cpp
+                            # 42876 => 41772
+                            lowFlashConsumption/i2c_stubs.c
+                            lowFlashConsumption/usb_stubs.c
                 PORT ${ARDUINO_DEFAULT_PORT}
                 BOARD_CPU ${ARDUINO_CPU}
                 )

@@ -1,0 +1,22 @@
+diff --git a/STM32F1/cores/maple/libmaple/i2c.c b/STM32F1/cores/maple/libmaple/i2c.c
+index d796e47..27afed8 100644
+--- a/STM32F1/cores/maple/libmaple/i2c.c
++++ b/STM32F1/cores/maple/libmaple/i2c.c
+@@ -465,7 +465,7 @@ int32 wait_for_state_change(i2c_dev *dev,
+  * IRQ handler for I2C master and slave.
+  * Handles transmission/reception.
+  */
+-void _i2c_irq_handler(i2c_dev *dev) {
++__weak void _i2c_irq_handler(i2c_dev *dev) {
+     // See Note in ST Specs:
+     //  Reading I2C_SR2 after reading I2C_SR1 clears the ADDR flag, even if the ADDR flag was
+     //  set after reading I2C_SR1. Consequently, I2C_SR2 must be read only when ADDR is found
+@@ -751,7 +751,7 @@ void _i2c_irq_handler(i2c_dev *dev) {
+  * Interrupt handler for I2C error conditions. Aborts any pending I2C
+  * transactions.
+  */
+-void _i2c_irq_error_handler(i2c_dev *dev) {
++__weak void _i2c_irq_error_handler(i2c_dev *dev) {
+     __IO uint32_t sr1 = dev->regs->SR1;
+     __IO uint32_t sr2 = dev->regs->SR2;
+ 
