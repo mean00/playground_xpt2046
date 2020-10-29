@@ -4,3 +4,4 @@ build/*
 *.sw*
 .*.sw*
 nbproject/*
+nbproject/private/*
