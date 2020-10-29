@@ -43,14 +43,14 @@ SET(SUB_LIBRARIES TFT_eSPI )
 #add_definitions("-O0")
 
 
-add_subdirectory(assets)
 
 include_directories(${CMAKE_SOURCE_DIR}/stubs)
 include_directories(${CMAKE_SOURCE_DIR})
 include_directories(FreeRTOS/Source/include)
 include_directories(FreeRTOS/)
 include_directories(FreeRTOS/Source/portable/Stm32duino/)
-include_directories(assets/backgrounds/generated)
+include_directories(myPwm)
+include_directories(fonts)
 
 
 # Build 
@@ -81,6 +81,9 @@ generate_arduino_firmware(componentTester${EXTENSION}
                             # 42876 => 41772
                             lowFlashConsumption/i2c_stubs.c
                             lowFlashConsumption/usb_stubs.c
+                            #
+                            myPwm/myPwm.cpp
+                            fonts.cpp
                 PORT ${ARDUINO_DEFAULT_PORT}
                 BOARD_CPU ${ARDUINO_CPU}
                 )
@@ -92,7 +95,6 @@ FOREACH(comp ${SUB_LIBRARIES} )
     LINK_TO_LIBRARIES(componentTester${EXTENSION} ${comp})
 ENDFOREACH(comp ${SUB_LIBRARIES} )
 
-target_link_libraries(componentTester${EXTENSION}  ${libPrefix}backgrounds)
 
 
 # EOF

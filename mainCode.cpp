@@ -10,6 +10,7 @@
 #include "dso_eeprom.h"
 #include "TFT_eSPI_stm32duino.h" 
 #include "stopWatch.h"
+
 extern const GFXfont FreeSans24pt7b ;
 extern const GFXfont FreeSans18pt7b ;
 extern const GFXfont FreeSans9pt7b ;

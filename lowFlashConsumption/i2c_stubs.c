@@ -51,10 +51,25 @@
 #include <libmaple/systick.h>
 
 #include <string.h>
+
 void _i2c_irq_handler(i2c_dev *dev)
 {
 }
 void _i2c_irq_error_handler(i2c_dev *dev)
 {
 }
-
+void _i2c_irq_priority_fixup(i2c_dev *dev)
+{
+}
+void i2c_init(i2c_dev *dev)
+{
+    
+}
+void i2c_config_gpios(const i2c_dev *dev)
+{
+    
+}
+void i2c_master_release_bus(const i2c_dev *dev)
+{
+    
+}
