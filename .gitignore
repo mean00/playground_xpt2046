@@ -5,3 +5,4 @@ build/*
 .*.sw*
 nbproject/*
 nbproject/private/*
+Arduino_stm32/*/patched
