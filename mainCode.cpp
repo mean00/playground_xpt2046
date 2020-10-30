@@ -10,7 +10,7 @@
 #include "dso_eeprom.h"
 #include "TFT_eSPI_stm32duino.h" 
 #include "stopWatch.h"
-
+#include "myPwm.h"
 extern const GFXfont FreeSans24pt7b ;
 extern const GFXfont FreeSans18pt7b ;
 extern const GFXfont FreeSans9pt7b ;
@@ -111,6 +111,8 @@ void mySetup()
 /**
  * 
  */
+
+#define PWM_PIN PA1
 void    MainTask::run(void)
 {  
   Wire.setClock(100*1000);
@@ -118,59 +120,40 @@ void    MainTask::run(void)
     
   initTft();   
   char s[200];
+
 #if 0  
-  tft->fillScreen(ILI9341_BLACK);
-  xDelay(2000);
-    tft->fillScreen(ILI9341_RED);
-    xDelay(2000);
-    tft->fillScreen(ILI9341_GREEN);
-    xDelay(2000);
-    tft->fillScreen(ILI9341_BLUE);
-    xDelay(2000);
+  int scaler, ovf,cmp;
+  pinMode(PWM_PIN,PWM);  
+  pwmWrite(PWM_PIN,1000);
 #endif  
+  
+  int scaler, ovf,cmp;
+  pinMode(PWM_PIN,PWM);  
+  pwmWrite(PWM_PIN,1000);
+  myPwm(PWM_PIN,10000);
+  
+  pwmGetScaleOverFlowCompare(10*1000,scaler,ovf,cmp);
+  pwmFromScalerAndOverflow(PWM_PIN,scaler,ovf);
+  pwmRestart(PWM_PIN);
     
-#if 0
-  for(int i=0;i<5;i++)
+#define WAIT xDelay(5*1000)
+  
+  while(1)
   {
-    StopWatch w;
-    w.ok();
-    tft->fillScreen(ILI9341_BLACK);
-    int t=w.msSinceOk();
-    sprintf(s,"Round:%d elapsed:%d\n\r",i,t);
-    Serial.print(s);
-  }
-#endif    
-    
-    
-for(int j=0;j<5;j++)    
-{
-    StopWatch w;
-    w.ok();
-    
-  for(int i=0;i<5;i++)
-  {
-    tft->setCursor(10, 20+i*30);
-    tft->myDrawString("ABCDEGHIJKMN");
-  }   
-    int t=w.msSinceOk();
-    sprintf(s,"elapsed:%d\n\r",t);
-    Serial.print(s);
-}   
+    Serial1.print("half\n");
+    pwmSetRatio(PWM_PIN, 512);
+    WAIT;  
+  
+    Serial1.print("25%\n");
+    pwmSetRatio(PWM_PIN, 256);
+    WAIT;  
+
+    Serial1.print("75%\n");
+    pwmSetRatio(PWM_PIN, 3*256);
+    WAIT;  
 
     
   
-#ifndef DISABLE_INA219  
-  BootSequence("Zero",40);
-  delay(10); // no current, we can autocalibrate the ina
-#endif
-  BootSequence("All ok",50);  
-  while(1)
-  {
-
-  }  
-  while(1)
-  {
-        loop();
   }  
 }
 /**
