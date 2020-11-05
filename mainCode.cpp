@@ -11,6 +11,9 @@
 #include "TFT_eSPI_stm32duino.h" 
 #include "stopWatch.h"
 #include "myPwm.h"
+#include "adc.h"
+#include "dso_adc.h"
+#include "embedded_printf/printf.h"
 extern const GFXfont FreeSans24pt7b ;
 extern const GFXfont FreeSans18pt7b ;
 extern const GFXfont FreeSans9pt7b ;
@@ -21,16 +24,14 @@ extern const GFXfont FreeSans9pt7b ;
 //#define TEST_DIS 
 
 // ILI9341 is using HW SPI + those pins
-#define TFT_DC          PB0
-#define TFT_RST         PB1
-#define TFT_CS          PB10
+#define TFT_DC          PB14
+#define TFT_RST         PB13
+#define TFT_CS          PB12
 
-#define INA219_I2C_ADR  0x40
-#define MCP7245_I2C_ADR 0x60
 
 // TOUCH SCREEN
-#define TOUCH_CS        PB11
-#define TOUCH_IRQ       PB8
+#define TOUCH_CS        PB5
+#define TOUCH_IRQ       PB4
 #define BootSequence(x,y) {Logger(x);  tft->setCursor(10, y*2);       tft->myDrawString(x);xDelay(10);}
 
 /*
@@ -72,8 +73,8 @@ void MainTask::initTft()
     // Deep reset of screen
  
     spiMutex=new xMutex();
-
-    tft = new TFT_eSPI_stm32duino(SPI,spiMutex,240,320,PB10,PB0,PB1);
+//(SPIClass &spi, xMutex *tex,int _W , int _H , int pinCS, int pinDC, int pinRst) 
+    tft = new TFT_eSPI_stm32duino(SPI,spiMutex,240,320,TFT_CS,TFT_DC,TFT_RST);
     
     tft->init();  
     tft->setRotation(3);
@@ -82,6 +83,7 @@ void MainTask::initTft()
     tft->setFontFamily(&FreeSans9pt7b,&FreeSans18pt7b,&FreeSans24pt7b);
     tft->setFontSize(TFT_eSPI::MediumFont);
     tft->setTextColor(ILI9341_WHITE,ILI9341_BLACK);
+    tft->myDrawString("Hi There!");
 }
 /**
  * 
@@ -138,8 +140,63 @@ void    MainTask::run(void)
     
 #define WAIT xDelay(5*1000)
   
+  
+    pinMode(PA3,INPUT_ANALOG);
+    char st[60];
+    float volt;  
+    float vcc=3.300;
+#if 1
+    
   while(1)
   {
+         float f=analogRead(PA3);
+         volt=2*f*vcc/4095.;
+         tft->fillScreen(ILI9341_BLACK);
+         sprintf(st,"%2.2f v",volt);
+         tft->setCursor(100,100);
+         tft->myDrawString(st);        
+         xDelay(1000);
+  }
+}
+#else
+           DSOADC adc(PA3);
+  adc.setupADCs ();
+  
+    float vcc=adc.readVCCmv();
+
+  while(1)
+  {
+      adc.clearSamples();
+      adc.prepareTimerSampling (5000,false,ADC_SMPR_13_5 , DSOADC::ADC_PRESCALER_2);
+      adc.startTimerSampling(16);
+      uint16_t *samples;
+      int nb;
+
+      if(adc.getSamples(&samples,nb))
+      {
+        int sum=0;
+        for(int i=0;i<nb;i++) sum+=samples[i];
+        sum/=nb;        
+        volt=((float)sum)*vcc/4095.;
+        volt*=2./1000.;
+
+        {
+         float f=analogRead(PA3);
+         f=f*vcc/4095.;
+
+         tft->fillScreen(ILI9341_BLACK);
+         sprintf(st,"%2.2f v",volt);
+         tft->setCursor(100,100);
+         tft->myDrawString(st);
+        
+      }
+      xDelay(1000);
+  DSOADC adc(PA3);
+  adc.setupADCs ();
+  
+    float vcc=adc.readVCCmv();
+#endif      
+#if 0      
     Serial1.print("half\n");
     pwmSetRatio(PWM_PIN, 512);
     WAIT;  
@@ -151,11 +208,9 @@ void    MainTask::run(void)
     Serial1.print("75%\n");
     pwmSetRatio(PWM_PIN, 3*256);
     WAIT;  
+#endif
 
-    
-  
-  }  
-}
+   
 /**
  * 
  */

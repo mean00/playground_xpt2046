@@ -37,7 +37,7 @@ set(ARDUINO_CPUMENU .menu.cpu.${ARDUINO_CPU})
 SET(libPrefix ${ARDUINO_DEFAULT_BOARD}_)
 #
 MESSAGE(STATUS "**** Configuration is ** ${CONFIGURATION} **")
-SET(SUB_COMPONENTS FreeRTOS )
+SET(SUB_COMPONENTS FreeRTOS adc)
 SET(SUB_LIBRARIES TFT_eSPI )
 
 #add_definitions("-O0")
@@ -49,8 +49,9 @@ include_directories(${CMAKE_SOURCE_DIR})
 include_directories(FreeRTOS/Source/include)
 include_directories(FreeRTOS/)
 include_directories(FreeRTOS/Source/portable/Stm32duino/)
-include_directories(myPwm)
+include_directories(utils)
 include_directories(fonts)
+include_directories(adc)
 
 
 # Build 
@@ -68,7 +69,7 @@ add_definitions("-DPRINTF_DISABLE_SUPPORT_EXPONENTIAL -DPRINTF_DISABLE_SUPPORT_L
 #
 # Our code
 #
-SET(UTILS utils/fancyLock.cpp    utils/cycleClock.cpp utils/myPwm.cpp utils/i2c_stubs.c)
+SET(UTILS utils/fancyLock.cpp     utils/myPwm.cpp utils/i2c_stubs.c)
 generate_arduino_firmware(componentTester${EXTENSION}
                 
                 SRCS 
@@ -79,10 +80,10 @@ generate_arduino_firmware(componentTester${EXTENSION}
                             heap.cpp
                             stopWatch.cpp
                             # 42876 => 41772
-                            lowFlashConsumption/i2c_stubs.c
-                            lowFlashConsumption/usb_stubs.c
+                            utils/i2c_stubs.c
+                            utils/usb_stubs.c
                             #
-                            myPwm/myPwm.cpp
+                            ${UTILS}
                             fonts.cpp
                 PORT ${ARDUINO_DEFAULT_PORT}
                 BOARD_CPU ${ARDUINO_CPU}

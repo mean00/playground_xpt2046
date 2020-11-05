@@ -57,7 +57,7 @@ static int i2c1_wants_remap(const i2c_dev *dev) {
         (dev->scl_pin == 8);
 }
 
-void i2c_config_gpios(const i2c_dev *dev) {
+__weak void i2c_config_gpios(const i2c_dev *dev) {
     if (i2c1_wants_remap(dev)) {
         afio_remap(AFIO_REMAP_I2C1);
     }
@@ -65,7 +65,7 @@ void i2c_config_gpios(const i2c_dev *dev) {
     gpio_set_mode(scl_port(dev), dev->scl_pin, GPIO_AF_OUTPUT_OD);
 }
 
-void i2c_master_release_bus(const i2c_dev *dev) {
+__weak void i2c_master_release_bus(const i2c_dev *dev) {
     gpio_write_bit(scl_port(dev), dev->scl_pin, 1);
     gpio_write_bit(sda_port(dev), dev->sda_pin, 1);
     gpio_set_mode(scl_port(dev), dev->scl_pin, GPIO_OUTPUT_OD);
@@ -97,7 +97,7 @@ __weak void __irq_i2c2_er(void) {
  */
 
 #if defined(_I2C_HAVE_IRQ_FIXUP) && (_I2C_HAVE_IRQ_FIXUP)
-void _i2c_irq_priority_fixup(i2c_dev *dev) {
+__weak void _i2c_irq_priority_fixup(i2c_dev *dev) {
     /*
      * Important STM32 Errata:
      *

@@ -237,7 +237,7 @@ static void i2c_clear_busy_flag_erratum(const i2c_dev *dev) {
  *        default values.
  * @param dev Device to initialize.
  */
-void i2c_init(i2c_dev *dev) {
+__weak void i2c_init(i2c_dev *dev) {
     rcc_clk_enable(dev->clk_id);    // The device's clock should enabled before we reset it
     rcc_reset_dev(dev->clk_id);
     _i2c_irq_priority_fixup(dev);
