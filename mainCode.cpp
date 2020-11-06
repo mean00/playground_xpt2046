@@ -54,6 +54,8 @@ public:
             void    run(void);
             void    initTft();
             void    loop(void) ;
+            void    analogLoop(int pin);
+            void    dmaLoop(int pin);
 protected:
             TFT_eSPI_stm32duino  *tft=NULL;
             xMutex               *spiMutex;
@@ -112,9 +114,76 @@ void mySetup()
 }
 /**
  * 
+ * @param pin
+ */
+void MainTask::dmaLoop(int pin)
+{
+    pinMode(pin,INPUT_ANALOG);
+    
+    analogRead(pin);
+    
+    DSOADC adc(pin);    
+    adc.setupADCs ();
+  
+    float vcc=adc.readVCCmv();
+    float volt;
+    char st[60];
+    while(1)
+    {
+        adc.clearSamples();
+        adc.setADCPin(pin);
+#if 0
+        adc.prepareTimerSampling (2000,false,ADC_SMPR_28_5 , DSOADC::ADC_PRESCALER_4);
+        adc.startTimerSampling(16);
+#else        
+        adc.prepareDMASampling(ADC_SMPR_28_5, DSOADC::ADC_PRESCALER_4);
+        adc.startDMASampling(16);
+#endif
+        uint16_t *samples;
+        int nb;
+
+        if(adc.getSamples(&samples,nb))
+        {
+          int sum=0;
+          for(int i=0;i<nb;i++) sum+=samples[i];
+          sum/=nb;        
+          volt=((float)sum)*vcc/4095.;
+          volt*=2./1000.;
+           tft->fillScreen(ILI9341_BLACK);
+           sprintf(st,"%2.2f v",volt);
+           tft->setCursor(100,100);
+           tft->myDrawString(st);        
+        }
+        xDelay(1000);
+    }
+}
+/**
+ * 
+ * @param pin
+ */
+void MainTask::analogLoop(int pin)
+{
+    pinMode(pin,INPUT_ANALOG);
+    char st[60];
+    float volt;  
+    float vcc=3.300;
+    while(1)
+    {
+           float f=analogRead(pin);
+           volt=2*f*vcc/4095.;
+           tft->fillScreen(ILI9341_BLACK);
+           sprintf(st,"%2.2f v",volt);
+           tft->setCursor(100,100);
+           tft->myDrawString(st);        
+           xDelay(1000);
+    }  
+}
+/**
+ * 
  */
 
 #define PWM_PIN PA1
+#define ADC_VOLT_PIN PA3
 void    MainTask::run(void)
 {  
   Wire.setClock(100*1000);
@@ -138,64 +207,15 @@ void    MainTask::run(void)
   pwmFromScalerAndOverflow(PWM_PIN,scaler,ovf);
   pwmRestart(PWM_PIN);
     
-#define WAIT xDelay(5*1000)
-  
-  
-    pinMode(PA3,INPUT_ANALOG);
-    char st[60];
-    float volt;  
-    float vcc=3.300;
-#if 1
-    
-  while(1)
-  {
-         float f=analogRead(PA3);
-         volt=2*f*vcc/4095.;
-         tft->fillScreen(ILI9341_BLACK);
-         sprintf(st,"%2.2f v",volt);
-         tft->setCursor(100,100);
-         tft->myDrawString(st);        
-         xDelay(1000);
-  }
-}
+#if 0  
+  analogLoop(ADC_VOLT_PIN);
 #else
-           DSOADC adc(PA3);
-  adc.setupADCs ();
+  dmaLoop(ADC_VOLT_PIN);
+#endif
   
-    float vcc=adc.readVCCmv();
-
-  while(1)
-  {
-      adc.clearSamples();
-      adc.prepareTimerSampling (5000,false,ADC_SMPR_13_5 , DSOADC::ADC_PRESCALER_2);
-      adc.startTimerSampling(16);
-      uint16_t *samples;
-      int nb;
-
-      if(adc.getSamples(&samples,nb))
-      {
-        int sum=0;
-        for(int i=0;i<nb;i++) sum+=samples[i];
-        sum/=nb;        
-        volt=((float)sum)*vcc/4095.;
-        volt*=2./1000.;
-
-        {
-         float f=analogRead(PA3);
-         f=f*vcc/4095.;
-
-         tft->fillScreen(ILI9341_BLACK);
-         sprintf(st,"%2.2f v",volt);
-         tft->setCursor(100,100);
-         tft->myDrawString(st);
-        
-      }
-      xDelay(1000);
-  DSOADC adc(PA3);
-  adc.setupADCs ();
   
-    float vcc=adc.readVCCmv();
-#endif      
+}
+     
 #if 0      
     Serial1.print("half\n");
     pwmSetRatio(PWM_PIN, 512);
