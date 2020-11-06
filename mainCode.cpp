@@ -145,11 +145,12 @@ void MainTask::dmaLoop(int pin)
         if(adc.getSamples(&samples,nb))
         {
           int sum=0;
-          for(int i=0;i<nb;i++) sum+=samples[i];
-          sum/=nb;        
+          for(int i=0;i<nb;i++) 
+              sum+=samples[i];
+          sum=(sum+nb/2)/nb;        
           volt=((float)sum)*vcc/4095.;
           volt*=2./1000.;
-           tft->fillScreen(ILI9341_BLACK);
+           //tft->fillScreen(ILI9341_BLACK);
            sprintf(st,"%2.2f v",volt);
            tft->setCursor(100,100);
            tft->myDrawString(st);        
