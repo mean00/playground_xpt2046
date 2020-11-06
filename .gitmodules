@@ -1,3 +1,6 @@
 [submodule "TFT_eSPI"]
 	path = TFT_eSPI
 	url = git@github.com:mean00/TFT_eSPI.git
+[submodule "adc"]
+	path = adc
+	url = git@github.com:mean00/stm32duino_adc.git
