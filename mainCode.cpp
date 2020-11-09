@@ -12,7 +12,7 @@
 #include "stopWatch.h"
 #include "myPwm.h"
 #include "adc.h"
-#include "dso_adc.h"
+#include "simpleADC.h"
 #include "embedded_printf/printf.h"
 extern const GFXfont FreeSans24pt7b ;
 extern const GFXfont FreeSans18pt7b ;
@@ -60,7 +60,7 @@ public:
 protected:
             TFT_eSPI_stm32duino  *tft=NULL;
             xMutex               *spiMutex;
-            DSOADC               *adc;
+            simpleAdc            *adc;
             float                vcc;
 };
 
@@ -120,26 +120,23 @@ void mySetup()
  * @param pin
  */
 float MainTask::dmaLoop(int pin)
-{   
-    adc->setupDmaSampling();     
+{       
     float volt;
-        adc->prepareDMASampling(ADC_SMPR_28_5, DSOADC::ADC_PRESCALER_4);
-        adc->startDMASampling(16);
-        uint16_t *samples;
-        int nb;
+    uint16_t *samples;
+    int nb=16;
 
-        if(adc->getSamples(&samples,nb))
-        {
-          int sum=0;
-          for(int i=0;i<nb;i++) 
-              sum+=samples[i];
-          sum=(sum+nb/2)/nb;        
-          volt=((float)sum)*vcc/4095.;
-          volt*=2./1000.;
-         
-          return volt;
-        }
-        return -1;
+    if(adc->sample(nb,&samples,ADC_SMPR_28_5,DSOADC::ADC_PRESCALER_4))
+    {
+      int sum=0;
+      for(int i=0;i<nb;i++) 
+          sum+=samples[i];
+      sum=(sum+nb/2)/nb;        
+      volt=((float)sum)*vcc/4095.;
+      volt*=2./1000.;
+
+      return volt;
+    }
+    return -1;
 }
 
 /**
@@ -149,24 +146,20 @@ float MainTask::dmaLoop(int pin)
 float MainTask::timeLoop(int pin)
 {    
     float volt;    
-    adc->setupTimerSampling();
-
-        adc->prepareTimerSampling (5000,false,ADC_SMPR_28_5 , DSOADC::ADC_PRESCALER_4);
-        adc->startTimerSampling(16);
-        uint16_t *samples;
-        int nb;
-
-        if(adc->getSamples(&samples,nb))
-        {
-          int sum=0;
-          for(int i=0;i<nb;i++) 
-              sum+=samples[i];
-          sum=(sum+nb/2)/nb;        
-          volt=((float)sum)*vcc/4095.;
-          volt*=2./1000.;
-          return volt;
-        }
-        return -1;
+    uint16_t *samples;
+    int nb=16;
+    
+    if(adc->timeSample(nb,&samples,5000))
+    {
+        int sum=0;
+        for(int i=0;i<nb;i++) 
+            sum+=samples[i];
+        sum=(sum+nb/2)/nb;        
+        volt=((float)sum)*vcc/4095.;
+        volt*=2./1000.;
+        return volt;
+    }
+    return -1;
 }
 /**
  * 
@@ -215,31 +208,24 @@ void    MainTask::run(void)
   
     pinMode(ADC_VOLT_PIN,INPUT_FLOATING);
 
-    adc=new DSOADC(ADC_VOLT_PIN);    
-    adc->setupADCs ();
-  
-    vcc=adc->readVCCmv();
+    adc=new simpleAdc(ADC_VOLT_PIN);    
+    vcc=adc->getVcc();
     float volt;
     
     
-    adc->clearSamples();
-    adc->setADCPin(ADC_VOLT_PIN);
-
     // do a dummy one to setup things
-    timeLoop(ADC_VOLT_PIN);    // OFFset    
-    timeLoop(ADC_VOLT_PIN);    // OFFset    
-    timeLoop(ADC_VOLT_PIN);    // OFFset    
+    //timeLoop(ADC_VOLT_PIN);    // OFFset    
     
     float vd,va,vt;
     pwmSetRatio(PWM_PIN, 256);
     int inc=100,target=0;
     while(1)
     {    
-      //va=analogLoop(ADC_VOLT_PIN);   // OFFSET
-      //vd=dmaLoop(ADC_VOLT_PIN);     // OK
+      va=analogLoop(ADC_VOLT_PIN);   // OFFSET
+      vd=dmaLoop(ADC_VOLT_PIN);     // OK
       vt=dmaLoop(ADC_VOLT_PIN);    // OFFset    
 
-       sprintf(st,"target=%d D:%2.2f v\n",target,vt);    
+       sprintf(st,"target=%d D:%2.2f d:%2.2f DD:%2.2fv\n",target,vt,vd,va);    
        Serial1.print(st);
        target+=inc;
        if(target>(1024-inc)) inc=-inc;
