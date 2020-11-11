@@ -57,6 +57,7 @@ public:
             float   analogLoop(int pin);
             float   dmaLoop(int pin);
             float   timeLoop(int pin);
+            float   dualLoop(int pin1, int pin2, float &current);
 protected:
             TFT_eSPI_stm32duino  *tft=NULL;
             xMutex               *spiMutex;
@@ -176,12 +177,43 @@ float MainTask::analogLoop(int pin)
     volt=volt/1000.;
     return volt;
 }
+
+/**
+ * 
+ * @param pin
+ */
+float MainTask::dualLoop(int pin1, int pin2, float &current)
+{
+    float volt;    
+    uint16_t *samples;
+    int nb=16;    
+    adc->clearSamples();
+    if(adc->dualTimeSample(pin2,nb,&samples,5000))
+    {
+        int sum=0,sum2=0;
+        nb>>=1;
+        for(int i=0;i<nb;i++) 
+        {
+             sum+=samples[i*2+0];
+            sum2+=samples[i*2+1];
+        }
+        sum=(sum+nb/2)/nb;        
+        sum2=(sum2+nb/2)/nb;        
+        volt=((float)sum)*vcc/4095.;
+        volt*=2./1000.;
+        current=((float)sum2)*vcc/4095.;
+        current=current/2.6;
+        return volt;
+    }
+    return -1;
+}
 /**
  * 
  */
 
 #define PWM_PIN PB0
 #define ADC_VOLT_PIN PA3
+#define ADC_VOLT_PIN2 PA4
 void    MainTask::run(void)
 {  
   Wire.setClock(100*1000);
@@ -216,16 +248,20 @@ void    MainTask::run(void)
     // do a dummy one to setup things
     //timeLoop(ADC_VOLT_PIN);    // OFFset    
     
-    float vd,va,vt;
+    float vd,va,vt,vv;
     pwmSetRatio(PWM_PIN, 256);
     int inc=100,target=0;
+    float current;
     while(1)
     {    
+#if 0        
       va=analogLoop(ADC_VOLT_PIN);   // OFFSET
       vd=dmaLoop(ADC_VOLT_PIN);     // OK
       vt=dmaLoop(ADC_VOLT_PIN);    // OFFset    
-
        sprintf(st,"target=%d D:%2.2f d:%2.2f DD:%2.2fv\n",target,vt,vd,va);    
+#endif      
+      vv=dualLoop(ADC_VOLT_PIN,ADC_VOLT_PIN2,current);
+      sprintf(st,"Voltage = %f , Current=%f\n" ,vv,current);    
        Serial1.print(st);
        target+=inc;
        if(target>(1024-inc)) inc=-inc;
