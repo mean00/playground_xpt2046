@@ -32,6 +32,10 @@ extern const GFXfont FreeSans9pt7b ;
 // TOUCH SCREEN
 #define TOUCH_CS        PB5
 #define TOUCH_IRQ       PB4
+
+
+#define BAT_ENABLE      PB10 // active low
+
 #define BootSequence(x,y) {Logger(x);  tft->setCursor(10, y*2);       tft->myDrawString(x);xDelay(10);}
 char st[60];
 /*
@@ -56,8 +60,9 @@ public:
             void    loop(void) ;
             float   analogLoop(int pin);
             float   dmaLoop(int pin);
-            float   timeLoop(int pin);
-            float   dualLoop(int pin1, int pin2, float &current);
+            float   timeLoop(int pin,float frac);
+            float   dualTimeLoop(int pin1, int pin2, float &current);
+            float   dualDmaLoop(int pin1, int pin2, float &current);
 protected:
             TFT_eSPI_stm32duino  *tft=NULL;
             xMutex               *spiMutex;
@@ -112,6 +117,9 @@ void mySetup()
 //  SPI.setClockDivider (SPI_CLOCK_DIV4); // Given for 10 Mhz...
   SPI.setClockDivider (SPI_CLOCK_DIV8); // Given for 10 Mhz...
     
+  digitalWrite(  BAT_ENABLE,1);
+  pinMode(BAT_ENABLE,OUTPUT_OPEN_DRAIN);
+  
   // Start freeRTOS
   MainTask *mainTask=new MainTask();
   vTaskStartScheduler();        
@@ -125,7 +133,7 @@ float MainTask::dmaLoop(int pin)
     float volt;
     uint16_t *samples;
     int nb=16;
-
+    adc->changePin(pin);
     if(adc->sample(nb,&samples,ADC_SMPR_28_5,DSOADC::ADC_PRESCALER_4))
     {
       int sum=0;
@@ -144,12 +152,12 @@ float MainTask::dmaLoop(int pin)
  * 
  * @param pin
  */
-float MainTask::timeLoop(int pin)
+float MainTask::timeLoop(int pin, float frac)
 {    
     float volt;    
     uint16_t *samples;
     int nb=16;
-    
+    adc->changePin(pin);
     if(adc->timeSample(nb,&samples,5000))
     {
         int sum=0;
@@ -157,7 +165,7 @@ float MainTask::timeLoop(int pin)
             sum+=samples[i];
         sum=(sum+nb/2)/nb;        
         volt=((float)sum)*vcc/4095.;
-        volt*=2./1000.;
+        volt=volt*frac;
         return volt;
     }
     return -1;
@@ -182,36 +190,72 @@ float MainTask::analogLoop(int pin)
  * 
  * @param pin
  */
-float MainTask::dualLoop(int pin1, int pin2, float &current)
+
+float averageMe(uint16_t *data, int nb)
+{
+    float sum=0;
+    for(int i=0;i<nb;i++)     
+    {
+         sum+=*data;
+         data+=2;
+    }
+    sum=(sum+nb/2.)/(float)nb;
+    return sum;
+}
+
+float MainTask::dualTimeLoop(int pin1, int pin2, float &current)
 {
     float volt;    
     uint16_t *samples;
     int nb=16;    
     adc->clearSamples();
-    if(adc->dualTimeSample(pin2,nb,&samples,5000))
+    if(!adc->dualTimeSample(pin2,nb,&samples,5000))
     {
-        int sum=0,sum2=0;
-        nb>>=1;
-        for(int i=0;i<nb;i++) 
-        {
-             sum+=samples[i*2+0];
-            sum2+=samples[i*2+1];
-        }
-        sum=(sum+nb/2)/nb;        
-        sum2=(sum2+nb/2)/nb;        
-        volt=((float)sum)*vcc/4095.;
-        volt*=2./1000.;
-        current=((float)sum2)*vcc/4095.;
-        current=current/2.6;
-        return volt;
+         Logger("Failed\n");
+         return -1;
     }
-    return -1;
+    nb>>=1;
+       
+    volt=averageMe(samples,nb)*vcc/4095.;
+    volt*=2./1000.;
+    current=averageMe(samples+1,nb)*vcc/4095.;
+    // 0.1OOhm , op amp=*28 => divide by 2.8
+    current=current/2.8;
+    return volt;
+}
+/**
+ * 
+ * @param pin1
+ * @param pin2
+ * @param current
+ * @return 
+ */
+float MainTask::dualDmaLoop(int pin1, int pin2, float &current)
+{
+    float volt;    
+    uint16_t *samples;
+    int nb=16;    
+    adc->clearSamples();
+    if(!adc->dualSample(pin2,nb,&samples,ADC_SMPR_28_5,DSOADC::ADC_PRESCALER_4))
+    {
+         Logger("Failed\n");
+         return -1;
+    }
+    nb>>=1;
+       
+    volt=averageMe(samples,nb)*vcc/4095.;
+    volt*=2./1000.;
+    current=averageMe(samples+1,nb)*vcc/4095.;
+    // 0.1OOhm , op amp=*28 => divide by 2.8
+    current=current/2.8;
+    return volt;
 }
 /**
  * 
  */
 
 #define PWM_PIN PB0
+#define PWM_FQ  (20*1000)
 #define ADC_VOLT_PIN PA3
 #define ADC_VOLT_PIN2 PA4
 void    MainTask::run(void)
@@ -228,30 +272,45 @@ void    MainTask::run(void)
   pwmWrite(PWM_PIN,1000);
 #endif  
   
+  // Volt frac=  2./1000.;
+  // Current frac=1/2.8
+  
   int scaler, ovf,cmp;
   pinMode(PWM_PIN,PWM);  
   pwmWrite(PWM_PIN,1000);
-  myPwm(PWM_PIN,10000);
+  myPwm(PWM_PIN,PWM_FQ);
   
-  pwmGetScaleOverFlowCompare(10*1000,scaler,ovf,cmp);
+  pwmGetScaleOverFlowCompare(PWM_FQ,scaler,ovf,cmp);
   pwmFromScalerAndOverflow(PWM_PIN,scaler,ovf);
   pwmRestart(PWM_PIN);
     
   
     pinMode(ADC_VOLT_PIN,INPUT_FLOATING);
+    pinMode(ADC_VOLT_PIN2,INPUT_FLOATING);
 
     adc=new simpleAdc(ADC_VOLT_PIN);    
     vcc=adc->getVcc();
     float volt;
     
+    // Connect battery
+      digitalWrite(  BAT_ENABLE,0);
     
     // do a dummy one to setup things
     //timeLoop(ADC_VOLT_PIN);    // OFFset    
     
     float vd,va,vt,vv;
-    pwmSetRatio(PWM_PIN, 256);
-    int inc=100,target=0;
+    // 100 mA => 300 mv
+    // =~ 1/9 VCC= 1000/9=110
+    pwmSetRatio(PWM_PIN, 128);
+    int inc=10,target=0;
     float current;
+#if 0    
+    noInterrupts();
+    while(1)
+    {
+        
+    }
+#endif    
     while(1)
     {    
 #if 0        
@@ -259,15 +318,50 @@ void    MainTask::run(void)
       vd=dmaLoop(ADC_VOLT_PIN);     // OK
       vt=dmaLoop(ADC_VOLT_PIN);    // OFFset    
        sprintf(st,"target=%d D:%2.2f d:%2.2f DD:%2.2fv\n",target,vt,vd,va);    
-#endif      
-      vv=dualLoop(ADC_VOLT_PIN,ADC_VOLT_PIN2,current);
-      sprintf(st,"Voltage = %f , Current=%f\n" ,vv,current);    
-       Serial1.print(st);
+#endif     
+       // Base ripple = ~ 25 mv, 1.6 khz
+       // 40 mv ripple at 1Khz     current=timeLoop(ADC_VOLT_PIN2,1./2.8); 
+    //  vv=dualTimeLoop(ADC_VOLT_PIN,ADC_VOLT_PIN2,current);
+     //    current=timeLoop(ADC_VOLT_PIN2,1./2.8); 
+    //   current=dmaLoop(ADC_VOLT_PIN2);
+    // ==> PEAK         current=timeLoop(ADC_VOLT_PIN2); 
+    // OK               vv=timeLoop(ADC_VOLT_PIN); 
+    // NOISE 100 khz    vv=dmaLoop(ADC_VOLT_PIN);current=dmaLoop(ADC_VOLT_PIN2); 
+    // OK               current=dmaLoop(ADC_VOLT_PIN2);       vv=dmaLoop(ADC_VOLT_PIN);
+    // OK               current=timeLoop(ADC_VOLT_PIN2);       vv=timeLoop(ADC_VOLT_PIN);
+    // 100 khz noise    
+    //vv=dualDmaLoop(ADC_VOLT_PIN,ADC_VOLT_PIN2,current);
+
+    // ADC-> Real current
+      //  current=(current+10.)/1.2; // in mA
+
+    // PEAKS            vv=dualTimeLoop(ADC_VOLT_PIN,ADC_VOLT_PIN2,current);
+    // PEAKS adc->changePin(ADC_VOLT_PIN2);      vv=dualTimeLoop(ADC_VOLT_PIN,ADC_VOLT_PIN,current);
+     //sprintf(st,"Voltage = %f , Current=%f\n" ,vv,current);    
+     //Serial1.print(st);
+       
+#if 1       
+       
        target+=inc;
-       if(target>(1024-inc)) inc=-inc;
-       if(target<200 && inc < 0) inc=-inc;
-        pwmSetRatio(PWM_PIN, target);
-      
+       if(target>(300-inc)) inc=-inc;
+       if(target<20 && inc < 0) inc=-inc;
+       pwmSetRatio(PWM_PIN, target);
+       sprintf(st,"PWM=%d\n",target);
+       Serial1.print("----------------------\n");
+       Serial1.print(st);
+#endif       
+        xDelay(500);
+      // vv=dualDmaLoop(ADC_VOLT_PIN,ADC_VOLT_PIN2,current);
+
+    // ADC-> Real current
+      //  current=(current+10.)/1.2; // in mA
+   vv=dualTimeLoop(ADC_VOLT_PIN,ADC_VOLT_PIN2,current);
+
+    // PEAKS            vv=dualTimeLoop(ADC_VOLT_PIN,ADC_VOLT_PIN2,current);
+    // PEAKS adc->changePin(ADC_VOLT_PIN2);      vv=dualTimeLoop(ADC_VOLT_PIN,ADC_VOLT_PIN,current);
+     sprintf(st,"Voltage = %f , Current=%f\n" ,vv,current);    
+     Serial1.print(st);
+ 
 #if 0      
         sprintf(st,"A:%2.2f v",va);            
         tft->setCursor(20,40);
@@ -281,7 +375,7 @@ void    MainTask::run(void)
         tft->setCursor(20,120);
         tft->myDrawString(st);   
 #endif        
-        xDelay(1000);
+        xDelay(10*1000);
     }
 
            
