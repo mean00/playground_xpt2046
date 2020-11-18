@@ -82,6 +82,7 @@ generate_arduino_firmware(componentTester${EXTENSION}
                             # 42876 => 41772
                             utils/i2c_stubs.c
                             utils/usb_stubs.c
+                            batterySensor.cpp
                             #
                             ${UTILS}
                             fonts.cpp
