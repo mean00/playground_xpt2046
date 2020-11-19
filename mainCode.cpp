@@ -156,7 +156,7 @@ void    MainTask::run(void)
   BatterySensor *batSensor=new BatterySensor(ADC_VOLT_PIN,ADC_VOLT_PIN2);
     
   // Connect battery
-  digitalWrite(  BAT_ENABLE,0);
+    digitalWrite(  BAT_ENABLE,0);
     
     // do a dummy one to setup things
     //timeLoop(ADC_VOLT_PIN);    // OFFset    
@@ -165,14 +165,15 @@ void    MainTask::run(void)
     // 100 mA => 300 mv
     // =~ 1/9 VCC= 1000/9=110
     //pwmSetRatio(PWM_PIN, 128);
-    pwmSetRatio(PWM_PIN, 0);
+    // we want 160 mAmp =~ 480 mV => ratio = 145
+    pwmSetRatio(PWM_PIN, 145);
     int inc=10,target=0;
     float current,voltage;
 
     while(1)
     {
         //batSensor->rawRead(voltage,current);
-        batSensor->readVoltageCurrent(voltage,current);
+        batSensor->getVoltageCurrent(voltage,current);
         
         sprintf(st,"V:%2.2f, A:%2.2f\n",voltage,current);
         Serial1.print(st);

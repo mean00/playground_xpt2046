@@ -1,9 +1,15 @@
 
 #include "batterySensor.h"
 #include "dso_debug.h"
+#include "hwSettings.h"
 
 
 int VCalibration5v=2483; // Voltage *1000 when 5v is applied
+int ACalibration500mA=1440;
+// Current
+// at 0A => 88 mv
+// at 500 ma => 1440
+
 
 static float averageMe(uint16_t *data, int nb)
 {
@@ -18,7 +24,7 @@ static float averageMe(uint16_t *data, int nb)
 }
 /**
  */
- BatterySensor::BatterySensor(int pinV, int pinA)
+ BatterySensor::BatterySensor(int pinV, int pinA) :  xTask("BatSense",  3, 200)
  {
      
     pinMode(pinV,INPUT_FLOATING);
@@ -28,8 +34,25 @@ static float averageMe(uint16_t *data, int nb)
     _pinV=pinV;
     _adc=new simpleAdc(_pinV);
     _vcc=_adc->getVcc();
+    _voltage=0;
+    _current=0;
  }
- 
+ /**
+  * 
+  */
+ void BatterySensor::run()
+ {
+     while(1)
+     {
+        float v,a;
+        if(readVoltageCurrent(v,a))
+        {
+            _voltage=v;
+            _current=a;
+        }
+        xDelay(100);
+     }
+ }
 /**
  */
 bool  BatterySensor::rawRead( float &voltage,float &current)
@@ -58,6 +81,11 @@ bool  BatterySensor::readVoltageCurrent( float &voltage,float &current)
     if(!rawRead(voltage,current)) return false;
     
     voltage=voltage*5./(float)VCalibration5v;
+    current=current*0.5/(float)ACalibration500mA;    
+    if(current<0.05) current=0; // noise floor
+    // The high side A03401 has a 80 mOhm internal resistance
+    // take that into account
+    voltage=voltage+current*HIGH_SIDE_RDSON/1000.;
     
     return true;
 }
