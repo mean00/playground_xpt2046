@@ -1088,3 +1088,191 @@ STM32VLD.menu.opt.ogstd.build.flags.optimize=-Og
 STM32VLD.menu.opt.ogstd.build.flags.ldspecs=
 
 ################################################################################
+
+###################### Generic GD32F303C ########################################
+
+genericGD32F303C.name=Generic GD32F303C series
+genericGD32F303C.vid.0=0x1EAF
+genericGD32F303C.pid.0=0x0004
+genericGD32F303C.build.variant=generic_gd32f303c
+genericGD32F303C.build.vect=VECT_TAB_ADDR=0x8000000
+genericGD32F303C.build.core=maple
+genericGD32F303C.build.board=GENERIC_GD32F303C
+genericGD32F303C.build.error_led_port=GPIOC
+genericGD32F303C.build.error_led_pin=13
+genericGD32F303C.upload.use_1200bps_touch=false
+genericGD32F303C.upload.file_type=bin
+genericGD32F303C.upload.auto_reset=true
+genericGD32F303C.upload.tool=maple_upload
+genericGD32F303C.upload.protocol=maple_dfu
+
+## GD32F303C8 -------------------------
+genericGD32F303C.menu.device_variant.GD32F303C8=GD32F303C8 (48 RAM. 256 Flash)
+genericGD32F303C.menu.device_variant.GD32F303C8.build.cpu_flags=-DMCU_GD32F303C8
+genericGD32F303C.menu.device_variant.GD32F303C8.build.ldscript=ld/jtag_c8.ld
+genericGD32F303C.menu.device_variant.GD32F303C8.upload.maximum_size=65536
+genericGD32F303C.menu.device_variant.GD32F303C8.upload.maximum_data_size=20480
+
+#---------------------------- UPLOAD METHODS ---------------------------
+
+genericGD32F303C.menu.upload_method.DFUUploadMethod=STM32duino bootloader
+genericGD32F303C.menu.upload_method.DFUUploadMethod.upload.protocol=maple_dfu
+genericGD32F303C.menu.upload_method.DFUUploadMethod.upload.tool=maple_upload
+genericGD32F303C.menu.upload_method.DFUUploadMethod.build.upload_flags=-DSERIAL_USB -DGENERIC_BOOTLOADER
+genericGD32F303C.menu.upload_method.DFUUploadMethod.build.vect=VECT_TAB_ADDR=0x8002000
+genericGD32F303C.menu.upload_method.DFUUploadMethod.build.ldscript=ld/bootloader_20.ld
+genericGD32F303C.menu.upload_method.DFUUploadMethod.upload.usbID=1EAF:0003
+genericGD32F303C.menu.upload_method.DFUUploadMethod.upload.altID=2
+
+genericGD32F303C.menu.upload_method.serialMethod=Serial
+genericGD32F303C.menu.upload_method.serialMethod.upload.protocol=maple_serial
+genericGD32F303C.menu.upload_method.serialMethod.upload.tool=serial_upload
+genericGD32F303C.menu.upload_method.serialMethod.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG
+
+genericGD32F303C.menu.upload_method.STLinkMethod=STLink
+genericGD32F303C.menu.upload_method.STLinkMethod.upload.protocol=STLink
+genericGD32F303C.menu.upload_method.STLinkMethod.upload.tool=stlink_upload
+genericGD32F303C.menu.upload_method.STLinkMethod.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG=1 -DSERIAL_USB -DGENERIC_BOOTLOADER
+
+genericGD32F303C.menu.upload_method.BMPMethod=BMP (Black Magic Probe)
+genericGD32F303C.menu.upload_method.BMPMethod.upload.protocol=gdb_bmp
+genericGD32F303C.menu.upload_method.BMPMethod.upload.tool=bmp_upload
+genericGD32F303C.menu.upload_method.BMPMethod.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG
+
+genericGD32F303C.menu.upload_method.jlinkMethod=JLink
+genericGD32F303C.menu.upload_method.jlinkMethod.upload.protocol=jlink
+genericGD32F303C.menu.upload_method.jlinkMethod.upload.tool=jlink_upload
+genericGD32F303C.menu.upload_method.jlinkMethod.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG=1 -DSERIAL_USB -DGENERIC_BOOTLOADER 
+
+genericGD32F303C.menu.upload_method.HIDUploadMethod=HID bootloader 2.0
+genericGD32F303C.menu.upload_method.HIDUploadMethod.upload.tool=hid_upload
+genericGD32F303C.menu.upload_method.HIDUploadMethod.build.upload_flags=-DSERIAL_USB -DGENERIC_BOOTLOADER
+genericGD32F303C.menu.upload_method.HIDUploadMethod.build.vect=VECT_TAB_ADDR=0x8001000
+genericGD32F303C.menu.upload_method.HIDUploadMethod.build.ldscript=ld/hid_bootloader.ld
+
+#-- CPU Clock frequency
+genericGD32F303C.menu.cpu_speed.speed_96mhz=96Mhz (Normal)
+genericGD32F303C.menu.cpu_speed.speed_96mhz.build.f_cpu=96000000L
+
+genericGD32F303C.menu.cpu_speed.speed_120mhz=120Mhz (Normal)
+genericGD32F303C.menu.cpu_speed.speed_120mhz.build.f_cpu=120000000L
+
+genericGD32F303C.menu.cpu_speed.speed_72mhz=72Mhz (Normal)
+genericGD32F303C.menu.cpu_speed.speed_72mhz.build.f_cpu=72000000L
+
+genericGD32F303C.menu.cpu_speed.speed_48mhz=48Mhz (Slow - with USB)
+genericGD32F303C.menu.cpu_speed.speed_48mhz.build.f_cpu=48000000L
+
+genericGD32F303C.menu.cpu_speed.speed_128mhz=Overclocked 128Mhz NO USB SERIAL. MANUAL RESET NEEDED TO UPLOAD
+genericGD32F303C.menu.cpu_speed.speed_128mhz.build.f_cpu=128000000L
+
+#-- Optimizations
+genericGD32F303C.menu.opt.osstd=Smallest (default)
+genericGD32F303C.menu.opt.o1std=Fast (-O1)
+genericGD32F303C.menu.opt.o1std.build.flags.optimize=-O1
+genericGD32F303C.menu.opt.o1std.build.flags.ldspecs=
+genericGD32F303C.menu.opt.o2std=Faster (-O2)
+genericGD32F303C.menu.opt.o2std.build.flags.optimize=-O2
+genericGD32F303C.menu.opt.o2std.build.flags.ldspecs=
+genericGD32F303C.menu.opt.o3std=Fastest (-O3)
+genericGD32F303C.menu.opt.o3std.build.flags.optimize=-O3
+genericGD32F303C.menu.opt.o3std.build.flags.ldspecs=
+genericGD32F303C.menu.opt.ogstd=Debug (-g)
+genericGD32F303C.menu.opt.ogstd.build.flags.optimize=-Og
+genericGD32F303C.menu.opt.ogstd.build.flags.ldspecs=
+
+###############################################################"
+## GD32F103C
+###############################################################"
+
+genericGD32F103C.name=Generic GD32F103C series
+genericGD32F103C.vid.0=0x1EAF
+genericGD32F103C.pid.0=0x0004
+genericGD32F103C.build.variant=generic_gd32f103c2
+genericGD32F103C.build.vect=VECT_TAB_ADDR=0x8000000
+genericGD32F103C.build.core=maple
+genericGD32F103C.build.board=GENERIC_GD32F103C
+genericGD32F103C.build.error_led_port=GPIOC
+genericGD32F103C.build.error_led_pin=13
+genericGD32F103C.upload.use_1200bps_touch=false
+genericGD32F103C.upload.file_type=bin
+genericGD32F103C.upload.auto_reset=true
+genericGD32F103C.upload.tool=maple_upload
+genericGD32F103C.upload.protocol=maple_dfu
+
+## GD32F103C8 -------------------------
+genericGD32F103C.menu.device_variant.GD32F103C8=GD32F103C8 (20 RAM. 64 Flash)
+genericGD32F103C.menu.device_variant.GD32F103C8.build.cpu_flags=-DMCU_GD32F103C8
+genericGD32F103C.menu.device_variant.GD32F103C8.build.ldscript=ld/jtag_c8.ld
+genericGD32F103C.menu.device_variant.GD32F103C8.upload.maximum_size=65536
+genericGD32F103C.menu.device_variant.GD32F103C8.upload.maximum_data_size=20480
+
+#---------------------------- UPLOAD METHODS ---------------------------
+
+genericGD32F103C.menu.upload_method.DFUUploadMethod=STM32duino bootloader
+genericGD32F103C.menu.upload_method.DFUUploadMethod.upload.protocol=maple_dfu
+genericGD32F103C.menu.upload_method.DFUUploadMethod.upload.tool=maple_upload
+genericGD32F103C.menu.upload_method.DFUUploadMethod.build.upload_flags=-DSERIAL_USB -DGENERIC_BOOTLOADER
+genericGD32F103C.menu.upload_method.DFUUploadMethod.build.vect=VECT_TAB_ADDR=0x8002000
+genericGD32F103C.menu.upload_method.DFUUploadMethod.build.ldscript=ld/bootloader_20.ld
+genericGD32F103C.menu.upload_method.DFUUploadMethod.upload.usbID=1EAF:0003
+genericGD32F103C.menu.upload_method.DFUUploadMethod.upload.altID=2
+
+genericGD32F103C.menu.upload_method.serialMethod=Serial
+genericGD32F103C.menu.upload_method.serialMethod.upload.protocol=maple_serial
+genericGD32F103C.menu.upload_method.serialMethod.upload.tool=serial_upload
+genericGD32F103C.menu.upload_method.serialMethod.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG
+
+genericGD32F103C.menu.upload_method.STLinkMethod=STLink
+genericGD32F103C.menu.upload_method.STLinkMethod.upload.protocol=STLink
+genericGD32F103C.menu.upload_method.STLinkMethod.upload.tool=stlink_upload
+genericGD32F103C.menu.upload_method.STLinkMethod.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG=1 -DSERIAL_USB -DGENERIC_BOOTLOADER
+
+genericGD32F103C.menu.upload_method.BMPMethod=BMP (Black Magic Probe)
+genericGD32F103C.menu.upload_method.BMPMethod.upload.protocol=gdb_bmp
+genericGD32F103C.menu.upload_method.BMPMethod.upload.tool=bmp_upload
+genericGD32F103C.menu.upload_method.BMPMethod.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG
+
+genericGD32F103C.menu.upload_method.jlinkMethod=JLink
+genericGD32F103C.menu.upload_method.jlinkMethod.upload.protocol=jlink
+genericGD32F103C.menu.upload_method.jlinkMethod.upload.tool=jlink_upload
+genericGD32F103C.menu.upload_method.jlinkMethod.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG=1 -DSERIAL_USB -DGENERIC_BOOTLOADER 
+
+genericGD32F103C.menu.upload_method.HIDUploadMethod=HID bootloader 2.0
+genericGD32F103C.menu.upload_method.HIDUploadMethod.upload.tool=hid_upload
+genericGD32F103C.menu.upload_method.HIDUploadMethod.build.upload_flags=-DSERIAL_USB -DGENERIC_BOOTLOADER
+genericGD32F103C.menu.upload_method.HIDUploadMethod.build.vect=VECT_TAB_ADDR=0x8001000
+genericGD32F103C.menu.upload_method.HIDUploadMethod.build.ldscript=ld/hid_bootloader.ld
+
+#-- CPU Clock frequency
+genericGD32F103C.menu.cpu_speed.speed_96mhz=96Mhz (Normal)
+genericGD32F103C.menu.cpu_speed.speed_96mhz.build.f_cpu=96000000L
+
+genericGD32F103C.menu.cpu_speed.speed_120mhz=120Mhz (Normal)
+genericGD32F103C.menu.cpu_speed.speed_120mhz.build.f_cpu=120000000L
+
+genericGD32F103C.menu.cpu_speed.speed_72mhz=72Mhz (Normal)
+genericGD32F103C.menu.cpu_speed.speed_72mhz.build.f_cpu=72000000L
+
+genericGD32F103C.menu.cpu_speed.speed_48mhz=48Mhz (Slow - with USB)
+genericGD32F103C.menu.cpu_speed.speed_48mhz.build.f_cpu=48000000L
+
+genericGD32F103C.menu.cpu_speed.speed_128mhz=Overclocked 128Mhz NO USB SERIAL. MANUAL RESET NEEDED TO UPLOAD
+genericGD32F103C.menu.cpu_speed.speed_128mhz.build.f_cpu=128000000L
+
+#-- Optimizations
+genericGD32F103C.menu.opt.osstd=Smallest (default)
+genericGD32F103C.menu.opt.o1std=Fast (-O1)
+genericGD32F103C.menu.opt.o1std.build.flags.optimize=-O1
+genericGD32F103C.menu.opt.o1std.build.flags.ldspecs=
+genericGD32F103C.menu.opt.o2std=Faster (-O2)
+genericGD32F103C.menu.opt.o2std.build.flags.optimize=-O2
+genericGD32F103C.menu.opt.o2std.build.flags.ldspecs=
+genericGD32F103C.menu.opt.o3std=Fastest (-O3)
+genericGD32F103C.menu.opt.o3std.build.flags.optimize=-O3
+genericGD32F103C.menu.opt.o3std.build.flags.ldspecs=
+genericGD32F103C.menu.opt.ogstd=Debug (-g)
+genericGD32F103C.menu.opt.ogstd.build.flags.optimize=-Og
+genericGD32F103C.menu.opt.ogstd.build.flags.ldspecs=
+
+
