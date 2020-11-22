@@ -1,24 +1,12 @@
-OPTION(USE_GD32F103   "Use GD32F103 MCU" FALSE) 
-OPTION(USE_GD32F303   "Use GD32F303 MCU" FALSE) 
+OPTION(USE_GD30F103   "Use GD32F103 MCU" FALSE) 
+OPTION(USE_GD30F303   "Use GD32F303 MCU" FALSE) 
 
 # Select platform and installation for extra arduino files AND toolchain (compiler...)
 SET(PLATFORM_ARCHITECTURE "STM32F1")
 # Do we have patch around ?
 #
+include(cmake_utils/FindPatch.cmake)
 include(./platformConfig.cmake)
-cmake_minimum_required(VERSION 3.0)
-
-IF(USE_GD32F103 OR USE_GD32F303)
-    SET(MCU_SPEED             96000000)                 # Max speed, above 96M USB will not work (?)
-ENDIF(USE_GD32F103 OR USE_GD32F303)
-include(./platformConfig.cmake)
-
-
-set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
-include(cmake_tools)
-include(FindPatch)
-SET(CMAKE_TOOLCHAIN_FILE cmake/ArduinoToolchain.cmake)
-Project("BatteryTester" C CXX ASM)
 #
 # Patch Arduino_stm32 if needed to add gd32f303 support
 #
@@ -35,26 +23,35 @@ IF(NOT EXISTS "${PLATFORM_PATH}/patched2")
 ENDIF(NOT EXISTS "${PLATFORM_PATH}/patched2")
 
 
+cmake_minimum_required(VERSION 3.0)
+
+IF(USE_GD32F103 OR USE_GD32F303)
+    SET(MCU_SPEED             96000000)                 # Max speed, above 96M USB will not work (?)
+ENDIF(USE_GD32F103 OR USE_GD32F303)
+include(./platformConfig.cmake)
+
+
+set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
+include(cmake_tools)
+include(FindPatch)
+SET(CMAKE_TOOLCHAIN_FILE cmake/ArduinoToolchain.cmake)
+Project("BatteryTester" C CXX ASM)
 # Board setup
 IF(USE_GD32F103)
     SET(EXTENSION             "_GD32F103")
     set(ARDUINO_DEFAULT_BOARD genericGD32F103C)        # Default Board ID, when not specified
     set(ARDUINO_CPU           GD32F103C8)
-    ADD_DEFINITIONS("-DHIGH_SPEED_ADC")
-    SET(ARDUINO_UPLOAD_METHOD BMP) # Use blackmagic link, if you comment it out you'll use DFU => 8kB flash
 ELSEIF(USE_GD32F303)
     SET(EXTENSION             "_GD32F303")
     set(ARDUINO_DEFAULT_BOARD genericGD32F303C)        # Default Board ID, when not specified
     set(ARDUINO_CPU           GD32F303C8)
-    ADD_DEFINITIONS("-DHIGH_SPEED_ADC")
-    SET(ARDUINO_UPLOAD_METHOD BMP) # Use blackmagic link, if you comment it out you'll use DFU => 8kB flash
 ELSE()
     SET(EXTENSION             "_STM32F103")
     set(ARDUINO_LD_FILE      jtag)      # Use that instead of default jtag-c8 to get the full 128 kB
     set(ARDUINO_DEFAULT_BOARD genericSTM32F103C)        # Default Board ID, when not specified
     set(ARDUINO_CPU           STM32F103C8)
-    SET(ARDUINO_UPLOAD_METHOD BMP) # Use blackmagic link, if you comment it out you'll use DFU => 8kB flash
 ENDIF(USE_GD32F103)
+SET(ARDUINO_UPLOAD_METHOD BMP) # Use blackmagic link, if you comment it out you'll use DFU => 8kB flash
 
 #
 #print_board_list()
@@ -103,12 +100,14 @@ generate_arduino_firmware(componentTester${EXTENSION}
                             embedded_printf/printf.c    
                             settings.cpp
                             dso_logger.cpp
+                            cpuID.cpp
                             heap.cpp
                             stopWatch.cpp
                             # 42876 => 41772
                             utils/i2c_stubs.c
                             utils/usb_stubs.c
                             batterySensor.cpp
+                            adcTest.cpp
                             #
                             ${UTILS}
                             fonts.cpp

@@ -6,6 +6,7 @@
 
 #include <Wire.h>
 #include "SPI.h"
+#include "cpuID.h"
 #include "dso_debug.h"
 #include "dso_eeprom.h"
 #include "TFT_eSPI_stm32duino.h" 
@@ -16,6 +17,8 @@
 extern const GFXfont FreeSans24pt7b ;
 extern const GFXfont FreeSans18pt7b ;
 extern const GFXfont FreeSans9pt7b ;
+
+extern void adcTest();
 
 #define mySetup setup
 #define myLoop loop
@@ -112,6 +115,8 @@ void mySetup()
   Serial1.begin(115200);  
     
   Logger("Init"); 
+  cpuID::identify();
+  Logger(cpuID::getIdAsString());
   
   SPI.begin();
   SPI.setBitOrder(MSBFIRST); // Set the SPI bit order
@@ -136,6 +141,8 @@ void    MainTask::run(void)
   Wire.setClock(100*1000);
   Wire.begin();
     
+  adcTest();
+  
   initTft();   
   char s[200];
 
@@ -152,6 +159,9 @@ void    MainTask::run(void)
   pwmFromScalerAndOverflow(PWM_PIN,scaler,ovf);
   pwmRestart(PWM_PIN);
     
+  
+  
+  
   
   BatterySensor *batSensor=new BatterySensor(ADC_VOLT_PIN,ADC_VOLT_PIN2);
     
