@@ -1,5 +1,6 @@
 #include "Arduino.h"
 #include "stdarg.h"
+#include "embedded_printf/printf.h"
 static char buffer[1024];
 void Logger(const char *fmt...)
 {
