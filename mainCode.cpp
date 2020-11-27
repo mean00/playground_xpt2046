@@ -124,8 +124,12 @@ void mySetup()
 //  SPI.setClockDivider (SPI_CLOCK_DIV4); // Given for 10 Mhz...
   SPI.setClockDivider (SPI_CLOCK_DIV8); // Given for 10 Mhz...
     
-  digitalWrite(  BAT_ENABLE,1);
-  pinMode(BAT_ENABLE,OUTPUT_OPEN_DRAIN);
+  digitalWrite(  BAT_ENABLE,0);
+  pinMode(BAT_ENABLE,OUTPUT);
+  
+  // set PWM to 0
+  pinMode(PWM_PIN,OUTPUT);  
+  digitalWrite(PWM_PIN,0);
   
   // Start freeRTOS
   MainTask *mainTask=new MainTask();
@@ -141,7 +145,7 @@ void    MainTask::run(void)
   Wire.setClock(100*1000);
   Wire.begin();
     
-  adcTest();
+ // adcTest();
   
   initTft();   
   char s[200];
@@ -166,8 +170,8 @@ void    MainTask::run(void)
   BatterySensor *batSensor=new BatterySensor(ADC_VOLT_PIN,ADC_VOLT_PIN2);
     
   // Connect battery
+  //  digitalWrite(  BAT_ENABLE,0);
     digitalWrite(  BAT_ENABLE,0);
-    
     // do a dummy one to setup things
     //timeLoop(ADC_VOLT_PIN);    // OFFset    
 

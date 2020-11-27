@@ -25,10 +25,9 @@ static float averageMe(uint16_t *data, int nb)
 /**
  */
  BatterySensor::BatterySensor(int pinV, int pinA) :  xTask("BatSense",  3, 200)
- {
-     
-    pinMode(pinV,INPUT_FLOATING);
-    pinMode(pinA,INPUT_FLOATING);
+ { 
+    pinMode(pinV,INPUT_ANALOG);
+    pinMode(pinA,INPUT_ANALOG);
      
     _pinA=pinA;
     _pinV=pinV;
@@ -42,6 +41,11 @@ static float averageMe(uint16_t *data, int nb)
   */
  void BatterySensor::run()
  {
+     // do a dummy read
+     {
+        float v,a;
+        readVoltageCurrent(v,a);
+     }
      while(1)
      {
         float v,a;

@@ -92,21 +92,31 @@ void doubleTimeRead()
 void adcTest()
 {
     Logger("ADC TEST\n");
-    pinMode(ADC_VOLT_PIN,INPUT_FLOATING);
-    pinMode(ADC_VOLT_PIN2,INPUT_FLOATING);
+    pinMode(ADC_VOLT_PIN,INPUT_ANALOG);
+    pinMode(ADC_VOLT_PIN2,INPUT_ANALOG);
     
     adc=new simpleAdc(ADC_VOLT_PIN);
     vcc=adc->getVcc();
     Logger("VCC=%d\n",(int)vcc);
-    digitalWrite(  BAT_ENABLE,0);
+   // digitalWrite(  BAT_ENABLE,0);
     xDelay(10);
     while(1)
     {
         Logger("vcc=%f\n",vcc/1000.);
         simpleTimeRead();
         simpleNormalRead();
-     //   doubleTimeRead();
-        xDelay(1000);
+        doubleTimeRead();
+        uint32_t regs[20];
+        int nb=adc->getRegisters(regs);
+        
+        for(int i=0;i<nb;i++)
+        {
+       //     Logger("%02d: 0x%x",i,regs[i]);
+        }
+       // while(1)
+        {
+            xDelay(1000);
+        }
     }
 }
     
