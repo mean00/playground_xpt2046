@@ -148,6 +148,7 @@ void    MainTask::run(void)
  // adcTest();
   
   initTft();   
+  
   char s[200];
 
   
@@ -189,9 +190,10 @@ void    MainTask::run(void)
         //batSensor->rawRead(voltage,current);
         batSensor->getVoltageCurrent(voltage,current);
         
-        sprintf(st,"V:%2.2f, A:%2.2f\n",voltage,current);
-        Serial1.print(st);
-        xDelay(3000);
+        sprintf(st,"V:%2.2f, A:%2.2f\n",voltage,current);        
+        tft->setCursor(10,100);
+        tft->myDrawString(st);
+        xDelay(1000);
     }
 }
 
