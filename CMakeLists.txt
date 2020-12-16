@@ -1,63 +1,41 @@
-OPTION(USE_GD30F103   "Use GD32F103 MCU" FALSE) 
-OPTION(USE_GD30F303   "Use GD32F303 MCU" FALSE) 
-
-# Select platform and installation for extra arduino files AND toolchain (compiler...)
-SET(PLATFORM_ARCHITECTURE "STM32F1")
-# Do we have patch around ?
-#
-include(cmake_utils/FindPatch.cmake)
-include(./platformConfig.cmake)
-#
-# Patch Arduino_stm32 if needed to add gd32f303 support
-#
-IF(NOT EXISTS "${PLATFORM_PATH}/patched")
-    MESSAGE(STATUS "Patching file in ${PLATFORM_PATH} to fix spi dma in async mode")
-    patch_file_p(2 "${PLATFORM_PATH}" "${CMAKE_SOURCE_DIR}/patches/spi_dma_async_patch2.diff")
-    file(WRITE "${PLATFORM_PATH}/patched" "patched")
-ENDIF(NOT EXISTS "${PLATFORM_PATH}/patched")
-
-IF(NOT EXISTS "${PLATFORM_PATH}/patched2")
-    MESSAGE(STATUS "Patching file in ${PLATFORM_PATH} to add gd32f303/103 support")
-    patch_file_p(2 "${PLATFORM_PATH}" "${CMAKE_SOURCE_DIR}/patches/gd32_patch.diff")
-    file(WRITE "${PLATFORM_PATH}/patched2" "patched2")
-ENDIF(NOT EXISTS "${PLATFORM_PATH}/patched2")
-
-
-cmake_minimum_required(VERSION 3.0)
-
-IF(USE_GD32F103 OR USE_GD32F303)
-    SET(MCU_SPEED             96000000)                 # Max speed, above 96M USB will not work (?)
-ENDIF(USE_GD32F103 OR USE_GD32F303)
-include(./platformConfig.cmake)
-
-
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
-include(cmake_tools)
+include(select_mcu_stm32)
+include(applyPatch)
 include(FindPatch)
+# Patch
+include(./platformConfig.cmake)
+
+APPLY_PATCH_IF_NEEDED(patched gd32_patch.diff              "add gd32f303 support") 
+APPLY_PATCH_IF_NEEDED(patched2 spi_dma_async_patch2.diff   "add cookie to spi callback ") 
+APPLY_PATCH_IF_NEEDED(patched3 weak_i2c.diff               "weaken i2c symbols") 
+
+cmake_minimum_required(VERSION 2.8)
+#
+SET(CMAKE_TOOLCHAIN_FILE cmake/ArduinoToolchain.cmake)
+Project("ILI_speedTest" C CXX ASM)
+
+set(ARDUINO_DEFAULT_BOARD ${X_ARDUINO_DEFAULT_BOARD})        # Default Board ID, when not specified
+set(ARDUINO_CPU           ${X_ARDUINO_CPU})
+SET(ARDUINO_UPLOAD_METHOD ${X_ARDUINO_UPLOAD_METHOD}) # Use blackmagic link, if you comment it out you'll use DFU => 8kB flash
+set(ARDUINO_DEFAULT_PORT ttyACM0) # Default Port, when not specified
+
+
+SET(libPrefix ${ARDUINO_DEFAULT_BOARD}_)
+
+
+MESSAGE(STATUS "Starting ILI-speedTest")
+
+
+IF(USE_VANILLA_HW)    
+    SET(EXTENSION "${EXTENSION}_vanilla")
+ELSE(USE_VANILLA_HW)    
+    SET(EXTENSION "${EXTENSION}_usb")
+ENDIF(USE_VANILLA_HW)    
+
+
+include(cmake_tools)
 SET(CMAKE_TOOLCHAIN_FILE cmake/ArduinoToolchain.cmake)
 Project("BatteryTester" C CXX ASM)
-# Board setup
-IF(USE_GD32F103)
-    SET(EXTENSION             "_GD32F103")
-    set(ARDUINO_DEFAULT_BOARD genericGD32F103C)        # Default Board ID, when not specified
-    set(ARDUINO_CPU           GD32F103C8)
-ELSEIF(USE_GD32F303)
-    SET(EXTENSION             "_GD32F303")
-    set(ARDUINO_DEFAULT_BOARD genericGD32F303C)        # Default Board ID, when not specified
-    set(ARDUINO_CPU           GD32F303C8)
-ELSE()
-    SET(EXTENSION             "_STM32F103")
-    set(ARDUINO_LD_FILE      jtag)      # Use that instead of default jtag-c8 to get the full 128 kB
-    set(ARDUINO_DEFAULT_BOARD genericSTM32F103C)        # Default Board ID, when not specified
-    set(ARDUINO_CPU           STM32F103C8)
-ENDIF(USE_GD32F103)
-SET(ARDUINO_UPLOAD_METHOD BMP) # Use blackmagic link, if you comment it out you'll use DFU => 8kB flash
-
-#
-#print_board_list()
-set(ARDUINO_DEFAULT_PORT ttyACM0) # Default Port, when not specified
-set(ARDUINO_CPUMENU .menu.cpu.${ARDUINO_CPU})
-SET(libPrefix ${ARDUINO_DEFAULT_BOARD}_)
 #
 MESSAGE(STATUS "**** Configuration is ** ${CONFIGURATION} **")
 SET(SUB_COMPONENTS FreeRTOS adc)
@@ -92,7 +70,7 @@ add_definitions("-DPRINTF_DISABLE_SUPPORT_EXPONENTIAL -DPRINTF_DISABLE_SUPPORT_L
 #
 # Our code
 #
-SET(UTILS    utils/myPwm.cpp utils/i2c_stubs.c)
+SET(UTILS    utils/myPwm.cpp )#utils/i2c_stubs.c)
 generate_arduino_firmware(componentTester${EXTENSION}
                 
                 SRCS 
@@ -104,7 +82,7 @@ generate_arduino_firmware(componentTester${EXTENSION}
                             heap.cpp
                             stopWatch.cpp
                             # 42876 => 41772
-                            utils/i2c_stubs.c
+                            #utils/i2c_stubs.c
                             utils/usb_stubs.c
                             batterySensor.cpp
                             adcTest.cpp
