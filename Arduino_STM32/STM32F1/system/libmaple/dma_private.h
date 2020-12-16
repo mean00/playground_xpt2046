@@ -40,14 +40,10 @@
 static inline void dma_irq_handler(dma_dev *dev, dma_tube tube)
 {
     void (*handler)(void) = DMA_GET_HANDLER(dev, tube);
-    if (handler) 
-    {
+    if (handler) {
         handler();
-        dma_clear_isr_bits(dev, tube); /* in case handler doesn't */
-    }else
-    {   // spurious interrupt, halt debugger
-        __asm__("bkpt 1");
     }
+    dma_clear_isr_bits(dev, tube); /* in case handler doesn't */
 }
 #endif
 

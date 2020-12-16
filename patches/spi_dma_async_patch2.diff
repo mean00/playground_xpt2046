@@ -86,23 +86,4 @@ index f5abcdf..552544e 100644
  
      /*
       * I/O
-diff --git a/STM32F1/system/libmaple/dma_private.h b/STM32F1/system/libmaple/dma_private.h
-index b3e2385..2c01102 100644
---- a/STM32F1/system/libmaple/dma_private.h
-+++ b/STM32F1/system/libmaple/dma_private.h
-@@ -40,9 +40,13 @@
- static inline void dma_irq_handler(dma_dev *dev, dma_tube tube)
- {
-     void (*handler)(void) = DMA_GET_HANDLER(dev, tube);
--    if (handler) {
-+    if (handler) 
-+    {
-         handler();
--	    dma_clear_isr_bits(dev, tube); /* in case handler doesn't */
-+        dma_clear_isr_bits(dev, tube); /* in case handler doesn't */
-+    }else
-+    {   // spurious interrupt, halt debugger
-+        __asm__("bkpt 1");
-     }
- }
- #endif
+
