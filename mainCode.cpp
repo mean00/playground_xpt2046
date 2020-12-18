@@ -181,19 +181,22 @@ void    MainTask::run(void)
     // =~ 1/9 VCC= 1000/9=110
     //pwmSetRatio(PWM_PIN, 128);
     // we want 160 mAmp =~ 480 mV => ratio = 145
-    pwmSetRatio(PWM_PIN, 145);
+    pwmSetRatio(PWM_PIN, 1024);
     int inc=10,target=0;
     float current,voltage;
 
     while(1)
     {
         //batSensor->rawRead(voltage,current);
-        batSensor->getVoltageCurrent(voltage,current);
-        
+#if 1        
+        batSensor->getVoltageCurrent(voltage,current);        
+#else        
+        batSensor->rawRead(voltage,current);      
+#endif        
+        tft->setCursor(10,160);
         sprintf(st,"V:%2.2f, A:%2.2f\n",voltage,current);        
-        tft->setCursor(10,100);
-        tft->myDrawString(st);
-        xDelay(1000);
+        tft->myDrawString(st);        
+        xDelay(300);
     }
 }
 

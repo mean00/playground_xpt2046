@@ -17,8 +17,8 @@ public:
                 return true;
             }
 protected:
-            bool            readVoltageCurrent(float &volt,float &current);
-            virtual        void run();
+            bool           readVoltageCurrent(float &volt,float &current);
+            void           run();
             simpleAdc    *_adc;
             int           _pinV, _pinA;
             float         _vcc;

@@ -4,7 +4,7 @@
 #include "hwSettings.h"
 
 
-int VCalibration5v=2483; // Voltage *1000 when 5v is applied
+int VCalibration4v=2008; // Voltage *1000 when 4v is applied
 int ACalibration500mA=1440;
 // Current
 // at 0A => 88 mv
@@ -54,6 +54,7 @@ static float averageMe(uint16_t *data, int nb)
             _voltage=v;
             _current=a;
         }
+        Logger("K\n");
         xDelay(100);
      }
  }
@@ -72,8 +73,8 @@ bool  BatterySensor::rawRead( float &voltage,float &current)
          return false;
     }
     nb>>=1;       
-    voltage=averageMe(samples,nb)*_vcc/4095.;    
-    current=averageMe(samples+1,nb)*_vcc/4095.;
+    voltage=(averageMe(samples,nb)*_vcc)/4095.;    
+    current=(averageMe(samples+1,nb)*_vcc)/4095.;
     return true;
 }
     
@@ -84,7 +85,7 @@ bool  BatterySensor::readVoltageCurrent( float &voltage,float &current)
 {
     if(!rawRead(voltage,current)) return false;
     
-    voltage=voltage*5./(float)VCalibration5v;
+    voltage=voltage*4./(float)VCalibration4v;
     current=current*0.5/(float)ACalibration500mA;    
     if(current<0.05) current=0; // noise floor
     // The high side A03401 has a 80 mOhm internal resistance
