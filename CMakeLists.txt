@@ -71,7 +71,7 @@ add_definitions("-DPRINTF_DISABLE_SUPPORT_EXPONENTIAL -DPRINTF_DISABLE_SUPPORT_L
 # Our code
 #
 SET(UTILS    utils/myPwm.cpp )#utils/i2c_stubs.c)
-generate_arduino_firmware(componentTester${EXTENSION}
+generate_arduino_firmware(ILI_speedTest${EXTENSION}
                 
                 SRCS 
                             mainCode.cpp 
@@ -93,11 +93,11 @@ generate_arduino_firmware(componentTester${EXTENSION}
                 BOARD_CPU ${ARDUINO_CPU}
                 )
 FOREACH(comp ${SUB_COMPONENTS})
-    target_link_libraries(componentTester${EXTENSION} ${libPrefix}${comp})
+    target_link_libraries(ILI_speedTest${EXTENSION} ${libPrefix}${comp})
 ENDFOREACH(comp ${SUB_COMPONENTS})
 
 FOREACH(comp ${SUB_LIBRARIES} )
-    LINK_TO_LIBRARIES(componentTester${EXTENSION} ${comp})
+    LINK_TO_LIBRARIES(ILI_speedTest${EXTENSION} ${comp})
 ENDFOREACH(comp ${SUB_LIBRARIES} )
 
 
