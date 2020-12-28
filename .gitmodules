@@ -4,3 +4,6 @@
 [submodule "adc"]
 	path = adc
 	url = git@github.com:mean00/stm32duino_adc.git
+[submodule "FreeRTOS"]
+	path = FreeRTOS
+	url = https://github.com/mean00/MapleFreeRTOS1000.git
