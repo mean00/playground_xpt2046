@@ -7,3 +7,4 @@ nbproject/*
 nbproject/private/*
 Arduino_STM32/*/patched
 cmake
+.vscode
