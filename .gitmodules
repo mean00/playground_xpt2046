@@ -7,6 +7,6 @@
 [submodule "FreeRTOS"]
 	path = FreeRTOS
 	url = https://github.com/mean00/MapleFreeRTOS1000.git
-[submodule "lvgl"]
-	path = lvgl
-	url = https://github.com/lvgl/lvgl
+[submodule "XPT2046"]
+	path = XPT2046
+	url = git@github.com:mean00/simplerXpt2046.git
