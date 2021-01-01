@@ -9,7 +9,7 @@
 uint16_t calibrationHash;
 
 #define CUSTOM_START 20
-#define CURRENT_HASH 0xBEF1
+#define CURRENT_HASH 0xBEF2
 
 #if 0
     #define CHECK_READ(x) xAssert(x)

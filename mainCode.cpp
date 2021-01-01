@@ -16,7 +16,7 @@
 #include "batterySensor.h"
 #include "xpt2046.h"
 #include "dso_eeprom.h"
-
+#include "myPinout.h"
 
 extern const GFXfont FreeSans24pt7b ;
 extern const GFXfont FreeSans18pt7b ;
@@ -29,27 +29,9 @@ extern void adcTest();
 
 //#define TEST_DIS 
 
-// ILI9341 is using HW SPI + those pins
-#define TFT_DC          PB14
-#define TFT_RST         PB13
-#define TFT_CS          PB12
-
-
-// TOUCH SCREEN
-#define TOUCH_CS        PB5
-#define TOUCH_IRQ       PB4
-
-
-#define BAT_ENABLE      PB10 // active low
 
 #define BootSequence(x,y) {Logger(x);  tft->setCursor(10, y*2);       tft->myDrawString(x);xDelay(10);}
 
-
-
-#define PWM_PIN PB0
-#define PWM_FQ  (20*1000)
-#define ADC_VOLT_PIN PA3
-#define ADC_VOLT_PIN2 PA4
 
 
 char st[60];
@@ -111,7 +93,13 @@ void MainTask::initTft()
  */
 void mySetup() 
 {
-      afio_cfg_debug_ports( AFIO_DEBUG_SW_ONLY); // get PB3 & PB4
+  afio_cfg_debug_ports( AFIO_DEBUG_SW_ONLY); // get PB3 & PB4
+  
+   
+  // set PWM to 0
+  pinMode(PWM_PIN,OUTPUT);  
+  digitalWrite(PWM_PIN,0);
+  
 
   // switch to uart ASAP    
   Serial.end();
@@ -129,13 +117,6 @@ void mySetup()
 //  SPI.setClockDivider (SPI_CLOCK_DIV4); // Given for 10 Mhz...
   SPI.setClockDivider (SPI_CLOCK_DIV8); // Given for 10 Mhz...
     
-  digitalWrite(  BAT_ENABLE,0);
-  pinMode(BAT_ENABLE,OUTPUT);
-  
-  // set PWM to 0
-  pinMode(PWM_PIN,OUTPUT);  
-  digitalWrite(PWM_PIN,0);
-  
   // Start freeRTOS
   MainTask *mainTask=new MainTask();
   vTaskStartScheduler();        
@@ -154,21 +135,14 @@ void    MainTask::run(void)
   
   initTft();   
   
-  char s[200];
-
-  
-  // Volt frac=  2./1000.;
-  // Current frac=1/2.8
-  
   int scaler, ovf,cmp;
   pinMode(PWM_PIN,PWM);  
-  pwmWrite(PWM_PIN,1000);
+  pwmWrite(PWM_PIN,0);
   myPwm(PWM_PIN,PWM_FQ);
   
   pwmGetScaleOverFlowCompare(PWM_FQ,scaler,ovf,cmp);
   pwmFromScalerAndOverflow(PWM_PIN,scaler,ovf);
   pwmRestart(PWM_PIN);
-    
   
    
   xpt2046=new XPT2046(SPI,TOUCH_CS,TOUCH_IRQ,2400*1000,spiMutex); // 2.4Mbits
@@ -178,13 +152,8 @@ void    MainTask::run(void)
         DSOEeprom::read();
   }
 
-  
-  
-  BatterySensor *batSensor=new BatterySensor(ADC_VOLT_PIN,ADC_VOLT_PIN2);
+  BatterySensor *batSensor=new BatterySensor(ADC_VOLT_PIN,ADC_CURRENT_PIN);
     
-  // Connect battery
-  //  digitalWrite(  BAT_ENABLE,0);
-    digitalWrite(  BAT_ENABLE,0);
     // do a dummy one to setup things
     //timeLoop(ADC_VOLT_PIN);    // OFFset    
 
