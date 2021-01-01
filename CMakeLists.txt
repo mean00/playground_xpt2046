@@ -38,7 +38,7 @@ SET(CMAKE_TOOLCHAIN_FILE cmake/ArduinoToolchain.cmake)
 Project("BatteryTester" C CXX ASM)
 #
 MESSAGE(STATUS "**** Configuration is ** ${CONFIGURATION} **")
-SET(SUB_COMPONENTS FreeRTOS adc)
+SET(SUB_COMPONENTS FreeRTOS adc UI_engine)
 SET(SUB_LIBRARIES TFT_eSPI )
 
 #add_definitions("-O0")
