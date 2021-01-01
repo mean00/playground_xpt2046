@@ -15,6 +15,7 @@ virtual         ~UI_Screen();
         void    addWidget(UI_Widget *widget);
 virtual void    process();
 virtual void    begin();
+        TFT_eSPI_stm32duino *getTft() {return _tft;}
     
 protected:    
     std::vector <UI_Widget *>_widgets;

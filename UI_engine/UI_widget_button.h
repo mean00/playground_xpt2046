@@ -10,6 +10,7 @@ class UI_WidgetButton : public UI_Widget
             _w=w;
             _h=h;
             _txt=text;
+            _screen=screen;
     }
     virtual ~UI_WidgetButton()
     {
@@ -20,6 +21,7 @@ class UI_WidgetButton : public UI_Widget
     virtual void press(bool longPress);   
     
 protected:
-    const char *_txt;
+    const char  *_txt;
+    UI_Screen   *_screen;
 };  
 // EOF

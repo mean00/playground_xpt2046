@@ -1,6 +1,6 @@
 #include "UI_widget.h"
 #include "UI_screen.h"
-
+#include "dso_debug.h"
 
 /**
  * 
@@ -34,6 +34,7 @@ UI_Screen::~UI_Screen()
  */
 void   UI_Screen::pressEvent(int x,int y)
 {
+    Logger("Press event : x=%d y=%d\n",x,y);
     bool dirty=false;
     int n=_widgets.size();
     for(int i=0;i<n;i++)
@@ -63,7 +64,7 @@ void    UI_Screen::addWidget(UI_Widget *widget)
  */
 void    UI_Screen::process()
 {
-    
+    xDelay(100);
 }
 void UI_Screen::begin()
 {

@@ -64,9 +64,9 @@ protected:
             XPT2046              *xpt2046=NULL;
 };
 
-
-/**
- * 
+XPT2046 *globalXpt2046;
+/*
+ *  
  */
 void MainTask::initTft()
 {
@@ -147,16 +147,21 @@ void    MainTask::run(void)
   pwmRestart(PWM_PIN);
   
    
-  xpt2046=new XPT2046(SPI,TOUCH_CS,TOUCH_IRQ,2400*1000,spiMutex); // 2.4Mbits
+  xpt2046=  XPT2046::spawn(SPI,TOUCH_CS,TOUCH_IRQ,2400*1000,spiMutex); // 2.4Mbits
+  
+  globalXpt2046=xpt2046;
+  
   if(0 || ! DSOEeprom::read())
   {
         touchCalibration(xpt2046,tft);
         DSOEeprom::read();
   }
   xpt2046->setup(DSOEeprom::calibration);
+  xpt2046->start();
   BatterySensor *batSensor=new BatterySensor(ADC_VOLT_PIN,ADC_CURRENT_PIN);
     
   testScreen *st=new testScreen(tft,xpt2046);
+  st->begin();
   while(1)
   {
       st->process();

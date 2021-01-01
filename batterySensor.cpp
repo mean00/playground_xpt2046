@@ -54,7 +54,7 @@ static float averageMe(uint16_t *data, int nb)
             _voltage=v;
             _current=a;
         }
-        Logger("K\n");
+       // Logger("K\n");
         xDelay(100);
      }
  }

@@ -18,7 +18,7 @@ testScreen::~testScreen()
  */
 void    testScreen::process()
 {
-    
+    xDelay(100);
 }
 /***/
     

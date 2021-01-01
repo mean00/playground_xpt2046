@@ -44,6 +44,7 @@ include_directories(utils)
 include_directories(fonts)
 include_directories(adc)
 include_directories(UI_engine)
+include_directories(TFT_eSPI)
 
 # Build 
 add_subdirectory(XPT2046) # Physical folder name

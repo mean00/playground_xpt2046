@@ -1,4 +1,5 @@
 IMPORT_LIBRARY(xpt2046)
+IMPORT_LIBRARY(TFT_eSPI)
 SET(SRCS 
     UI_widget.cpp
     UI_widget_button.cpp
