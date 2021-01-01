@@ -30,8 +30,8 @@ set(ARDUINO_CPUMENU .menu.cpu.${ARDUINO_CPU})
 SET(libPrefix ${ARDUINO_DEFAULT_BOARD}_)
 #
 MESSAGE(STATUS "**** Configuration is ** ${CONFIGURATION} **")
-SET(SUB_COMPONENTS FreeRTOS adc )
-SET(SUB_LIBRARIES xpt2046  TFT_eSPI )
+SET(SUB_COMPONENTS FreeRTOS adc  )
+SET(SUB_LIBRARIES xpt2046  TFT_eSPI  UI_engine)
 
 add_subdirectory(assets)
 
@@ -43,10 +43,13 @@ include_directories(FreeRTOS/Source/portable/Stm32duino/)
 include_directories(utils)
 include_directories(fonts)
 include_directories(adc)
-
+include_directories(UI_engine)
 
 # Build 
 add_subdirectory(XPT2046) # Physical folder name
+add_subdirectory(UI_engine)
+
+
 FOREACH(comp ${SUB_LIBRARIES} ) # Logical name    
     IMPORT_LIBRARY(${comp})
 ENDFOREACH(comp ${SUB_LIBRARIES} )
@@ -76,6 +79,7 @@ generate_arduino_firmware(ILI_speedTest${EXTENSION}
                     batterySensor.cpp
                     fonts.cpp
                     cpuID.cpp
+                    touchScreen.cpp
 
 
                 PORT ${ARDUINO_DEFAULT_PORT}

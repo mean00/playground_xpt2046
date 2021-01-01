@@ -8,8 +8,6 @@
 #define TFT_RST         PB13
 #define TFT_CS          PB12
 
-#define INA219_I2C_ADR  0x40
-#define MCP7245_I2C_ADR 0x60
 
 // TOUCH SCREEN
 #define TOUCH_CS        PB5

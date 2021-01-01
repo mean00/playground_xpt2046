@@ -1,4 +1,4 @@
-
+IMPORT_LIBRARY(xpt2046)
 SET(SRCS 
     UI_widget.cpp
     UI_widget_button.cpp

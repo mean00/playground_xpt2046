@@ -18,6 +18,8 @@
 #include "dso_eeprom.h"
 #include "myPinout.h"
 
+#include "touchScreen.h"
+
 extern const GFXfont FreeSans24pt7b ;
 extern const GFXfont FreeSans18pt7b ;
 extern const GFXfont FreeSans9pt7b ;
@@ -146,15 +148,26 @@ void    MainTask::run(void)
   
    
   xpt2046=new XPT2046(SPI,TOUCH_CS,TOUCH_IRQ,2400*1000,spiMutex); // 2.4Mbits
-  if(! DSOEeprom::read())
+  if(0 || ! DSOEeprom::read())
   {
         touchCalibration(xpt2046,tft);
         DSOEeprom::read();
   }
-
+  xpt2046->setup(DSOEeprom::calibration);
   BatterySensor *batSensor=new BatterySensor(ADC_VOLT_PIN,ADC_CURRENT_PIN);
     
-    // do a dummy one to setup things
+  testScreen *st=new testScreen(tft,xpt2046);
+  while(1)
+  {
+      st->process();
+  }
+   
+}
+
+
+
+#if 0
+ // do a dummy one to setup things
     //timeLoop(ADC_VOLT_PIN);    // OFFset    
 
     float vd,va,vt,vv;
@@ -179,9 +192,8 @@ void    MainTask::run(void)
         tft->myDrawString(st);        
         xDelay(300);
     }
-}
+#endif
 
-   
 /**
  * 
  */
