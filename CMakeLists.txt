@@ -45,6 +45,7 @@ include_directories(fonts)
 include_directories(adc)
 include_directories(UI_engine)
 include_directories(TFT_eSPI)
+include_directories(commonCode)
 
 # Build 
 add_subdirectory(XPT2046) # Physical folder name
@@ -70,16 +71,16 @@ generate_arduino_firmware(ILI_speedTest${EXTENSION}
                     #screenCalibration.cpp 
                     mainCode.cpp 
                     embedded_printf/printf.c    
-                    dso_eeprom.cpp
-                    dso_logger.cpp
+                    commonCode/dso_eeprom.cpp
+                    commonCode/dso_logger.cpp
                     calibration.cpp
-                    heap.cpp
+                    commonCode/heap.cpp
                     stopWatch.cpp
                     utils/i2c_stubs.c
                     utils/usb_stubs.c
                     batterySensor.cpp
                     fonts.cpp
-                    cpuID.cpp
+                    commonCode/cpuID.cpp
                     touchScreen.cpp
 
 
