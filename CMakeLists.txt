@@ -41,7 +41,7 @@ add_definitions("-O0")
 #
 MESSAGE(STATUS "**** Configuration is ** ${CONFIGURATION} **")
 SET(SUB_COMPONENTS FreeRTOS adc )
-SET(SUB_LIBRARIES TFT_eSPI XPT2046 UI_engine )
+SET(SUB_LIBRARIES TFT_eSPI xpt2046 UI_engine )
 
 
 
@@ -55,8 +55,9 @@ include_directories(FreeRTOS/Source/portable/Stm32duino/)
 include_directories(utils)
 include_directories(fonts)
 include_directories(adc)
-include_directories(XPT2046)
 
+add_subdirectory(XPT2046)
+add_subdirectory(UI_engine)
 
 # Build 
 FOREACH(comp ${SUB_LIBRARIES} ) # Logical name    
@@ -73,32 +74,33 @@ add_definitions("-DPRINTF_DISABLE_SUPPORT_EXPONENTIAL -DPRINTF_DISABLE_SUPPORT_L
 # Our code
 #
 SET(UTILS    )#utils/i2c_stubs.c)
-generate_arduino_firmware(ILI_speedTest${EXTENSION}
-                
+generate_arduino_firmware(ILI_speedTest${EXTENSION}                
                 SRCS 
-                            mainCode.cpp 
-                            embedded_printf/printf.c    
-                            settings.cpp
-                            dso_logger.cpp
-                            cpuID.cpp
-                            heap.cpp
-                            stopWatch.cpp
-                            utils/i2c_stubs.c
-                            utils/usb_stubs.c
-                            batterySensor.cpp
-                            calibration.cpp
-                            dso_eeprom.cpp
-                            #
-                            ${UTILS}
-                            fonts.cpp
+                    mainCode.cpp 
+                    embedded_printf/printf.c    
+                    settings.cpp
+                    dso_logger.cpp
+                    cpuID.cpp
+                    heap.cpp
+                    stopWatch.cpp
+                    utils/i2c_stubs.c
+                    utils/usb_stubs.c
+                    batterySensor.cpp
+                    calibration.cpp
+                    dso_eeprom.cpp
+                    #
+                    ${UTILS}
+                    fonts.cpp
                 PORT ${ARDUINO_DEFAULT_PORT}
                 BOARD_CPU ${ARDUINO_CPU}
                 )
 FOREACH(comp ${SUB_COMPONENTS})
+    MESSAGE(STATUS "Linking to <${comp}>")
     target_link_libraries(ILI_speedTest${EXTENSION} ${libPrefix}${comp})
 ENDFOREACH(comp ${SUB_COMPONENTS})
 
 FOREACH(comp ${SUB_LIBRARIES} )
+    MESSAGE(STATUS "Linking to <${comp}>")
     LINK_TO_LIBRARIES(ILI_speedTest${EXTENSION} ${comp})
 ENDFOREACH(comp ${SUB_LIBRARIES} )
 

@@ -14,10 +14,14 @@
 #include "myPwm.h"
 #include "embedded_printf/printf.h"
 #include "batterySensor.h"
+#include "xpt2046.h"
+#include "dso_eeprom.h"
+
+
 extern const GFXfont FreeSans24pt7b ;
 extern const GFXfont FreeSans18pt7b ;
 extern const GFXfont FreeSans9pt7b ;
-
+extern void touchCalibration(XPT2046 *xpt, TFT_eSPI *tft);
 extern void adcTest();
 
 #define mySetup setup
@@ -73,6 +77,7 @@ protected:
             xMutex               *spiMutex;
             simpleAdc            *adc;
             float                vcc;
+            XPT2046              *xpt2046=NULL;
 };
 
 
@@ -165,7 +170,14 @@ void    MainTask::run(void)
   pwmRestart(PWM_PIN);
     
   
-  
+   
+  xpt2046=new XPT2046(SPI,TOUCH_CS,TOUCH_IRQ,2400*1000,spiMutex); // 2.4Mbits
+  if(! DSOEeprom::read())
+  {
+        touchCalibration(xpt2046,tft);
+        DSOEeprom::read();
+  }
+
   
   
   BatterySensor *batSensor=new BatterySensor(ADC_VOLT_PIN,ADC_VOLT_PIN2);
