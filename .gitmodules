@@ -10,3 +10,9 @@
 [submodule "XPT2046"]
 	path = XPT2046
 	url = git@github.com:mean00/simplerXpt2046.git
+[submodule "Arduino_STM32"]
+	path = Arduino_STM32
+	url = https://github.com/rogerclarkmelbourne/Arduino_STM32
+[submodule "cmake"]
+	path = cmake
+	url = https://github.com/mean00/arduino-cmake-stm32.git
