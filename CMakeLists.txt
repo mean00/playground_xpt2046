@@ -37,11 +37,13 @@ include(cmake_tools)
 SET(CMAKE_TOOLCHAIN_FILE cmake/ArduinoToolchain.cmake)
 Project("BatteryTester" C CXX ASM)
 #
+add_definitions("-O0")
+#
 MESSAGE(STATUS "**** Configuration is ** ${CONFIGURATION} **")
-SET(SUB_COMPONENTS FreeRTOS adc UI_engine)
-SET(SUB_LIBRARIES TFT_eSPI )
+SET(SUB_COMPONENTS FreeRTOS adc )
+SET(SUB_LIBRARIES TFT_eSPI XPT2046 UI_engine )
 
-#add_definitions("-O0")
+
 
 
 
@@ -53,10 +55,10 @@ include_directories(FreeRTOS/Source/portable/Stm32duino/)
 include_directories(utils)
 include_directories(fonts)
 include_directories(adc)
+include_directories(XPT2046)
 
 
 # Build 
-add_subdirectory(TFT_eSPI)
 FOREACH(comp ${SUB_LIBRARIES} ) # Logical name    
     IMPORT_LIBRARY(${comp})
 ENDFOREACH(comp ${SUB_LIBRARIES} )
@@ -70,7 +72,7 @@ add_definitions("-DPRINTF_DISABLE_SUPPORT_EXPONENTIAL -DPRINTF_DISABLE_SUPPORT_L
 #
 # Our code
 #
-SET(UTILS    utils/myPwm.cpp )#utils/i2c_stubs.c)
+SET(UTILS    )#utils/i2c_stubs.c)
 generate_arduino_firmware(ILI_speedTest${EXTENSION}
                 
                 SRCS 
@@ -81,11 +83,11 @@ generate_arduino_firmware(ILI_speedTest${EXTENSION}
                             cpuID.cpp
                             heap.cpp
                             stopWatch.cpp
-                            # 42876 => 41772
-                            #utils/i2c_stubs.c
+                            utils/i2c_stubs.c
                             utils/usb_stubs.c
                             batterySensor.cpp
-                            adcTest.cpp
+                            calibration.cpp
+                            dso_eeprom.cpp
                             #
                             ${UTILS}
                             fonts.cpp
