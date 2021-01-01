@@ -6,6 +6,9 @@ build*/*
 attic/*
 nbproject/*
 nbproject/private/*
-Arduino_STM32/*/patched
+Arduino_STM32/*
 cmake
 .vscode
+*.new
+compiler*
+
