@@ -78,7 +78,6 @@ void MainTask::initTft()
     // Deep reset of screen
  
     spiMutex=new xMutex();
-//(SPIClass &spi, xMutex *tex,int _W , int _H , int pinCS, int pinDC, int pinRst) 
     tft = new TFT_eSPI_stm32duino(SPI,spiMutex,240,320,TFT_CS,TFT_DC,TFT_RST);
     
     tft->init();  
@@ -88,7 +87,6 @@ void MainTask::initTft()
     tft->setFontFamily(&FreeSans9pt7b,&FreeSans18pt7b,&FreeSans24pt7b);
     tft->setFontSize(TFT_eSPI::MediumFont);
     tft->setTextColor(ILI9341_WHITE,ILI9341_BLACK);
-    tft->myDrawString("Hi There!");
 }
 /**
  * 
