@@ -158,15 +158,21 @@ void    MainTask::run(void)
   }
   xpt2046->setup(DSOEeprom::calibration);
   xpt2046->start();
+#if 1  
   BatterySensor *batSensor=new BatterySensor(ADC_VOLT_PIN,ADC_CURRENT_PIN);
-    
+  
   testScreen *st=new testScreen(tft,xpt2046);
   st->begin();
   while(1)
   {
       st->process();
   }
-   
+#else
+  while(1)
+  {
+      xDelay(100);
+  }
+#endif     
 }
 
 
