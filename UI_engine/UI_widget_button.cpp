@@ -4,6 +4,8 @@
 #include "TFT_eSPI/TFT_eSPI_stm32duino.h"
 #include "dso_debug.h"
 
+#define holdoff 500
+
 void UI_WidgetButton::draw()
 {    
     TFT_eSPI_stm32duino *tft=_screen->getTft();
@@ -25,11 +27,24 @@ void UI_WidgetButton::draw()
     
     
 }
+/**
+ * 
+ */
 void UI_WidgetButton::redraw()
 {
     draw();
 }
+/**
+ * 
+ * @param longPress
+ */
 void UI_WidgetButton::press(bool longPress)
 {
     Logger("Button %s pressed",_txt);
+    uint32_t now=millis();
+    if(_lastEvent==-1 || (now>(_lastEvent+holdoff)))
+    {        
+        _screen->post(0,this->_event);
+        _lastEvent=now;
+    }
 }

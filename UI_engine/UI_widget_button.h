@@ -11,6 +11,7 @@ class UI_WidgetButton : public UI_Widget
             _h=h;
             _txt=text;
             _screen=screen;
+            _lastEvent=-1;
     }
     virtual ~UI_WidgetButton()
     {
@@ -23,5 +24,6 @@ class UI_WidgetButton : public UI_Widget
 protected:
     const char  *_txt;
     UI_Screen   *_screen;
+    int         _lastEvent;
 };  
 // EOF

@@ -72,4 +72,38 @@ void UI_Screen::begin()
     for(int i=0;i<n;i++)
         _widgets[i]->draw();
 }
+/**
+ * 
+ * @param widgetId
+ * @param event
+ */
+void    UI_Screen::post(int widgetId, int event)
+{
+    uint32_t ev=(widgetId<<16)+event;
+    _eventMutex.lock();
+    this->_events.push_back(ev);
+    _eventMutex.unlock();
+}
+/**
+ * 
+ * @param widgetId
+ * @param event
+ * @return 
+ */
+bool UI_Screen::getEvent(int &widgetId, int &event)
+{
+    _eventMutex.lock();
+    if(!_events.size())
+    {
+        _eventMutex.unlock();
+        return false;
+    }
+    uint32_t ev=_events[0];
+    _events.erase(_events.begin());
+    _eventMutex.unlock();
+    widgetId=ev>>16;
+    event=ev&0xffff;
+    return true;
+    
+}
 // EOF
