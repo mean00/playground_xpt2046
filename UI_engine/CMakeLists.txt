@@ -3,6 +3,7 @@ IMPORT_LIBRARY(TFT_eSPI)
 SET(SRCS 
     UI_widget.cpp
     UI_widget_button.cpp
+    UI_widget_numbers.cpp
     UI_screen.cpp
 ) 
 generate_arduino_library(${libPrefix}UI_engine

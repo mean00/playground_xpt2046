@@ -41,7 +41,7 @@ void   UI_Screen::pressEvent(int x,int y)
     {
         if(_widgets[i]->hitBox(x,y))
         {
-            _widgets[i]->press(false);
+            _widgets[i]->press(false,x,y);
             dirty=true;
         }
     }

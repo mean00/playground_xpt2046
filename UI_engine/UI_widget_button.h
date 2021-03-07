@@ -19,7 +19,7 @@ class UI_WidgetButton : public UI_Widget
     }
     virtual void draw();
     virtual void redraw();    
-    virtual void press(bool longPress);   
+    virtual void press(bool longPress,int x, int y);   
     
 protected:
     const char  *_txt;

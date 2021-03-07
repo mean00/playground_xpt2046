@@ -22,7 +22,7 @@ public:
     }
     virtual void draw()=0;
     virtual void redraw()=0;    
-    virtual void press(bool longPress)=0;   
+    virtual void press(bool longPress,int x, int y)=0;   
     virtual bool hitBox(int x,int y);
 protected:
     UI_Screen *_screen;

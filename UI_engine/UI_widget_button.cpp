@@ -38,7 +38,7 @@ void UI_WidgetButton::redraw()
  * 
  * @param longPress
  */
-void UI_WidgetButton::press(bool longPress)
+void UI_WidgetButton::press(bool longPress,int x, int y)
 {
     Logger("Button %s pressed",_txt);
     uint32_t now=millis();
