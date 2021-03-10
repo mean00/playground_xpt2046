@@ -64,7 +64,7 @@ void AdcPoll::run(void)
             _values[i]=sum;
         }
         for(int i=0;i<_nbPoint;i++)
-            _clients[i]->_value=_values[i];
+            _clients[i]->setValue(_values[i]);
     }
 }
 

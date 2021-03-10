@@ -1,4 +1,11 @@
 #pragma once
+
+/**
+ This polls N pins and update the client "value"
+ It contains races, probably not a problem
+ 
+ */
+
 #include "MapleFreeRTOS1000_pp.h"
 
 
@@ -13,9 +20,10 @@ class AdcPollClient
 public:
                 AdcPollClient(int pin, AdcPoll &poller);
         int     getValue() {return _value;}
+  virtual void  setValue(int v) {_value=v;}
         
         // This is used by AdcPoll
-        int     _index;
+protected:
         int     _value;
 };
 

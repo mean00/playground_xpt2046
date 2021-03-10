@@ -33,6 +33,9 @@ void joyTest(TFT_eSPI_stm32duino *tft)
     AdcPollClient yAxis(PIN2,adcPoll);
     
     
+    xAxis.setValue(2048);
+    yAxis.setValue(2048);
+    
     for(int i=0;i<1024;i++)
     {
         float a=M_PI*(float)(i-512.)/512.; // -pi to pi
