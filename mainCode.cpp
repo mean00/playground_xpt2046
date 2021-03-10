@@ -125,7 +125,7 @@ void mySetup()
 /**
  * 
  */
-
+extern void joyTest(TFT_eSPI_stm32duino *tft);
 void    MainTask::run(void)
 {  
   Wire.setClock(100*1000);
@@ -135,6 +135,8 @@ void    MainTask::run(void)
   
   initTft();   
   
+  joyTest(tft);
+  //------------------------
   int scaler, ovf,cmp;
   pinMode(PWM_PIN,PWM);  
   pwmWrite(PWM_PIN,0);

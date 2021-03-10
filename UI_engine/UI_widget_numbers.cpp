@@ -67,7 +67,32 @@ bool UI_WidgetNumbers::hitBox(int x,int y)
  */
 void UI_WidgetNumbers::redraw()
 {
+    char fmt[16];
+    char str[16];
     
+    if(_decimal)
+    {
+        sprintf(fmt,"%%0%d.%0df",_intg,_decimal);
+        sprintf(str,fmt,_value);
+        
+    }
+    else
+    {
+          sprintf(fmt,"%%0%dd",_intg);
+          sprintf(str,fmt,(int)_value);
+          
+          int baseX=_posX+(_w)/(2*_intg);
+          int baseY=_posY+(_h/2); //-_squareHeight/2;
+          
+          for(int i=0;i<_intg;i++)
+          {
+              char c=str[i];
+              TFT_eSPI_stm32duino *tft=_screen->getTft();   
+              
+              tft->myDrawChar((_w*i)/_intg+baseX,baseY,  c,ILI9341_WHITE,0,*(tft->currentFont));
+              
+          }
+    }
 }
 /**
  * 
@@ -85,6 +110,20 @@ void UI_WidgetNumbers::press(bool longPress,int x, int y)
     if(y>_posY+_h-_squareHeight-1) line=1;
     if(line<0) return;
     Logger("Column : %d Line=%d\n",x,line);
-        
-   
+    
+    x=_decimal+_intg-x-1;
+    
+    float inc=1.0;
+    for(int i=0;i<_decimal;i++) inc/=10.;
+    for(int i=0;i<x;i++) inc*=10.;
+    if(line==0)
+    {
+        _value+=inc;
+    }
+    else
+    {
+        if(_value>=inc)
+            _value-=inc;           
+    }
 }
+

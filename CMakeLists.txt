@@ -82,6 +82,8 @@ generate_arduino_firmware(ILI_speedTest${EXTENSION}
                     fonts.cpp
                     commonCode/cpuID.cpp
                     touchScreen.cpp
+                    adcPoll.cpp
+                    joy_test.cpp
 
 
                 PORT ${ARDUINO_DEFAULT_PORT}
