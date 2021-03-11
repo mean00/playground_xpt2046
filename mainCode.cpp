@@ -19,7 +19,7 @@
 #include "myPinout.h"
 
 #include "touchScreen.h"
-
+#include "adcPoll.h"
 extern const GFXfont FreeSans24pt7b ;
 extern const GFXfont FreeSans18pt7b ;
 extern const GFXfont FreeSans9pt7b ;
@@ -135,7 +135,7 @@ void    MainTask::run(void)
   
   initTft();   
   
-  joyTest(tft);
+  
   //------------------------
   int scaler, ovf,cmp;
   pinMode(PWM_PIN,PWM);  
@@ -158,8 +158,22 @@ void    MainTask::run(void)
   }
   xpt2046->setup(DSOEeprom::calibration);
   xpt2046->start();
+
+  AdcPoll adcPoller(1000);
+
+  BatterySensor *batSensor=new BatterySensor(&adcPoller,ADC_VOLT_PIN,ADC_CURRENT_PIN);
+  
+  adcPoller.start();
+
+    while(1)
+  {
+    float v,a;
+    batSensor->getVoltageCurrent(v,a);
+    Logger("V:%f A:%f\n",v,a);
+    xDelay(500);
+  }
+  
 #if 1  
-  BatterySensor *batSensor=new BatterySensor(ADC_VOLT_PIN,ADC_CURRENT_PIN);
   
   testScreen *st=new testScreen(tft,xpt2046);
   st->begin();

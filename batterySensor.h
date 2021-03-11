@@ -1,4 +1,4 @@
-#include "simpleADC.h"
+#include "adcPoll.h"
 
 /**
  * 
@@ -8,7 +8,7 @@
 class BatterySensor: public xTask
 {
 public:
-                            BatterySensor(int pinV, int pinA);
+                            BatterySensor(AdcPoll *poller, int pinV, int pinA);
             bool            rawRead(float &v, float &a);
             bool            getVoltageCurrent(float &v, float &a)
             {
@@ -19,10 +19,11 @@ public:
 protected:
             bool           readVoltageCurrent(float &volt,float &current);
             void           run();
-            simpleAdc    *_adc;
+            AdcPoll       *_adc;
             int           _pinV, _pinA;
             float         _vcc;
             float         _voltage,_current;
+            AdcPollClient _currentPoller, _voltagePoller;
             
 protected:
             

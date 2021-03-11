@@ -12,6 +12,7 @@
 AdcPollClient::AdcPollClient(int pin,AdcPoll &poller)
 {
     _value=0;
+    pinMode(pin,INPUT_ANALOG);
     poller.add(pin, this);
 }
 /**
@@ -43,14 +44,14 @@ void AdcPoll::start(void)
  */
 void AdcPoll::run(void)
 {
-    simpleAdc adc(_pins[0]);    
-    adc.setPins(_nbPoint, _pins);
+    
+    _adc->setPins(_nbPoint, _pins);
     int f=_frequency*16*_nbPoint;
     while(1)
     {
         int nb=16*_nbPoint;
         uint16_t *data=NULL;
-        if(!adc.timeSample(nb, &data, f)) xAssert(0);
+        if(!_adc->timeSample(nb, &data, f)) xAssert(0);
         for(int i=0;i<_nbPoint;i++)
         {
             int sum=0;

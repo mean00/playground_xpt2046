@@ -7,7 +7,7 @@
  */
 
 #include "MapleFreeRTOS1000_pp.h"
-
+#include "simpleADC.h"
 
 class AdcPoll;
 /**
@@ -36,14 +36,16 @@ public:
     {
         _nbPoint=0;
         _frequency=frequency;
+        _adc=new simpleAdc(PA0);    ;
     }
     virtual ~AdcPoll()
     {
         
     }
-    void add(int pin, AdcPollClient *client);    
-    void start();
-    void run();
+    void    add(int pin, AdcPollClient *client);    
+    void    start();
+    void    run();
+     float  getVcc() {return _adc->getVcc();}
 protected:
     int             _nbPoint;
     int             _pins[8];
@@ -51,4 +53,5 @@ protected:
     uint16_t        _values[8];
     TaskHandle_t    _taskHandle;
     int             _frequency;
+    simpleAdc       *_adc;    
 };

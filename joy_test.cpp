@@ -19,14 +19,21 @@
 #include "adcPoll.h"
 #define PIN PA1
 #define PIN2 PA2
+#define PINPUSH PB1
 
 int angle[256];
+int pushpush=0;
+void myInterrupt()
+{
+    pushpush=digitalRead(PINPUSH);
+}
 
 void joyTest(TFT_eSPI_stm32duino *tft)
 {
     pinMode(PIN,INPUT_ANALOG);
     pinMode(PIN2,INPUT_ANALOG);
-    
+    pinMode(PINPUSH,INPUT_PULLUP);    
+    attachInterrupt(PINPUSH, myInterrupt, CHANGE);
     AdcPoll adcPoll(1000);
     
     AdcPollClient xAxis(PIN,adcPoll);
@@ -55,6 +62,7 @@ void joyTest(TFT_eSPI_stm32duino *tft)
         
         Logger("Value =%d value2=%d\n",sum,sum2);
         Logger("Angle =%d Angle=%d\n",angle[sum],angle[sum2]);
+        Logger("Button=%d\n",pushpush);
         
 
         xDelay(1000);

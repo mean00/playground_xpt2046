@@ -24,14 +24,12 @@ static float averageMe(uint16_t *data, int nb)
 }
 /**
  */
- BatterySensor::BatterySensor(int pinV, int pinA) :  xTask("BatSense",  3, 200)
+ BatterySensor::BatterySensor(AdcPoll *poller, int pinV, int pinA) :
+     xTask("BatSense",  3, 200),_currentPoller(pinA,*poller),  _voltagePoller(pinV,*poller)
  { 
-    pinMode(pinV,INPUT_ANALOG);
-    pinMode(pinA,INPUT_ANALOG);
-     
     _pinA=pinA;
     _pinV=pinV;
-    _adc=new simpleAdc(_pinV);
+    _adc=poller;
     _vcc=_adc->getVcc();
     _voltage=0;
     _current=0;
@@ -41,11 +39,7 @@ static float averageMe(uint16_t *data, int nb)
   */
  void BatterySensor::run()
  {
-     // do a dummy read
-     {
-        float v,a;
-        readVoltageCurrent(v,a);
-     }
+  
      while(1)
      {
         float v,a;
@@ -58,40 +52,24 @@ static float averageMe(uint16_t *data, int nb)
         xDelay(100);
      }
  }
-/**
- */
-bool  BatterySensor::rawRead( float &voltage,float &current)
-{
-    
-    uint16_t *samples;
-    int nb=16;    
-    _adc->clearSamples();
-    _adc->changePin(_pinV);
-    if(!_adc->dualTimeSample(_pinA,nb,&samples,5000))
-    {
-         Logger("Failed\n");
-         return false;
-    }
-    nb>>=1;       
-    voltage=(averageMe(samples,nb)*_vcc)/4095.;    
-    current=(averageMe(samples+1,nb)*_vcc)/4095.;
-    return true;
-}
-    
  
 /**
+ * 
+ * @param voltage
+ * @param current
+ * @return 
  */
-bool  BatterySensor::readVoltageCurrent( float &voltage,float &current)
+ bool  BatterySensor::readVoltageCurrent( float &voltage,float &current)
 {
-    if(!rawRead(voltage,current)) return false;
+    voltage=((float)_voltagePoller.getValue()*_vcc)/4095.;    
+    current=((float)_currentPoller.getValue()*_vcc)/4095.;
     
     voltage=voltage*4./(float)VCalibration4v;
     current=current*0.5/(float)ACalibration500mA;    
     if(current<0.05) current=0; // noise floor
     // The high side A03401 has a 80 mOhm internal resistance
     // take that into account
-    voltage=voltage+current*HIGH_SIDE_RDSON/1000.;
-    
+    voltage=voltage+current*HIGH_SIDE_RDSON/1000.;    
     return true;
 }
 // EOF
